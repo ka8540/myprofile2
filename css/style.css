@@ -99,6 +99,104 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
   }
 }
 
+/* === DARK MODE STYLING === */
+body.dark-mode {
+  background-color: #121212;
+  color: #f0f0f0;
+}
+
+/* Primary backgrounds (navbar, footer, header) */
+body.dark-mode .bg-primary {
+  background-color: #1f2937 !important;
+}
+
+/* Light backgrounds (navbar, etc.) */
+body.dark-mode .navbar,
+body.dark-mode .bg-light {
+  background-color: #1c1c1c !important;
+  color: #f0f0f0 !important;
+}
+
+/* Headings + major font color (adjusted to soft grey or blue-gray) */
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6 {
+  color: #eaeaea;
+}
+
+/* Muted light text (white replacement) */
+body.dark-mode .text-white {
+  color: #f0f0f0 !important;
+}
+
+/* Muted accent text (primary = soft blue) */
+body.dark-mode .text-primary {
+  color: #9bd4ff !important; /* navbar + links + hovers */
+}
+
+/* ✅ Make overlay section titles like "BACKGROUND" use blue too */
+body.dark-mode h1.position-absolute.text-primary {
+  color: #9bd4ff !important;
+}
+
+/* Button outlines - light */
+body.dark-mode .btn-outline-light {
+  color: #fff;
+  border-color: #ccc;
+}
+
+body.dark-mode .btn-outline-light:hover {
+  background-color: #ccc;
+  color: #000;
+}
+
+/* Button outlines - primary */
+body.dark-mode .btn-outline-primary {
+  border-color: #9bd4ff;
+  color: #9bd4ff;
+}
+
+body.dark-mode .btn-outline-primary:hover {
+  background-color: #9bd4ff;
+  color: #000;
+}
+
+/* Portfolio popup button hover background */
+body.dark-mode .portfolio-btn {
+  background-color: rgba(155, 212, 255, 0.9);
+}
+
+/* Improve visibility of progress bars */
+body.dark-mode .progress-bar {
+  filter: brightness(1.4);
+}
+
+/* Navbar links */
+body.dark-mode .navbar-nav .nav-link {
+  color: #e0e0e0 !important;
+}
+
+body.dark-mode .navbar-nav .nav-link:hover,
+body.dark-mode .navbar-nav .nav-link.active {
+  color: #9bd4ff !important;
+}
+
+/* Footer icon buttons (socials) */
+body.dark-mode .btn-light.btn-social {
+  background-color: #333 !important;
+  color: #fff !important;
+  border: none;
+}
+
+body.dark-mode .btn-light.btn-social:hover {
+  background-color: #555 !important;
+  color: #fff !important;
+}
+
+
 
 body {
   margin: 0;
