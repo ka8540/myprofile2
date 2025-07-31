@@ -117,7 +117,7 @@ body.dark-mode .bg-light {
   color: #f0f0f0 !important;
 }
 
-/* Headings + major font color (adjusted to soft grey or blue-gray) */
+/* Headings - base color */
 body.dark-mode h1,
 body.dark-mode h2,
 body.dark-mode h3,
@@ -127,19 +127,24 @@ body.dark-mode h6 {
   color: #eaeaea;
 }
 
-/* Muted light text (white replacement) */
+/* Muted light text */
 body.dark-mode .text-white {
   color: #f0f0f0 !important;
 }
 
-/* Muted accent text (primary = soft blue) */
+/* Accent blue for primary text */
 body.dark-mode .text-primary {
-  color: #9bd4ff !important; /* navbar + links + hovers */
+  color: #9bd4ff !important;
 }
 
-/* ✅ Make overlay section titles like "BACKGROUND" use blue too */
-body.dark-mode h1.position-absolute.text-primary {
+/* ✅ Front title (like "Background") */
+body.dark-mode h1.position-absolute.text-uppercase.text-primary {
   color: #9bd4ff !important;
+}
+
+/* ✅ Background heading (like "QUALITY") */
+body.dark-mode .display-1.text-uppercase.text-white {
+  color: #ffffff !important;
 }
 
 /* Button outlines - light */
@@ -164,12 +169,12 @@ body.dark-mode .btn-outline-primary:hover {
   color: #000;
 }
 
-/* Portfolio popup button hover background */
+/* Portfolio button hover */
 body.dark-mode .portfolio-btn {
   background-color: rgba(155, 212, 255, 0.9);
 }
 
-/* Improve visibility of progress bars */
+/* Progress bar brightness boost */
 body.dark-mode .progress-bar {
   filter: brightness(1.4);
 }
@@ -184,7 +189,7 @@ body.dark-mode .navbar-nav .nav-link.active {
   color: #9bd4ff !important;
 }
 
-/* Footer icon buttons (socials) */
+/* Footer social buttons */
 body.dark-mode .btn-light.btn-social {
   background-color: #333 !important;
   color: #fff !important;
