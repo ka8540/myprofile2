@@ -100,6 +100,32 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 }
 
 
+/* Footer text hover */
+.footer-name,
+.footer-text {
+    transition: color 0.2s ease;
+}
+
+.footer-name:hover,
+.footer-text:hover {
+    color: #000;
+}
+
+/* Social button hover */
+.footer-social {
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.footer-social:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+.footer-social:hover i {
+    color: #000;
+}
+
+
 body {
   margin: 0;
   font-family: "Roboto", sans-serif;
