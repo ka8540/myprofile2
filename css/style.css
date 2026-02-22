@@ -34,6 +34,171 @@
   --breakpoint-xl: 1200px;
   --font-family-sans-serif: "Roboto", sans-serif;
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+  /* App-level tokens (used for dark mode overrides) */
+  --app-bg: #ffffff;
+  --app-surface: #ffffff;
+  --app-surface-2: #f8f9fa;
+  --app-text: #343a40;
+  --app-text-muted: #6c757d;
+  --app-border: rgba(0, 0, 0, 0.08);
+  --app-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+/* Dark mode */
+html[data-theme="dark"] {
+  --app-bg: #0b0f14;
+  --app-surface: #111825;
+  --app-surface-2: #0f1722;
+  --app-text: #e8eef6;
+  --app-text-muted: #a7b3c2;
+  --app-border: rgba(255, 255, 255, 0.10);
+  --app-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+
+  /* Keep your brand primary, slightly brighter on dark */
+  --primary: #19e3c2;
+}
+
+html[data-theme="dark"] body {
+  background-color: var(--app-bg) !important;
+  color: var(--app-text) !important;
+}
+
+html[data-theme="dark"] h1.display-3.text-uppercase.text-primary.mb-2 {
+  color: transparent !important;          /* no fill */
+  -webkit-text-stroke: 2px #ffffff;       /* white outline */
+}
+
+html[data-theme="dark"] p,
+html[data-theme="dark"] .text-secondary,
+html[data-theme="dark"] .text-muted {
+  color: var(--app-text-muted) !important;
+}
+
+/* Headings in dark mode */
+/*
+ * IMPORTANT: Don't force-fill the "hero name" heading(s) at the top of the page.
+ * Those rely on transparent fill + white stroke for the design.
+ */
+html[data-theme="dark"] h1:not(.typed-text-output):not(.display-3),
+html[data-theme="dark"] h2,
+html[data-theme="dark"] h3,
+html[data-theme="dark"] h4,
+html[data-theme="dark"] h5,
+html[data-theme="dark"] h6 {
+  color: var(--app-text) !important;
+}
+
+/* Don't override stroked/transparent headings in dark mode (keeps the hero name looking the same). */
+html[data-theme="dark"] h1[style*="-webkit-text-stroke"] {
+  color: inherit !important;
+}
+
+/* Navbar */
+html[data-theme="dark"] .navbar {
+  background: rgba(17, 24, 37, 0.85) !important;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+html[data-theme="dark"] .navbar-light .navbar-nav .nav-link {
+  color: rgba(232, 238, 246, 0.85) !important;
+}
+
+html[data-theme="dark"] .navbar-light .navbar-nav .nav-link:hover,
+html[data-theme="dark"] .navbar-light .navbar-nav .nav-link.active {
+  color: var(--primary) !important;
+}
+
+html[data-theme="dark"] .navbar-light .navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+html[data-theme="dark"] .navbar-light .navbar-toggler-icon {
+  filter: invert(1);
+}
+
+/* Generic surfaces */
+html[data-theme="dark"] .container,
+html[data-theme="dark"] .container-fluid {
+  color: var(--app-text);
+}
+
+html[data-theme="dark"] .bg-light {
+  background-color: var(--app-surface) !important;
+}
+
+html[data-theme="dark"] .bg-white {
+  background-color: var(--app-surface) !important;
+}
+
+/* Cards / panels used across sections */
+html[data-theme="dark"] .skill-card {
+  background: var(--app-surface);
+  border-color: var(--app-border);
+  box-shadow: var(--app-shadow);
+}
+
+html[data-theme="dark"] .skill-tag {
+  background: rgba(25, 227, 194, 0.10);
+  border-color: rgba(25, 227, 194, 0.22);
+  color: var(--app-text);
+}
+
+html[data-theme="dark"] .skill-tag.is-active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #051014;
+}
+
+html[data-theme="dark"] .project-tag {
+  background: rgba(25, 227, 194, 0.09);
+  border-color: rgba(25, 227, 194, 0.20);
+  color: var(--app-text);
+}
+
+/* Buttons */
+html[data-theme="dark"] .btn-outline-dark {
+  color: var(--app-text) !important;
+  border-color: rgba(255, 255, 255, 0.22) !important;
+}
+
+html[data-theme="dark"] .btn-outline-dark:hover {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+/* Forms */
+html[data-theme="dark"] .form-control {
+  background-color: var(--app-surface) !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+  color: var(--app-text) !important;
+}
+
+html[data-theme="dark"] .form-control::placeholder {
+  color: rgba(167, 179, 194, 0.75) !important;
+}
+
+/* Modals */
+html[data-theme="dark"] .modal-content {
+  background-color: var(--app-surface) !important;
+  color: var(--app-text) !important;
+  border-color: var(--app-border) !important;
+}
+
+html[data-theme="dark"] .close {
+  color: var(--app-text) !important;
+  text-shadow: none !important;
+  opacity: 0.9;
+}
+
+/* Footer */
+html[data-theme="dark"] .container-fluid.bg-primary.text-white {
+  background: linear-gradient(135deg, #0b3a33, #0e1d2b) !important;
+}
+
+/* Large outline headers (stroke) */
+html[data-theme="dark"] .display-1.text-uppercase.text-white {
+  color: transparent !important;
 }
 
 *,
@@ -119,6 +284,190 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 .footer-social:hover {
     background-color: #fff;
     color: #000;
+}
+
+/* Skills (updated section) */
+.skill-card {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 14px;
+  padding: 22px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(11, 206, 175, 0.35);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.10);
+}
+
+.skill-card:focus-within {
+  border-color: rgba(11, 206, 175, 0.55);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.10), 0 0 0 0.18rem rgba(11, 206, 175, 0.18);
+}
+
+.skill-icon {
+  width: 48px;
+  height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  flex: 0 0 auto;
+  transition: transform 220ms ease, filter 220ms ease;
+}
+
+.skill-card:hover .skill-icon {
+  transform: translateY(-2px) rotate(-2deg);
+  filter: brightness(1.02);
+}
+
+.skill-icon i {
+  font-size: 18px;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill-tag {
+  display: inline-block;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(11, 206, 175, 0.12);
+  color: #343a40;
+  border: 1px solid rgba(11, 206, 175, 0.25);
+  font-size: 0.95rem;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 160ms ease, background-color 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.skill-tag:hover {
+  transform: translateY(-2px);
+  background: rgba(11, 206, 175, 0.18);
+  border-color: rgba(11, 206, 175, 0.45);
+}
+
+.skill-tag:active {
+  transform: translateY(0);
+}
+
+.skill-tag.is-active {
+  background: #0BCEAF;
+  border-color: #0BCEAF;
+  color: #ffffff;
+  box-shadow: 0 10px 24px rgba(11, 206, 175, 0.25);
+}
+
+.skill-tag:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 0.18rem rgba(11, 206, 175, 0.25);
+}
+
+/* Reveal animation (applied via JS) */
+.skill-reveal {
+  opacity: 0;
+  transform: translateY(14px);
+}
+
+.skill-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 520ms ease, transform 520ms ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skill-card,
+  .skill-icon,
+  .skill-tag,
+  .skill-reveal,
+  .skill-reveal.is-visible {
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
+  }
+}
+
+.skill-card h4 {
+  font-size: 1.15rem;
+}
+
+/* Portfolio enhancements */
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.project-tag {
+  display: inline-block;
+  padding: 7px 10px;
+  border-radius: 999px;
+  background: rgba(11, 206, 175, 0.10);
+  border: 1px solid rgba(11, 206, 175, 0.22);
+  color: #343a40;
+  font-size: 0.85rem;
+  line-height: 1;
+  transition: transform 160ms ease, background-color 160ms ease, border-color 160ms ease;
+}
+
+.portfolio-item:hover .project-tag {
+  background: rgba(11, 206, 175, 0.14);
+  border-color: rgba(11, 206, 175, 0.32);
+}
+
+.project-actions {
+  margin-top: 12px;
+}
+
+.project-actions .btn {
+  border-radius: 999px;
+}
+
+/* Slightly richer hover on the thumbnail */
+.portfolio-container img {
+  transition: transform 260ms ease, filter 260ms ease;
+}
+
+.portfolio-item:hover img {
+  transform: scale(1.03);
+  filter: saturate(1.05);
+}
+
+/* Portfolio reveal animation (applied via JS) */
+.portfolio-reveal {
+  opacity: 0;
+  transform: translateY(16px);
+}
+
+.portfolio-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 520ms ease, transform 520ms ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-tag,
+  .portfolio-container img,
+  .portfolio-reveal,
+  .portfolio-reveal.is-visible {
+    transition: none !important;
+  }
+  .portfolio-item:hover img {
+    transform: none;
+    filter: none;
+  }
+  .portfolio-reveal {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 .footer-social:hover i {

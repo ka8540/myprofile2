@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
     <meta charset="utf-8">
@@ -53,6 +53,12 @@
                 <a href="#blog" class="nav-item nav-link">Research</a>
                 <a href="#testimonial" class="nav-item nav-link">Strengths</a>
                 <a href="#contact" class="nav-item nav-link">Contact</a>
+            </div>
+            <div class="d-flex align-items-center ml-lg-3 mt-3 mt-lg-0">
+                <button id="themeToggle" type="button" class="btn btn-sm btn-outline-primary" aria-label="Toggle dark mode" aria-pressed="false">
+                    <i class="fas fa-moon"></i>
+                    <span class="d-none d-sm-inline ml-2">Dark</span>
+                </button>
             </div>
         </div>
     </nav>
@@ -306,148 +312,106 @@
                 <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Skills</h1>
                 <h1 class="position-absolute text-uppercase text-primary">My Skills</h1>
             </div>
-            <div class="row align-items-center">
-                <div class="col-md-6">
-                    <div class="skill mb-4">
-                        <div class="d-flex justify-content-between">
-                            <h6 class="font-weight-bold">Python</h6>
-                            <h6 class="font-weight-bold">95%</h6>
+            <div class="row">
+                <div class="col-12 text-center mb-4">
+                    <p class="text-secondary mb-0">A quick snapshot of the tools, technologies, and practices I use to build scalable products.</p>
+                </div>
+
+                <div class="col-lg-6 mb-4">
+                    <div class="skill-card h-100">
+                        <div class="d-flex align-items-center mb-3">
+                            <span class="skill-icon bg-primary text-white mr-3"><i class="fa fa-code"></i></span>
+                            <h4 class="font-weight-bold m-0">Languages & Frameworks</h4>
                         </div>
-                        <div class="progress">
-                            <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="95" aria-valuemin="0"
-                                aria-valuemax="100"></div>
-                        </div>
-                    </div>
-                    <div class="skill mb-4">
-                        <div class="d-flex justify-content-between">
-                            <h6 class="font-weight-bold">Java</h6>
-                            <h6 class="font-weight-bold">90%</h6>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="90" aria-valuemin="0"
-                                aria-valuemax="100"></div>
-                        </div>
-                    </div>
-                    <div class="skill mb-4">
-                        <div class="d-flex justify-content-between">
-                            <h6 class="font-weight-bold">C++</h6>
-                            <h6 class="font-weight-bold">85%</h6>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="85" aria-valuemin="0"
-                                aria-valuemax="100"></div>
-                        </div>
-                    </div>
-                    <div class="skill mb-4">
-                        <div class="d-flex justify-content-between">
-                            <h6 class="font-weight-bold">JavaScript</h6>
-                            <h6 class="font-weight-bold">88%</h6>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar bg-info" role="progressbar" aria-valuenow="88" aria-valuemin="0"
-                                aria-valuemax="100"></div>
-                        </div>
-                    </div>
-                    <div class="skill mb-4">
-                        <div class="d-flex justify-content-between">
-                            <h6 class="font-weight-bold">TypeScript</h6>
-                            <h6 class="font-weight-bold">80%</h6>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar bg-dark" role="progressbar" aria-valuenow="80" aria-valuemin="0"
-                                aria-valuemax="100"></div>
-                        </div>
-                    </div>
-                    <div class="skill mb-4">
-                        <div class="d-flex justify-content-between">
-                            <h6 class="font-weight-bold">React</h6>
-                            <h6 class="font-weight-bold">92%</h6>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="92" aria-valuemin="0"
-                                aria-valuemax="100"></div>
-                        </div>
-                    </div>
-                    <div class="skill mb-4">
-                        <div class="d-flex justify-content-between">
-                            <h6 class="font-weight-bold">MongoDB</h6>
-                            <h6 class="font-weight-bold">85%</h6>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar bg-success" role="progressbar" aria-valuenow="85" aria-valuemin="0"
-                                aria-valuemax="100"></div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Java</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">C++</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">TypeScript</span>
+                            <span class="skill-tag">React</span>
+                            <span class="skill-tag">Next.js</span>
+                            <span class="skill-tag">Node.js</span>
+                            <span class="skill-tag">Flask</span>
+                            <span class="skill-tag">Spring Boot</span>
+                            <span class="skill-tag">HTML</span>
+                            <span class="skill-tag">CSS3</span>
+                            <span class="skill-tag">Objective-C</span>
+                            <span class="skill-tag">Swift</span>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="skill mb-4">
-                        <div class="d-flex justify-content-between">
-                            <h6 class="font-weight-bold">Spring Boot</h6>
-                            <h6 class="font-weight-bold">85%</h6>
+
+                <div class="col-lg-6 mb-4">
+                    <div class="skill-card h-100">
+                        <div class="d-flex align-items-center mb-3">
+                            <span class="skill-icon bg-primary text-white mr-3"><i class="fa fa-cloud"></i></span>
+                            <h4 class="font-weight-bold m-0">Cloud & DevOps</h4>
                         </div>
-                        <div class="progress">
-                            <div class="progress-bar bg-success" role="progressbar" aria-valuenow="85" aria-valuemin="0"
-                                aria-valuemax="100"></div>
-                        </div>
-                    </div>
-                    <div class="skill mb-4">
-                        <div class="d-flex justify-content-between">
-                            <h6 class="font-weight-bold">Flask</h6>
-                            <h6 class="font-weight-bold">87%</h6>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="87" aria-valuemin="0"
-                                aria-valuemax="100"></div>
-                        </div>
-                    </div>
-                    <div class="skill mb-4">
-                        <div class="d-flex justify-content-between">
-                            <h6 class="font-weight-bold">Django</h6>
-                            <h6 class="font-weight-bold">82%</h6>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="82" aria-valuemin="0"
-                                aria-valuemax="100"></div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">AWS</span>
+                            <span class="skill-tag">Azure</span>
+                            <span class="skill-tag">GCP</span>
+                            <span class="skill-tag">BigQuery</span>
+                            <span class="skill-tag">Vercel</span>
+                            <span class="skill-tag">Docker</span>
+                            <span class="skill-tag">Kubernetes</span>
+                            <span class="skill-tag">GitHub Actions</span>
+                            <span class="skill-tag">Jenkins</span>
+                            <span class="skill-tag">Linux</span>
+                            <span class="skill-tag">CI/CD</span>
                         </div>
                     </div>
-                    <div class="skill mb-4">
-                        <div class="d-flex justify-content-between">
-                            <h6 class="font-weight-bold">AWS</h6>
-                            <h6 class="font-weight-bold">90%</h6>
+                </div>
+
+                <div class="col-lg-6 mb-4">
+                    <div class="skill-card h-100">
+                        <div class="d-flex align-items-center mb-3">
+                            <span class="skill-icon bg-primary text-white mr-3"><i class="fa fa-database"></i></span>
+                            <h4 class="font-weight-bold m-0">Databases</h4>
                         </div>
-                        <div class="progress">
-                            <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="90" aria-valuemin="0"
-                                aria-valuemax="100"></div>
-                        </div>
-                    </div>
-                    <div class="skill mb-4">
-                        <div class="d-flex justify-content-between">
-                            <h6 class="font-weight-bold">Docker & Kubernetes</h6>
-                            <h6 class="font-weight-bold">88%</h6>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar bg-info" role="progressbar" aria-valuenow="88" aria-valuemin="0"
-                                aria-valuemax="100"></div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">PostgreSQL</span>
+                            <span class="skill-tag">MySQL</span>
+                            <span class="skill-tag">MongoDB</span>
+                            <span class="skill-tag">Neo4j</span>
+                            <span class="skill-tag">Snowflake</span>
+                            <span class="skill-tag">BigQuery</span>
                         </div>
                     </div>
-                    <div class="skill mb-4">
-                        <div class="d-flex justify-content-between">
-                            <h6 class="font-weight-bold">MySQL & PostgreSQL</h6>
-                            <h6 class="font-weight-bold">89%</h6>
+                </div>
+
+                <div class="col-lg-6 mb-4">
+                    <div class="skill-card h-100">
+                        <div class="d-flex align-items-center mb-3">
+                            <span class="skill-icon bg-primary text-white mr-3"><i class="fa fa-vial"></i></span>
+                            <h4 class="font-weight-bold m-0">Testing & QA</h4>
                         </div>
-                        <div class="progress">
-                            <div class="progress-bar bg-dark" role="progressbar" aria-valuenow="89" aria-valuemin="0"
-                                aria-valuemax="100"></div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Selenium</span>
+                            <span class="skill-tag">JUnit</span>
+                            <span class="skill-tag">TestNG</span>
+                            <span class="skill-tag">Pytest</span>
+                            <span class="skill-tag">Playwright</span>
+                            <span class="skill-tag">BDD</span>
+                            <span class="skill-tag">Unit Testing</span>
                         </div>
                     </div>
-                    <div class="skill mb-4">
-                        <div class="d-flex justify-content-between">
-                            <h6 class="font-weight-bold">XML</h6>
-                            <h6 class="font-weight-bold">80%</h6>
+                </div>
+
+                <div class="col-12">
+                    <div class="skill-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <span class="skill-icon bg-primary text-white mr-3"><i class="fa fa-sitemap"></i></span>
+                            <h4 class="font-weight-bold m-0">Practices</h4>
                         </div>
-                        <div class="progress">
-                            <div class="progress-bar bg-secondary" role="progressbar" aria-valuenow="80"
-                                aria-valuemin="0" aria-valuemax="100"></div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Data Structures & Algorithms</span>
+                            <span class="skill-tag">Agile</span>
+                            <span class="skill-tag">System Design</span>
+                            <span class="skill-tag">Algorithm Design</span>
+                            <span class="skill-tag">Object-Oriented Design</span>
+                            <span class="skill-tag">Computer Science Fundamentals</span>
                         </div>
                     </div>
                 </div>
@@ -540,6 +504,14 @@
                     <h5 class="mt-2">EquiPay</h5>
                     <p>A group expense-splitting app built with React Native and Flask. It features real-time balances,
                         receipt uploads (Textract), and group settlements using AWS services.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">React Native</span>
+                        <span class="project-tag">Flask</span>
+                        <span class="project-tag">AWS</span>
+                    </div>
+                    <div class="project-actions">
+                        <a class="btn btn-sm btn-outline-primary py-2" href="https://github.com/ka8540/EquiPay" target="_blank" rel="noopener">View Code</a>
+                    </div>
                 </div>
 
                 <!-- PersonaCraft -->
@@ -555,6 +527,14 @@
                     <h5 class="mt-2">PersonaCraft</h5>
                     <p>Chat with AI-generated fictional characters you create! Users provide traits, backstory, and
                         personality, and the app handles dynamic conversations using GPT integration.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">Python</span>
+                        <span class="project-tag">Flask</span>
+                        <span class="project-tag">LLM</span>
+                    </div>
+                    <div class="project-actions">
+                        <a class="btn btn-sm btn-outline-primary py-2" href="https://github.com/ka8540/PersonaCraft" target="_blank" rel="noopener">View Code</a>
+                    </div>
                 </div>
 
                 <!-- SWEN732-Team1 -->
@@ -570,6 +550,14 @@
                     <h5 class="mt-2">Price Compare Plus</h5>
                     <p>A mobile app for comparing product prices across online retailers. Built with React Native,
                         includes user login, product search, wishlist, and data parsing from APIs.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">React Native</span>
+                        <span class="project-tag">APIs</span>
+                        <span class="project-tag">Mobile</span>
+                    </div>
+                    <div class="project-actions">
+                        <a class="btn btn-sm btn-outline-primary py-2" href="https://github.com/ka8540/SWEN732-team1" target="_blank" rel="noopener">View Code</a>
+                    </div>
                 </div>
 
                 <!-- BudgetWise AI -->
@@ -585,6 +573,14 @@
                     <h5 class="mt-2">BudgetWise AI</h5>
                     <p>A financial analytics platform deployed on AWS with Docker scalability. It integrates predictive
                         analytics, boosting decision-making by 25%.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">AWS</span>
+                        <span class="project-tag">Docker</span>
+                        <span class="project-tag">Analytics</span>
+                    </div>
+                    <div class="project-actions">
+                        <a class="btn btn-sm btn-outline-primary py-2" href="https://github.com/ka8540/BudgetWise" target="_blank" rel="noopener">View Code</a>
+                    </div>
                 </div>
 
                 <!-- ICRS -->
@@ -600,6 +596,14 @@
                     <h5 class="mt-2">ICRS</h5>
                     <p>An AI-powered college recommendation system improving student advisement accuracy by 30% using
                         Java, Flask, and MySQL.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">Java</span>
+                        <span class="project-tag">Flask</span>
+                        <span class="project-tag">MySQL</span>
+                    </div>
+                    <div class="project-actions">
+                        <a class="btn btn-sm btn-outline-primary py-2" href="https://github.com/klsterfx/ICRS" target="_blank" rel="noopener">View Code</a>
+                    </div>
                 </div>
 
                 <!-- CrimeAtlas -->
@@ -618,6 +622,14 @@
                         Street View images of crime locations are fetched via API and stored in GridFS, with optimized
                         retrieval through a custom endpoint. Enhances data visualization and investigative insight using
                         real-time geolocation and image association.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">MERN</span>
+                        <span class="project-tag">MongoDB</span>
+                        <span class="project-tag">Google Cloud</span>
+                    </div>
+                    <div class="project-actions">
+                        <a class="btn btn-sm btn-outline-primary py-2" href="https://github.com/ka8540/CrimeAtlas" target="_blank" rel="noopener">View Code</a>
+                    </div>
                 </div>
 
                 <!-- NeoHub -->
@@ -632,6 +644,14 @@
                     </div>
                     <h5 class="mt-2">NeoHub</h5>
                     <p>A GitHub contribution graph visualizer powered by Neo4j and D3.js. It processes large-scale GitHub Archive data to uncover user–commit–repo relationships through a force-directed graph. The project features 3M+ nodes, custom Cypher queries, color-coded node types, and interactive commit exploration, helping visualize contribution patterns at scale with a sleek, browser-based interface.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">Neo4j</span>
+                        <span class="project-tag">D3.js</span>
+                        <span class="project-tag">Data Viz</span>
+                    </div>
+                    <div class="project-actions">
+                        <a class="btn btn-sm btn-outline-primary py-2" href="https://github.com/ka8540/NeoHub" target="_blank" rel="noopener">View Code</a>
+                    </div>
                 </div>
 
                 <!-- Examora -->
@@ -654,6 +674,15 @@
                         are combined to generate exam questions and rubric templates using LLMs, enabling faster, data-informed
                         exam creation with human-in-the-loop review and control.
                     </p>
+                    <div class="project-tags">
+                        <span class="project-tag">React</span>
+                        <span class="project-tag">Node.js</span>
+                        <span class="project-tag">AWS</span>
+                        <span class="project-tag">Playwright</span>
+                    </div>
+                    <div class="project-actions">
+                        <a class="btn btn-sm btn-outline-primary py-2" href="https://github.com/ka8540/Examora" target="_blank" rel="noopener">View Code</a>
+                    </div>
                 </div>
 
 
@@ -880,8 +909,17 @@
     <!-- Portfolio Animation Script -->
     <script src="js/portfolioFade.js"></script>
 
+    <!-- Portfolio Interaction Script -->
+    <script src="js/portfolioInteractive.js"></script>
+
     <!-- Qualification Animation Script -->
     <script src="js/qualificationFade.js"></script>
+
+    <!-- Skills Interaction Script -->
+    <script src="js/skillsInteractive.js"></script>
+
+    <!-- Theme (Dark Mode) Toggle Script -->
+    <script src="js/themeToggle.js"></script>
 </body>
 
 </html>
