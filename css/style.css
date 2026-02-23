@@ -4554,6 +4554,25 @@ input[type="button"].btn-block {
   white-space: nowrap;
 }
 
+/* Navbar logo image */
+.navbar-logo {
+  height: 42px;
+  width: auto;
+  display: block;
+}
+
+@media (max-width: 991.98px) {
+  .navbar-logo {
+    height: 36px;
+  }
+}
+
+html[data-theme="dark"] .navbar-logo {
+  /* If your PNG is already light-on-transparent, this won't change much.
+     If it's dark, the filter helps it stay visible on dark nav. */
+  filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.35));
+}
+
 .navbar-brand:hover, .navbar-brand:focus {
   text-decoration: none;
 }
