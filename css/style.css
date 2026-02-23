@@ -75,6 +75,12 @@ html[data-theme="dark"] .text-muted {
   color: var(--app-text-muted) !important;
 }
 
+html[data-theme="dark"] .position-absolute.text-uppercase.text-primary {
+  color: var(--primary) !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  
+}
+
 /* Headings in dark mode */
 /*
  * IMPORTANT: Don't force-fill the "hero name" heading(s) at the top of the page.
