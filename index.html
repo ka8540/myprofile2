@@ -55,9 +55,10 @@
                 <a href="#contact" class="nav-item nav-link">Contact</a>
             </div>
             <div class="d-flex align-items-center ml-lg-3 mt-3 mt-lg-0">
-                <button id="themeToggle" type="button" class="btn btn-sm btn-outline-primary" aria-label="Toggle dark mode" aria-pressed="false">
-                    <i class="fas fa-moon"></i>
-                    <span class="d-none d-sm-inline ml-2">Dark</span>
+                <button id="themeToggle" type="button" class="theme-toggle" aria-label="Light mode active. Switch to dark mode" aria-pressed="false">
+                    <span class="theme-toggle__icon" aria-hidden="true">
+                        <i class="fas fa-sun"></i>
+                    </span>
                 </button>
             </div>
         </div>
@@ -118,9 +119,6 @@
     </div>
 </div>
 <!-- Header End -->
-
-
-
 
     <!-- About Start -->
     <div class="container-fluid py-5" id="about">
@@ -483,209 +481,373 @@
 
 
     <!-- Portfolio Start -->
-    <div class="container-fluid pt-5 pb-3" id="portfolio">
+    <div class="container-fluid pt-5 pb-4" id="portfolio">
         <div class="container">
-            <div class="position-relative d-flex align-items-center justify-content-center">
-                <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Works</h1>
-                <h1 class="position-absolute text-uppercase text-primary">My Projects</h1>
+            <div class="position-relative d-flex align-items-center justify-content-center portfolio-heading">
+                <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Projects</h1>
+                <h1 class="position-absolute text-uppercase text-primary">Selected Work</h1>
             </div>
+            <p class="portfolio-intro text-center mx-auto mb-5">
+                Product, AI, and data-heavy builds where I focused on reliable architecture, strong backend systems,
+                and the details that make software hold up in real use.
+            </p>
+
             <div class="row portfolio-container">
 
-                <!-- EquiPay -->
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item first">
-                    <div class="position-relative overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100" src="img/EP.png" alt="EquiPay">
-                        <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
-                            <a href="https://github.com/ka8540/EquiPay" target="_blank">
-                                <i class="fab fa-github text-white" style="font-size: 60px;"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <h5 class="mt-2">EquiPay</h5>
-                    <p>A group expense-splitting app built with React Native and Flask. It features real-time balances,
-                        receipt uploads (Textract), and group settlements using AWS services.</p>
-                    <div class="project-tags">
-                        <span class="project-tag">React Native</span>
-                        <span class="project-tag">Flask</span>
-                        <span class="project-tag">AWS</span>
-                    </div>
-                    <div class="project-actions">
-                        <a class="btn btn-sm btn-outline-primary py-2" href="https://github.com/ka8540/EquiPay" target="_blank" rel="noopener">View Code</a>
-                    </div>
-                </div>
+                <!-- Sendloom -->
+                <div class="col-lg-4 col-md-6 mb-4 portfolio-item">
+                    <article class="portfolio-card h-100">
+                        <div class="portfolio-card-front">
+                            <div class="portfolio-visual portfolio-visual--sendloom" aria-hidden="true">
+                                <div class="portfolio-logo-frame portfolio-logo-frame--sendloom">
+                                    <svg class="portfolio-logo-svg sendloom-logo" viewBox="0 0 1024 1024" aria-hidden="true">
+                                        <rect class="sendloom-logo__bg" width="1024" height="1024"></rect>
+                                        <rect class="sendloom-logo__shell" x="84" y="84" width="856" height="856" rx="72"></rect>
+                                        <rect class="sendloom-logo__window" x="156" y="156" width="712" height="712" rx="44"></rect>
+                                        <rect class="sendloom-logo__topbar" x="156" y="156" width="712" height="84" rx="44"></rect>
+                                        <circle class="sendloom-logo__dot sendloom-logo__dot--a" cx="208" cy="198" r="10"></circle>
+                                        <circle class="sendloom-logo__dot sendloom-logo__dot--b" cx="242" cy="198" r="10"></circle>
+                                        <circle class="sendloom-logo__dot sendloom-logo__dot--c" cx="276" cy="198" r="10"></circle>
 
-                <!-- PersonaCraft -->
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item second">
-                    <div class="position-relative overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100" src="img/PC.png" alt="PersonaCraft">
-                        <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
-                            <a href="https://github.com/ka8540/PersonaCraft" target="_blank">
-                                <i class="fab fa-github text-white" style="font-size: 60px;"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <h5 class="mt-2">PersonaCraft</h5>
-                    <p>Chat with AI-generated fictional characters you create! Users provide traits, backstory, and
-                        personality, and the app handles dynamic conversations using GPT integration.</p>
-                    <div class="project-tags">
-                        <span class="project-tag">Python</span>
-                        <span class="project-tag">Flask</span>
-                        <span class="project-tag">LLM</span>
-                    </div>
-                    <div class="project-actions">
-                        <a class="btn btn-sm btn-outline-primary py-2" href="https://github.com/ka8540/PersonaCraft" target="_blank" rel="noopener">View Code</a>
-                    </div>
-                </div>
+                                        <rect class="sendloom-logo__stack" x="212" y="300" width="214" height="122" rx="26"></rect>
+                                        <rect class="sendloom-logo__stack" x="212" y="452" width="214" height="122" rx="26"></rect>
+                                        <rect class="sendloom-logo__stack" x="212" y="604" width="214" height="122" rx="26"></rect>
 
-                <!-- SWEN732-Team1 -->
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item third">
-                    <div class="position-relative overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100" src="img/PCP.png" alt="Price Compare Plus">
-                        <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
-                            <a href="https://github.com/ka8540/SWEN732-team1" target="_blank">
-                                <i class="fab fa-github text-white" style="font-size: 60px;"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <h5 class="mt-2">Price Compare Plus</h5>
-                    <p>A mobile app for comparing product prices across online retailers. Built with React Native,
-                        includes user login, product search, wishlist, and data parsing from APIs.</p>
-                    <div class="project-tags">
-                        <span class="project-tag">React Native</span>
-                        <span class="project-tag">APIs</span>
-                        <span class="project-tag">Mobile</span>
-                    </div>
-                    <div class="project-actions">
-                        <a class="btn btn-sm btn-outline-primary py-2" href="https://github.com/ka8540/SWEN732-team1" target="_blank" rel="noopener">View Code</a>
-                    </div>
-                </div>
+                                        <rect class="sendloom-logo__stack-accent" x="246" y="338" width="26" height="48" rx="11"></rect>
+                                        <rect class="sendloom-logo__stack-accent" x="246" y="490" width="26" height="48" rx="11"></rect>
+                                        <rect class="sendloom-logo__stack-accent" x="246" y="642" width="26" height="48" rx="11"></rect>
 
-                <!-- BudgetWise AI -->
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item third">
-                    <div class="position-relative overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100" src="img/BWR.png" alt="BudgetWise AI">
-                        <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
-                            <a href="https://github.com/ka8540/BudgetWise" target="_blank">
-                                <i class="fab fa-github text-white" style="font-size: 60px;"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <h5 class="mt-2">BudgetWise AI</h5>
-                    <p>A financial analytics platform deployed on AWS with Docker scalability. It integrates predictive
-                        analytics, boosting decision-making by 25%.</p>
-                    <div class="project-tags">
-                        <span class="project-tag">AWS</span>
-                        <span class="project-tag">Docker</span>
-                        <span class="project-tag">Analytics</span>
-                    </div>
-                    <div class="project-actions">
-                        <a class="btn btn-sm btn-outline-primary py-2" href="https://github.com/ka8540/BudgetWise" target="_blank" rel="noopener">View Code</a>
-                    </div>
-                </div>
+                                        <rect class="sendloom-logo__stack-line sendloom-logo__stack-line--strong" x="292" y="346" width="96" height="14" rx="7"></rect>
+                                        <rect class="sendloom-logo__stack-line" x="292" y="374" width="68" height="12" rx="6"></rect>
+                                        <rect class="sendloom-logo__stack-line sendloom-logo__stack-line--strong" x="292" y="498" width="108" height="14" rx="7"></rect>
+                                        <rect class="sendloom-logo__stack-line" x="292" y="526" width="82" height="12" rx="6"></rect>
+                                        <rect class="sendloom-logo__stack-line sendloom-logo__stack-line--strong" x="292" y="650" width="90" height="14" rx="7"></rect>
+                                        <rect class="sendloom-logo__stack-line" x="292" y="678" width="74" height="12" rx="6"></rect>
 
-                <!-- ICRS -->
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item fourth">
-                    <div class="position-relative overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100" src="img/ICRS2.png" alt="ICRS">
-                        <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
-                            <a href="https://github.com/klsterfx/ICRS" target="_blank">
-                                <i class="fab fa-github text-white" style="font-size: 60px;"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <h5 class="mt-2">ICRS</h5>
-                    <p>An AI-powered college recommendation system improving student advisement accuracy by 30% using
-                        Java, Flask, and MySQL.</p>
-                    <div class="project-tags">
-                        <span class="project-tag">Java</span>
-                        <span class="project-tag">Flask</span>
-                        <span class="project-tag">MySQL</span>
-                    </div>
-                    <div class="project-actions">
-                        <a class="btn btn-sm btn-outline-primary py-2" href="https://github.com/klsterfx/ICRS" target="_blank" rel="noopener">View Code</a>
-                    </div>
-                </div>
+                                        <rect class="sendloom-logo__panel" x="486" y="286" width="314" height="438" rx="38"></rect>
+                                        <rect class="sendloom-logo__panel-line sendloom-logo__panel-line--strong" x="532" y="338" width="226" height="26" rx="13"></rect>
+                                        <rect class="sendloom-logo__panel-line" x="532" y="388" width="172" height="20" rx="10"></rect>
+                                        <rect class="sendloom-logo__panel-line" x="532" y="596" width="144" height="20" rx="10"></rect>
+                                        <rect class="sendloom-logo__panel-line" x="532" y="634" width="186" height="20" rx="10"></rect>
 
-                <!-- CrimeAtlas -->
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item fourth">
-                    <div class="position-relative overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100" src="img/CRA.png" alt="CrimeAtlas">
-                        <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
-                            <a href="https://github.com/ka8540/CrimeAtlas" target="_blank">
-                                <i class="fab fa-github text-white" style="font-size: 60px;"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <h5 class="mt-2">CrimeAtlas</h5>
-                    <p>A MERN Stack-based Crime Data Detection system that processes Los Angeles crime data from 2020
-                        onwards. Crime records are ingested into MongoDB, cleaned, and geospatially formatted. Google
-                        Street View images of crime locations are fetched via API and stored in GridFS, with optimized
-                        retrieval through a custom endpoint. Enhances data visualization and investigative insight using
-                        real-time geolocation and image association.</p>
-                    <div class="project-tags">
-                        <span class="project-tag">MERN</span>
-                        <span class="project-tag">MongoDB</span>
-                        <span class="project-tag">Google Cloud</span>
-                    </div>
-                    <div class="project-actions">
-                        <a class="btn btn-sm btn-outline-primary py-2" href="https://github.com/ka8540/CrimeAtlas" target="_blank" rel="noopener">View Code</a>
-                    </div>
-                </div>
+                                        <path class="sendloom-logo__wire" d="M408 514c44-12 88-10 126 4"></path>
+                                        <path class="sendloom-logo__wire sendloom-logo__wire--soft" d="M408 610c42-6 80-2 116 12"></path>
 
-                <!-- NeoHub -->
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item fourth">
-                    <div class="position-relative overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100" src="img/image4.png" alt="NeoHub">
-                        <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
-                            <a href="https://github.com/ka8540/NeoHub" target="_blank">
-                                <i class="fab fa-github text-white" style="font-size: 60px;"></i>
-                            </a>
+                                        <path class="sendloom-logo__plane" d="M504 548l236-168c18-13 43 4 36 24l-90 252c-7 20-33 25-47 10l-40-46-82 45c-27 15-56-10-46-39l33-78Z"></path>
+                                        <path class="sendloom-logo__plane-soft" d="M504 548l104-58c10-6 18-14 25-24l87-120-168 198c-8 10-14 21-18 33l-30 90 35-119c4-14 13-26 25-34Z"></path>
+
+                                        <circle class="sendloom-logo__spark" cx="754" cy="290" r="22"></circle>
+                                        <path class="sendloom-logo__spark-cross" d="M754 272v36M736 290h36"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="portfolio-front-meta">
+                                <h5 class="portfolio-front-title">Sendloom</h5>
+                            </div>
                         </div>
-                    </div>
-                    <h5 class="mt-2">NeoHub</h5>
-                    <p>A GitHub contribution graph visualizer powered by Neo4j and D3.js. It processes large-scale GitHub Archive data to uncover user–commit–repo relationships through a force-directed graph. The project features 3M+ nodes, custom Cypher queries, color-coded node types, and interactive commit exploration, helping visualize contribution patterns at scale with a sleek, browser-based interface.</p>
-                    <div class="project-tags">
-                        <span class="project-tag">Neo4j</span>
-                        <span class="project-tag">D3.js</span>
-                        <span class="project-tag">Data Viz</span>
-                    </div>
-                    <div class="project-actions">
-                        <a class="btn btn-sm btn-outline-primary py-2" href="https://github.com/ka8540/NeoHub" target="_blank" rel="noopener">View Code</a>
-                    </div>
+                        <div class="portfolio-card-overlay">
+                            <div class="portfolio-overlay-top">
+                                <p class="portfolio-label">Email Ops / SaaS</p>
+                                <a class="portfolio-repo-link" href="https://github.com/ka8540/Sendloom" target="_blank" rel="noopener" aria-label="Open Sendloom GitHub repository">
+                                    <i class="fab fa-github"></i>
+                                    <span>GitHub</span>
+                                </a>
+                            </div>
+                            <h5 class="portfolio-overlay-title">Sendloom</h5>
+                            <p class="portfolio-summary">
+                                Sequence sending platform for campaign setup, template previews, Gmail SMTP delivery,
+                                lead finding, and controlled send execution.
+                            </p>
+                            <div class="project-tags">
+                                <span class="project-tag">Next.js</span>
+                                <span class="project-tag">PostgreSQL</span>
+                                <span class="project-tag">Redis</span>
+                                <span class="project-tag">SMTP</span>
+                            </div>
+                        </div>
+                    </article>
                 </div>
 
                 <!-- Examora -->
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item fourth">
-                    <div class="position-relative overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100" src="img/Examoraimg.png" alt="Examora">
-                        <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
-                            <a href="https://github.com/ka8540/Examora" target="_blank">
-                                <i class="fab fa-github text-white" style="font-size: 60px;"></i>
-                            </a>
+                <div class="col-lg-4 col-md-6 mb-4 portfolio-item">
+                    <article class="portfolio-card h-100">
+                        <div class="portfolio-card-front">
+                            <div class="portfolio-visual portfolio-visual--violet" aria-hidden="true">
+                                <div class="portfolio-logo-frame">
+                                    <img class="portfolio-logo" src="img/Examoraimg.png" alt="Examora">
+                                </div>
+                            </div>
+                            <div class="portfolio-front-meta">
+                                <h5 class="portfolio-front-title">Examora</h5>
+                            </div>
                         </div>
-                    </div>
-                    <h5 class="mt-2">Examora</h5>
-                    <p>
-                        An AI-enhanced exam authoring and difficulty calibration platform built with a cloud-native architecture.
-                        Examora integrates a React frontend with a Node.js/Express backend and AWS services including Cognito,
-                        DynamoDB, Bedrock, Textract, and SageMaker. Instructor-provided exam PDFs and topics are processed to
-                        extract key concepts, while a Playwright-based pipeline scrapes professor review data from
-                        RateMyProfessors and applies sentiment analysis to surface contextual difficulty signals. These inputs
-                        are combined to generate exam questions and rubric templates using LLMs, enabling faster, data-informed
-                        exam creation with human-in-the-loop review and control.
-                    </p>
-                    <div class="project-tags">
-                        <span class="project-tag">React</span>
-                        <span class="project-tag">Node.js</span>
-                        <span class="project-tag">AWS</span>
-                        <span class="project-tag">Playwright</span>
-                    </div>
-                    <div class="project-actions">
-                        <a class="btn btn-sm btn-outline-primary py-2" href="https://github.com/ka8540/Examora" target="_blank" rel="noopener">View Code</a>
-                    </div>
+                        <div class="portfolio-card-overlay">
+                            <div class="portfolio-overlay-top">
+                                <p class="portfolio-label">EdTech / AI Workflow</p>
+                                <a class="portfolio-repo-link" href="https://github.com/ka8540/Examora" target="_blank" rel="noopener" aria-label="Open Examora GitHub repository">
+                                    <i class="fab fa-github"></i>
+                                    <span>GitHub</span>
+                                </a>
+                            </div>
+                            <h5 class="portfolio-overlay-title">Examora</h5>
+                            <p class="portfolio-summary">
+                                AI-assisted exam authoring platform that combines React, Node.js, AWS, and LLM
+                                workflows to generate question sets, rubrics, and difficulty signals.
+                            </p>
+                            <div class="project-tags">
+                                <span class="project-tag">React</span>
+                                <span class="project-tag">Node.js</span>
+                                <span class="project-tag">AWS</span>
+                                <span class="project-tag">Playwright</span>
+                            </div>
+                        </div>
+                    </article>
                 </div>
 
+                <!-- EquiPay -->
+                <div class="col-lg-4 col-md-6 mb-4 portfolio-item">
+                    <article class="portfolio-card h-100">
+                        <div class="portfolio-card-front">
+                            <div class="portfolio-visual portfolio-visual--emerald" aria-hidden="true">
+                                <div class="portfolio-logo-frame">
+                                    <img class="portfolio-logo" src="img/EP.png" alt="EquiPay">
+                                </div>
+                            </div>
+                            <div class="portfolio-front-meta">
+                                <h5 class="portfolio-front-title">EquiPay</h5>
+                            </div>
+                        </div>
+                        <div class="portfolio-card-overlay">
+                            <div class="portfolio-overlay-top">
+                                <p class="portfolio-label">Fintech / Mobile</p>
+                                <a class="portfolio-repo-link" href="https://github.com/ka8540/EquiPay" target="_blank" rel="noopener" aria-label="Open EquiPay GitHub repository">
+                                    <i class="fab fa-github"></i>
+                                    <span>GitHub</span>
+                                </a>
+                            </div>
+                            <h5 class="portfolio-overlay-title">EquiPay</h5>
+                            <p class="portfolio-summary">
+                                Group expense-splitting app with real-time balances, receipt OCR via Textract, and
+                                settlement workflows powered by React Native, Flask, and AWS.
+                            </p>
+                            <div class="project-tags">
+                                <span class="project-tag">React Native</span>
+                                <span class="project-tag">Flask</span>
+                                <span class="project-tag">AWS</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
 
+                <!-- PersonaCraft -->
+                <div class="col-lg-4 col-md-6 mb-4 portfolio-item">
+                    <article class="portfolio-card h-100">
+                        <div class="portfolio-card-front">
+                            <div class="portfolio-visual portfolio-visual--indigo" aria-hidden="true">
+                                <div class="portfolio-logo-frame">
+                                    <img class="portfolio-logo" src="img/PC.png" alt="PersonaCraft">
+                                </div>
+                            </div>
+                            <div class="portfolio-front-meta">
+                                <h5 class="portfolio-front-title">PersonaCraft</h5>
+                            </div>
+                        </div>
+                        <div class="portfolio-card-overlay">
+                            <div class="portfolio-overlay-top">
+                                <p class="portfolio-label">LLM / Conversational AI</p>
+                                <a class="portfolio-repo-link" href="https://github.com/ka8540/PersonaCraft" target="_blank" rel="noopener" aria-label="Open PersonaCraft GitHub repository">
+                                    <i class="fab fa-github"></i>
+                                    <span>GitHub</span>
+                                </a>
+                            </div>
+                            <h5 class="portfolio-overlay-title">PersonaCraft</h5>
+                            <p class="portfolio-summary">
+                                Character-chat app where users define traits, lore, and tone, then hold dynamic
+                                GPT-powered conversations with generated personas.
+                            </p>
+                            <div class="project-tags">
+                                <span class="project-tag">Python</span>
+                                <span class="project-tag">Flask</span>
+                                <span class="project-tag">LLM</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- NeoHub -->
+                <div class="col-lg-4 col-md-6 mb-4 portfolio-item">
+                    <article class="portfolio-card h-100">
+                        <div class="portfolio-card-front">
+                            <div class="portfolio-visual portfolio-visual--sky" aria-hidden="true">
+                                <div class="portfolio-logo-frame">
+                                    <img class="portfolio-logo" src="img/image4.png" alt="NeoHub">
+                                </div>
+                            </div>
+                            <div class="portfolio-front-meta">
+                                <h5 class="portfolio-front-title">NeoHub</h5>
+                            </div>
+                        </div>
+                        <div class="portfolio-card-overlay">
+                            <div class="portfolio-overlay-top">
+                                <p class="portfolio-label">Graph / Visualization</p>
+                                <a class="portfolio-repo-link" href="https://github.com/ka8540/NeoHub" target="_blank" rel="noopener" aria-label="Open NeoHub GitHub repository">
+                                    <i class="fab fa-github"></i>
+                                    <span>GitHub</span>
+                                </a>
+                            </div>
+                            <h5 class="portfolio-overlay-title">NeoHub</h5>
+                            <p class="portfolio-summary">
+                                Neo4j and D3 visualization tool for exploring GitHub Archive contribution networks
+                                across millions of nodes, repos, and commits.
+                            </p>
+                            <div class="project-tags">
+                                <span class="project-tag">Neo4j</span>
+                                <span class="project-tag">D3.js</span>
+                                <span class="project-tag">Data Viz</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- CrimeAtlas -->
+                <div class="col-lg-4 col-md-6 mb-4 portfolio-item">
+                    <article class="portfolio-card h-100">
+                        <div class="portfolio-card-front">
+                            <div class="portfolio-visual portfolio-visual--amber" aria-hidden="true">
+                                <div class="portfolio-logo-frame">
+                                    <img class="portfolio-logo" src="img/CRA.png" alt="CrimeAtlas">
+                                </div>
+                            </div>
+                            <div class="portfolio-front-meta">
+                                <h5 class="portfolio-front-title">CrimeAtlas</h5>
+                            </div>
+                        </div>
+                        <div class="portfolio-card-overlay">
+                            <div class="portfolio-overlay-top">
+                                <p class="portfolio-label">Geospatial / Data Platform</p>
+                                <a class="portfolio-repo-link" href="https://github.com/ka8540/CrimeAtlas" target="_blank" rel="noopener" aria-label="Open CrimeAtlas GitHub repository">
+                                    <i class="fab fa-github"></i>
+                                    <span>GitHub</span>
+                                </a>
+                            </div>
+                            <h5 class="portfolio-overlay-title">CrimeAtlas</h5>
+                            <p class="portfolio-summary">
+                                MERN-based crime intelligence platform that maps Los Angeles incidents, enriches them
+                                with Street View imagery, and surfaces geospatial patterns for analysis.
+                            </p>
+                            <div class="project-tags">
+                                <span class="project-tag">MERN</span>
+                                <span class="project-tag">MongoDB</span>
+                                <span class="project-tag">Google Cloud</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- BudgetWise AI -->
+                <div class="col-lg-4 col-md-6 mb-4 portfolio-item">
+                    <article class="portfolio-card h-100">
+                        <div class="portfolio-card-front">
+                            <div class="portfolio-visual portfolio-visual--teal" aria-hidden="true">
+                                <div class="portfolio-logo-frame">
+                                    <img class="portfolio-logo" src="img/BWR.png" alt="BudgetWise AI">
+                                </div>
+                            </div>
+                            <div class="portfolio-front-meta">
+                                <h5 class="portfolio-front-title">BudgetWise AI</h5>
+                            </div>
+                        </div>
+                        <div class="portfolio-card-overlay">
+                            <div class="portfolio-overlay-top">
+                                <p class="portfolio-label">Analytics / Cloud</p>
+                                <a class="portfolio-repo-link" href="https://github.com/ka8540/BudgetWise" target="_blank" rel="noopener" aria-label="Open BudgetWise AI GitHub repository">
+                                    <i class="fab fa-github"></i>
+                                    <span>GitHub</span>
+                                </a>
+                            </div>
+                            <h5 class="portfolio-overlay-title">BudgetWise AI</h5>
+                            <p class="portfolio-summary">
+                                Cloud-hosted personal finance platform with predictive analytics, Dockerized services,
+                                and AWS deployment for scalable reporting and decision support.
+                            </p>
+                            <div class="project-tags">
+                                <span class="project-tag">AWS</span>
+                                <span class="project-tag">Docker</span>
+                                <span class="project-tag">Analytics</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Price Compare Plus -->
+                <div class="col-lg-4 col-md-6 mb-4 portfolio-item">
+                    <article class="portfolio-card h-100">
+                        <div class="portfolio-card-front">
+                            <div class="portfolio-visual portfolio-visual--coral" aria-hidden="true">
+                                <div class="portfolio-logo-frame">
+                                    <img class="portfolio-logo" src="img/PCP.png" alt="Price Compare Plus">
+                                </div>
+                            </div>
+                            <div class="portfolio-front-meta">
+                                <h5 class="portfolio-front-title">Price Compare Plus</h5>
+                            </div>
+                        </div>
+                        <div class="portfolio-card-overlay">
+                            <div class="portfolio-overlay-top">
+                                <p class="portfolio-label">Mobile / Commerce</p>
+                                <a class="portfolio-repo-link" href="https://github.com/ka8540/SWEN732-team1" target="_blank" rel="noopener" aria-label="Open Price Compare Plus GitHub repository">
+                                    <i class="fab fa-github"></i>
+                                    <span>GitHub</span>
+                                </a>
+                            </div>
+                            <h5 class="portfolio-overlay-title">Price Compare Plus</h5>
+                            <p class="portfolio-summary">
+                                React Native shopping companion that compares cross-retailer pricing, supports
+                                wishlists, and pulls live product data through backend APIs.
+                            </p>
+                            <div class="project-tags">
+                                <span class="project-tag">React Native</span>
+                                <span class="project-tag">APIs</span>
+                                <span class="project-tag">Mobile</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- ICRS -->
+                <div class="col-lg-4 col-md-6 mb-4 portfolio-item">
+                    <article class="portfolio-card h-100">
+                        <div class="portfolio-card-front">
+                            <div class="portfolio-visual portfolio-visual--royal" aria-hidden="true">
+                                <div class="portfolio-logo-frame">
+                                    <img class="portfolio-logo" src="img/ICRS2.png" alt="ICRS">
+                                </div>
+                            </div>
+                            <div class="portfolio-front-meta">
+                                <h5 class="portfolio-front-title">ICRS</h5>
+                            </div>
+                        </div>
+                        <div class="portfolio-card-overlay">
+                            <div class="portfolio-overlay-top">
+                                <p class="portfolio-label">Decision Support / Education</p>
+                                <a class="portfolio-repo-link" href="https://github.com/klsterfx/ICRS" target="_blank" rel="noopener" aria-label="Open ICRS GitHub repository">
+                                    <i class="fab fa-github"></i>
+                                    <span>GitHub</span>
+                                </a>
+                            </div>
+                            <h5 class="portfolio-overlay-title">ICRS</h5>
+                            <p class="portfolio-summary">
+                                Recommendation system that helps students evaluate college options using Java,
+                                Flask, and MySQL-backed scoring and ranking workflows.
+                            </p>
+                            <div class="project-tags">
+                                <span class="project-tag">Java</span>
+                                <span class="project-tag">Flask</span>
+                                <span class="project-tag">MySQL</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
 
             </div>
         </div>
@@ -703,8 +865,9 @@
             <div class="row">
                 <!-- Research Paper 1 -->
                 <div class="col-lg-6 mb-5">
-                    <div class="position-relative mb-4">
-                        <img class="img-fluid rounded w-100" src="img/Equifax2.png" alt="Equifax Data Breach">
+                    <article class="publication-card h-100">
+                    <div class="publication-media">
+                        <img class="publication-img" src="img/Equifax2.png" alt="Equifax Data Breach">
                     </div>
                     <h5 class="font-weight-medium mb-4">Equifax Data Breach: A Software Architecture Perspective</h5>
                     <p class="text-muted">
@@ -724,13 +887,15 @@
                     <a class="btn btn-sm btn-outline-primary py-2"
                         href="https://drive.google.com/file/d/19LkKC2V5NgkT1X8bjYVzvt9Z-NGhzo8j/view?usp=sharing"
                         target="_blank">Read Paper</a>
+                    </article>
                 </div>
 
 
                 <!-- Research Paper 2 -->
                 <div class="col-lg-6 mb-5">
-                    <div class="position-relative mb-4">
-                        <img class="img-fluid rounded w-100" src="img/SAC.png" alt="Software Quality Assurance">
+                    <article class="publication-card h-100">
+                    <div class="publication-media">
+                        <img class="publication-img" src="img/SAC.png" alt="Software Quality Assurance">
                     </div>
                     <h5 class="font-weight-medium mb-4">Legacy Systems in Open Source: Design Pattern-Based Refactoring
                     </h5>
@@ -744,12 +909,14 @@
                     <a class="btn btn-sm btn-outline-primary py-2"
                         href="https://drive.google.com/file/d/11D031PYmbkpxVhWif1Ngu7N0wdnpri9A/view?usp=sharing"
                         target="_blank">Read Paper</a>
+                    </article>
                 </div>
 
                 <!-- Research Paper 3 -->
                 <div class="col-lg-6 mb-5">
-                    <div class="position-relative mb-4">
-                        <img class="img-fluid rounded w-100" src="img/Paper3.png" alt="Educational NLP Evaluation">
+                    <article class="publication-card h-100">
+                    <div class="publication-media">
+                        <img class="publication-img" src="img/Paper3.png" alt="Educational NLP Evaluation">
                     </div>
                     <h5 class="font-weight-medium mb-4">Review of DISTO: Textual Distractors for Multiple Choice Reading
                         Comprehension Questions using Negative Sampling</h5>
@@ -769,6 +936,7 @@
                     <a class="btn btn-sm btn-outline-primary py-2"
                         href="https://drive.google.com/file/d/12Vv1QDZ9nW92yXWaxqtk7EQW_R097XRP/view?usp=sharing"
                         target="_blank">Read Paper</a>
+                    </article>
                 </div>
 
 
@@ -828,8 +996,6 @@
     <div class="container-fluid py-5 text-center" id="contact">
         <a href="mailto:kush.ahir2024@gmail.com" class="btn btn-outline-primary btn-lg">Contact Me</a>
     </div>
-
-
     <!-- Contact End -->
 
 

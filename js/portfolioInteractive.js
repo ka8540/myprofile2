@@ -30,12 +30,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Make project cards keyboard friendly: pressing Enter opens the GitHub link.
   items.forEach((item) => {
-    const link = item.querySelector('a[href]');
+    const link = item.querySelector('.portfolio-repo-link') || item.querySelector('a[href]');
     if (!link) return;
 
     item.setAttribute('tabindex', '0');
     item.setAttribute('role', 'group');
-    item.setAttribute('aria-label', `Project: ${item.querySelector('h5')?.textContent || 'Link'}`);
+    item.setAttribute('aria-label', `Project: ${item.querySelector('h3, h5')?.textContent || 'Link'}`);
 
     item.addEventListener('keydown', (e) => {
       if (e.key === 'Enter') {

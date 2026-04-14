@@ -25,24 +25,24 @@
   const setTheme = (theme) => {
     document.documentElement.setAttribute('data-theme', theme);
     document.documentElement.style.colorScheme = theme;
+    document.dispatchEvent(new CustomEvent('themechange', { detail: { theme } }));
 
     const btn = document.getElementById('themeToggle');
     if (btn) {
       const isDark = theme === 'dark';
       btn.setAttribute('aria-pressed', String(isDark));
+      btn.setAttribute(
+        'aria-label',
+        isDark
+          ? 'Dark mode active. Switch to light mode'
+          : 'Light mode active. Switch to dark mode'
+      );
 
-      const icon = btn.querySelector('i');
+      const icon = btn.querySelector('.theme-toggle__icon i');
       if (icon) {
-        icon.classList.toggle('fa-moon', !isDark);
-        icon.classList.toggle('fa-sun', isDark);
+        icon.classList.toggle('fa-sun', !isDark);
+        icon.classList.toggle('fa-moon', isDark);
       }
-
-      const label = btn.querySelector('span');
-      if (label) label.textContent = isDark ? 'Light' : 'Dark';
-
-      // Keep button styling readable on both themes.
-      btn.classList.toggle('btn-outline-light', isDark);
-      btn.classList.toggle('btn-outline-primary', !isDark);
     }
   };
 
