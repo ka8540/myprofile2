@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-labelledby="title desc">
+  <title id="title">Sendloom project artwork</title>
+  <desc id="desc">An outreach workflow illustration with imports, templates, and launch controls for Sendloom.</desc>
+  <defs>
+    <linearGradient id="bg" x1="120" y1="100" x2="904" y2="924" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#101b2d"/>
+      <stop offset="1" stop-color="#153934"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="200" y1="200" x2="820" y2="824" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#203346"/>
+      <stop offset="1" stop-color="#274c48"/>
+    </linearGradient>
+    <linearGradient id="plane" x1="472" y1="430" x2="716" y2="686" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#bdfdf1"/>
+      <stop offset="1" stop-color="#5fd8bf"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1024" height="1024" fill="url(#bg)"/>
+  <rect x="84" y="84" width="856" height="856" rx="56" fill="url(#panel)" stroke="#82f3df" stroke-opacity="0.14" stroke-width="4"/>
+
+  <rect x="148" y="160" width="728" height="704" rx="34" fill="#121c2b" stroke="#8bf4e1" stroke-opacity="0.12" stroke-width="4"/>
+  <rect x="148" y="160" width="728" height="86" rx="34" fill="#182536"/>
+  <circle cx="196" cy="203" r="10" fill="#89f4e1" opacity="0.85"/>
+  <circle cx="230" cy="203" r="10" fill="#89f4e1" opacity="0.45"/>
+  <circle cx="264" cy="203" r="10" fill="#89f4e1" opacity="0.25"/>
+
+  <rect x="198" y="300" width="206" height="116" rx="28" fill="#203847" opacity="0.96"/>
+  <rect x="226" y="328" width="28" height="60" rx="12" fill="#8af4e0" opacity="0.92"/>
+  <rect x="272" y="334" width="94" height="16" rx="8" fill="#d8fffa" opacity="0.88"/>
+  <rect x="272" y="364" width="68" height="14" rx="7" fill="#83ecd9" opacity="0.58"/>
+
+  <rect x="198" y="444" width="206" height="116" rx="28" fill="#1a3140" opacity="0.96"/>
+  <rect x="226" y="472" width="28" height="60" rx="12" fill="#8af4e0" opacity="0.92"/>
+  <rect x="272" y="478" width="82" height="16" rx="8" fill="#d8fffa" opacity="0.88"/>
+  <rect x="272" y="508" width="96" height="14" rx="7" fill="#83ecd9" opacity="0.58"/>
+
+  <rect x="198" y="588" width="206" height="116" rx="28" fill="#173043" opacity="0.96"/>
+  <rect x="226" y="616" width="28" height="60" rx="12" fill="#8af4e0" opacity="0.92"/>
+  <rect x="272" y="622" width="76" height="16" rx="8" fill="#d8fffa" opacity="0.88"/>
+  <rect x="272" y="652" width="88" height="14" rx="7" fill="#83ecd9" opacity="0.58"/>
+
+  <rect x="460" y="286" width="318" height="432" rx="36" fill="#f7fffd" opacity="0.08" stroke="#dffff8" stroke-opacity="0.2" stroke-width="4"/>
+  <rect x="500" y="336" width="238" height="28" rx="14" fill="#d6fff9" opacity="0.92"/>
+  <rect x="500" y="386" width="182" height="22" rx="11" fill="#8ef4e3" opacity="0.42"/>
+  <rect x="500" y="592" width="136" height="22" rx="11" fill="#8ef4e3" opacity="0.28"/>
+  <rect x="500" y="632" width="176" height="22" rx="11" fill="#8ef4e3" opacity="0.22"/>
+
+  <path d="M486 546l244-172c18-12 42 4 35 24l-92 257c-7 19-33 24-46 9l-42-49-85 47c-26 14-54-10-45-38l31-93Z" fill="url(#plane)"/>
+  <path d="M484 547l108-62c10-6 19-14 26-24l87-117-171 202c-8 10-14 22-18 34l-28 84 34-117c4-15 14-28 27-37Z" fill="#d8fff8" opacity="0.92"/>
+
+  <path d="M372 510c42-10 81-8 117 7" fill="none" stroke="#89f4e1" stroke-linecap="round" stroke-width="12" opacity="0.45"/>
+  <path d="M372 608c45-6 81-1 112 15" fill="none" stroke="#89f4e1" stroke-linecap="round" stroke-width="12" opacity="0.28"/>
+
+  <circle cx="736" cy="288" r="22" fill="#8bf4e1"/>
+  <path d="M736 270v36M718 288h36" stroke="#183f3c" stroke-linecap="round" stroke-width="10"/>
+</svg>

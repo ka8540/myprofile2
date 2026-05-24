@@ -1,1091 +1,681 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
-
+<html lang="en" data-theme="dark">
 <head>
-    <meta charset="utf-8">
-    <title>Kush Ahir</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="Kush-Portfolio" name="keywords">
-    <meta content="Kush-Portfolio" name="description">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0a0b0f">
+  <title>Kush Jayesh Ahir — Software Engineer · Backend, Cloud & Data</title>
+  <meta name="description" content="Kush Jayesh Ahir — Software Engineer building scalable backend systems, cloud-native data platforms, and AI-powered products with Python, Java, and modern web stacks. M.S. Computer Software Engineering, RIT.">
+  <meta name="author" content="Kush Jayesh Ahir">
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="favicon_io-2/favicon.ico">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon_io-2/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon_io-2/favicon-16x16.png">
-    <link rel="apple-touch-icon" href="favicon_io-2/apple-touch-icon.png">
-    <link rel="manifest" href="favicon_io-2/site.webmanifest">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Kush Jayesh Ahir — Software Engineer">
+  <meta property="og:description" content="Backend, cloud, and data engineering. Scalable APIs, data pipelines, and AI-powered products.">
+  <meta property="og:image" content="img/profile.webp">
 
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="favicon_io-2/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon_io-2/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon_io-2/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="favicon_io-2/apple-touch-icon.png">
+  <link rel="manifest" href="favicon_io-2/site.webmanifest">
 
-    <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-    <!-- Libraries Stylesheet -->
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
-
-
-
+  <link rel="stylesheet" href="css/premium.css">
 </head>
 
-<body data-spy="scroll" data-target=".navbar" data-offset="51">
-    <!-- Navbar Start -->
-    <nav class="navbar fixed-top shadow-sm navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-lg-5">
-        <a href="index.html" class="navbar-brand ml-lg-3">
-            <h1 class="m-0 display-5"><span class="text-primary">KAY</span></h1>
-        </a>
-        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span>
+<body>
+  <a href="#hero" class="visually-hidden" style="position:absolute;left:-9999px;top:0;">Skip to content</a>
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <!-- ============================== NAVBAR ============================== -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#hero" class="brand" aria-label="Kush Jayesh Ahir — home">
+        <span class="brand__mark">KA</span>
+        <span>Kush Ahir<small>Software Engineer</small></span>
+      </a>
+
+      <nav class="nav__links" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#research">Research</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="nav__right">
+        <button class="theme-toggle" data-theme-toggle aria-label="Toggle color theme">
+          <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2M12 19.5v2M21.5 12h-2M4.5 12h-2M18.4 5.6l-1.4 1.4M7 17l-1.4 1.4M18.4 18.4 17 17M7 7 5.6 5.6"/></svg>
+          <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"/></svg>
         </button>
-        <div class="collapse navbar-collapse px-lg-3" id="navbarCollapse">
-            <div class="navbar-nav m-auto py-0">
-                <a href="#home" class="nav-item nav-link active">Home</a>
-                <a href="#about" class="nav-item nav-link">About</a>
-                <a href="#qualification" class="nav-item nav-link">Quality</a>
-                <a href="#skill" class="nav-item nav-link">Skill</a>
-                <a href="#service" class="nav-item nav-link">Service</a>
-                <a href="#portfolio" class="nav-item nav-link">Projects</a>
-                <a href="#blog" class="nav-item nav-link">Research</a>
-                <a href="#testimonial" class="nav-item nav-link">Strengths</a>
-                <a href="#contact" class="nav-item nav-link">Contact</a>
-            </div>
-            <div class="d-flex align-items-center ml-lg-3 mt-3 mt-lg-0">
-                <button id="themeToggle" type="button" class="theme-toggle" aria-label="Light mode active. Switch to dark mode" aria-pressed="false">
-                    <span class="theme-toggle__icon" aria-hidden="true">
-                        <i class="fas fa-sun"></i>
-                    </span>
-                </button>
-            </div>
-        </div>
-    </nav>
-    <!-- Navbar End -->
-
-
-    <!-- Video Modal Start -->
-    <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                    <!-- 16:9 aspect ratio -->
-                    <div class="embed-responsive embed-responsive-16by9">
-                        <iframe class="embed-responsive-item" src="" id="video" allowscriptaccess="always"
-                            allow="autoplay"></iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <a href="#contact" class="btn btn-primary btn-sm nav__cta">Get in touch</a>
+        <button class="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
-    <!-- Video Modal End -->
+  </header>
 
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile">
+    <a href="#about">About <span>01</span></a>
+    <a href="#skills">Skills <span>02</span></a>
+    <a href="#projects">Projects <span>03</span></a>
+    <a href="#experience">Experience <span>04</span></a>
+    <a href="#education">Education <span>05</span></a>
+    <a href="#research">Research <span>06</span></a>
+    <a href="#contact">Contact <span>07</span></a>
+    <a href="#contact" class="btn btn-primary">Get in touch</a>
+  </nav>
 
-    <!-- Header Start -->
-<div class="container-fluid bg-primary d-flex align-items-center mb-5 py-5" id="home" style="min-height: 100vh; position: relative; overflow: hidden;">
-    
-    <!-- Animated Background Squares -->
-    <ul class="animated-squares">
-        <li></li><li></li><li></li><li></li><li></li>
-        <li></li><li></li><li></li><li></li><li></li>
-    </ul>
+  <main>
+    <!-- =============================== HERO ============================== -->
+    <section class="hero" id="hero">
+      <div class="bg-fx">
+        <div class="bg-grid"></div>
+        <div class="glow glow--a"></div>
+        <div class="glow glow--b"></div>
+      </div>
 
-    <div class="container position-relative" style="z-index: 1;">
-        <div class="row align-items-center">
-            <div class="col-lg-5 px-5 pl-lg-0 pb-5 pb-lg-0">
-                <img class="img-fluid w-100 rounded-circle shadow-sm" src="img/front2.png" alt="">
-            </div>
-            <div class="col-lg-7 text-center text-lg-left">
-                <h3 class="text-white font-weight-normal mb-3">I'm</h3>
-                <h1 class="display-3 text-uppercase text-primary mb-2" style="-webkit-text-stroke: 2px #ffffff;">
-                    Kush Jayesh Ahir</h1>
-                <h1 class="typed-text-output d-inline font-weight-lighter text-white"></h1>
-                <div class="typed-text d-none">
-                    Software Developer, Web Developer, Front-End Developer, Backend Developer, Apps Developer, Full-Stack Developer, AI/ML Developer, Cloud-Native Engineer, AWS Solutions Builder, Mobile App Developer, DevOps Enthusiast, Data Visualization Specialist, Power BI Developer, Dashboard Engineer
-                </div>
-                <div class="d-flex align-items-center justify-content-center justify-content-lg-start pt-5">
-                    <div class="text-center">
-                        <a href="https://drive.google.com/file/d/1ZNYicCihzlP0S_pLmAMnvWSAFDNkjqI5/view?usp=sharing" class="btn btn-outline-light">My Resume</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Header End -->
+      <div class="wrap">
+        <div class="hero__inner">
+          <div class="hero__copy">
+            <span class="status-pill" data-reveal="fade-up"><span class="dot"></span> Open to Software Engineering roles · 2026</span>
 
-    <!-- About Start -->
-    <div class="container-fluid py-5" id="about">
-        <div class="container">
-            <div class="position-relative d-flex align-items-center justify-content-center">
-                <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">About</h1>
-                <h1 class="position-absolute text-uppercase text-primary">About Me</h1>
-            </div>
-            <div class="row align-items-center">
-                <div class="col-lg-5 pb-4 pb-lg-0">
-                    <img class="img-fluid rounded w-100" src="img/profile.jpeg" alt="">
-                </div>
-                <div class="col-lg-7">
-                    <h3 class="mb-4">Software Developer & Data Analyst</h3>
-                    <p>
-                     I am a software engineer with strong experience in backend development, data pipelines, and cloud-deployed systems. I work primarily with Python and Java, building scalable APIs and services using Flask and Spring Boot, and integrating them with modern front-end frameworks such as React. I have deployed and operated applications on AWS and GCP using Docker and Kubernetes, and have designed data solutions using PostgreSQL, MySQL, MongoDB, BigQuery, and Elasticsearch. Alongside backend engineering, I have delivered analytics and reporting solutions using SQL, Tableau, and Power BI to support data-driven decision-making.
-                    </p>
+            <h1 data-reveal="fade-up" data-delay="0.05">
+              Hi, I'm Kush.<br>I build <span class="grad">scalable backend</span> &amp; data systems.
+            </h1>
 
-                    <p>
-                     I work effectively in Agile environments, contributing to sprint planning, implementation, and delivery in Scrum-based teams. Through my role as a Course Assistant and leadership responsibilities on academic and professional projects, I have developed strong communication and collaboration skills while guiding teams through complex technical requirements. I am analytical, adaptable, and execution-focused, with a proven ability to break down ambiguous problems and deliver reliable, scalable solutions in both independent and cross-functional settings.
-                    </p>
-
-                    
-                    <div class="row mb-3">
-                        <div class="col-sm-6 py-2">
-                            <h6>Name: <span class="text-secondary">Kush Jayesh Ahir</span></h6>
-                        </div>
-                        <div class="col-sm-6 py-2">
-                            <h6>Birthday: <span class="text-secondary">12 May 2001</span></h6>
-                        </div>
-                        <div class="col-sm-6 py-2">
-                            <h6>Degree: <span class="text-secondary">Master</span></h6>
-                        </div>
-                        <div class="col-sm-6 py-2">
-                            <h6>Experience: <span class="text-secondary">2 Years 5 Months</span></h6>
-                        </div>                        
-                        <div class="col-sm-6 py-2">
-                            <h6>Email: <span class="text-secondary">kush.ahir2024@gmail.com</span></h6>
-                        </div>
-                        <div class="col-12 py-2">
-                            <h6>Related Coursework:
-                                <span class="text-secondary">
-                                    Software Construction, Foundations of Software Engineering, Model-Driven
-                                    Development, Engineering Cloud Software Systems, Collaborative Software Development,
-                                    Software Architecture, Software Quality Assurance, Database Design & Implementation,
-                                    Non-Relational Data Management, Foundation of Data Science & Analytics, Software
-                                    Development & Problem Solving I
-                                </span>
-                            </h6>
-                        </div>
-                    </div>
-
-                    <a href="#contact" class="btn btn-outline-primary"
-                        onclick="event.preventDefault(); document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });">
-                        Learn More
-                    </a>
-
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- About End -->
-
-
-    <!-- Qualification Start -->
-    <div class="container-fluid py-5" id="qualification">
-        <div class="container">
-            <div class="position-relative d-flex align-items-center justify-content-center">
-                <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Quality</h1>
-                <h1 class="position-absolute text-uppercase text-primary">Background</h1>
-            </div>
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <h3 class="mb-4">My Education</h3>
-                    <div class="border-left border-primary pt-2 pl-4 ml-2">
-                        <div class="position-relative mb-4">
-                            <i class="far fa-dot-circle text-primary position-absolute"
-                                style="top: 2px; left: -32px;"></i>
-                            <h5 class="font-weight-bold mb-1">Master in Computer Software Engineering (Minor in Data
-                                Science)</h5>
-                            <p class="mb-2"><strong>Rochester Institute of Technology</strong> | <small>Aug 2023 - Dec 2025</small></p>
-                            <p>GPA: <strong>3.71/4.0</strong></p>
-                            <p>
-                            I have completed a Master of Science in Computer Software Engineering at Rochester Institute of Technology (GPA: 3.71), with a focus on backend systems, cloud-native development, and data-driven software engineering. Through rigorous coursework and hands-on roles as a Course Assistant and Dashboard Developer, I designed and optimized scalable APIs, analytics pipelines, and distributed systems using Python, Java, Spring Boot, SQL, and cloud platforms such as AWS and GCP. This experience strengthened my ability to build reliable, high-performance software systems and apply data engineering and analytical techniques to real-world problems at scale.
-                            </p>
-                            <!-- Certificate View Button -->
-                            <a href="https://www.parchment.com/u/award/d1606ebb2fe57420f6ff502d27fe21aa" target="_blank" class="btn btn-outline-primary btn-sm"
-                                style="padding: 10px 20px; font-size: 12px;">
-                                View Certificate
-                            </a>
-
-                        </div>
-
-                        <div class="position-relative mb-4">
-                            <i class="far fa-dot-circle text-primary position-absolute"
-                                style="top: 2px; left: -32px;"></i>
-                            <h5 class="font-weight-bold mb-1">Bachlors In Electronics and Communication</h5>
-                            <p class="mb-2"><strong>LJ Institute of Technology and Engineering</strong> | <small> Aug 2019 -
-                                    May 2023</small></p>
-                            <p>CGPA: <strong>8.52/10</strong></p>
-                            <p>I completed my Bachelor of Engineering in Electronics and Communication at Gujarat
-                                Technological University, gaining a robust understanding of core technical concepts and
-                                hands-on engineering skills. This program equipped me with critical analytical abilities
-                                and a deep appreciation for the interplay between hardware and software, setting the
-                                stage for my subsequent pursuits in software engineering. My studies focused on both
-                                theoretical knowledge and practical implementations, preparing me to tackle complex
-                                technical challenges effectively.</p>
-
-                            <!-- Certificate View Button -->
-                            <a href="img/BE.PDF" target="_blank" class="btn btn-outline-primary btn-sm"
-                                style="padding: 10px 20px; font-size: 12px;">
-                                View Certificate
-                            </a>
-
-                        </div>
-
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <h3 class="mb-4">My Experience</h3>
-                    <div class="border-left border-primary pt-2 pl-4 ml-2">
-
-                        <!-- RIT Dashboard Developer Co-op -->
-                        <div class="position-relative mb-4">
-                            <i class="far fa-dot-circle text-primary position-absolute"
-                                style="top: 2px; left: -32px;"></i>
-                            <h5 class="font-weight-bold mb-1">Dashboard Developer</h5>
-                            <p class="mb-2"><strong>Rochester Institute of Technology – Institutional Research, Data & Analytics</strong> | <small>May 2025 – Dec 2025</small></p>
-                           <p>
-                            Completed a Dashboard Developer Co-op with RIT’s Institutional Research, Data & Analytics team, where I architected backend data services and analytics pipelines to support high-volume institutional reporting. Designed and delivered SQL- and Power BI–driven dashboards by translating stakeholder requirements into actionable insights, integrated heterogeneous data sources, and automated ingestion workflows to improve reporting reliability, ensure end-to-end data accuracy, and accelerate data-driven decision-making across the university.
-                           </p>
-
-                        </div>
-
-
-                        <!-- RIT Course Assistant -->
-                        <div class="position-relative mb-4">
-                            <i class="far fa-dot-circle text-primary position-absolute"
-                                style="top: 2px; left: -32px;"></i>
-                            <h5 class="font-weight-bold mb-1">Course Assistant</h5>
-                            <p class="mb-2"><strong>Rochester Institute of Technology</strong> | <small>Aug 2024 -
-                                    May 2025</small></p>
-                            <p>
-                                As a Course Assistant at RIT, I have significantly improved student outcomes by
-                                providing targeted instruction in software processes and development tools. Through my
-                                mentorship, tool setup time was reduced by 25%, enhancing project success rates by 30%.
-                                Additionally, my critical feedback and personalized support led to an 18% improvement in
-                                class performance, contributing to a 90% pass rate.
-                            </p>
-                        </div>
-
-                        <!-- Axisray Pvt Ltd -->
-                        <div class="position-relative mb-4">
-                            <i class="far fa-dot-circle text-primary position-absolute"
-                                style="top: 2px; left: -32px;"></i>
-                            <h5 class="font-weight-bold mb-1">Software Engineer Intern</h5>
-                            <p class="mb-2"><strong>Axisray Pvt Ltd</strong> | <small>Jan - May 2023</small></p>
-                            <p>
-                            At Axisray Pvt Ltd, I worked as a Software Engineer Intern, developing and optimizing backend microservices using Java and Python within a distributed system. I built Flask-based REST APIs to enable reliable service-to-service communication and improved throughput, stability, and runtime performance across legacy services. I also revamped data workflows and automation pipelines, achieving measurable efficiency gains and reducing operational overhead, while enhancing backend maintainability through modular Spring Boot components and comprehensive unit testing.
-                            </p>
-
-                        </div>
-
-                        <!-- Moon Technolabs Pvt Ltd -->
-                        <div class="position-relative mb-4">
-                            <i class="far fa-dot-circle text-primary position-absolute"
-                                style="top: 2px; left: -32px;"></i>
-                            <h5 class="font-weight-bold mb-1">Data Science and AI/ML Engineering Intern</h5>
-                            <p class="mb-2"><strong>Moon Technolabs Pvt Ltd</strong> | <small>May - Oct 2022</small></p>
-                           <p>
-                            During my internship at Moon Technolabs Pvt Ltd, I worked as a Data Science and AI/ML Engineering Intern, contributing to production-scale analytics and system integrations. I executed distributed data processing pipelines using Spark and C++ on AWS, achieving up to 2× faster processing for large workloads. I developed and unified Python-based service layers and REST APIs to integrate HRMS and CRM platforms, significantly improving cross-system data consistency and reliability. I also delivered multiple client-facing solutions end-to-end, collaborated with engineering teams on system architecture and rollout planning, and supported automated deployments that minimized downtime and improved overall release quality while reducing operational costs.
-                           </p>
-
-                        </div>
-
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-    <!-- Qualification End -->
-
-
-    <!-- Skill Start -->
-    <div class="container-fluid py-5" id="skill">
-        <div class="container">
-            <div class="position-relative d-flex align-items-center justify-content-center">
-                <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Skills</h1>
-                <h1 class="position-absolute text-uppercase text-primary">My Skills</h1>
-            </div>
-            <div class="row">
-                <div class="col-12 text-center mb-4">
-                    <p class="text-secondary mb-0">A quick snapshot of the tools, technologies, and practices I use to build scalable products.</p>
-                </div>
-
-                <div class="col-lg-6 mb-4">
-                    <div class="skill-card h-100">
-                        <div class="d-flex align-items-center mb-3">
-                            <span class="skill-icon bg-primary text-white mr-3"><i class="fa fa-code"></i></span>
-                            <h4 class="font-weight-bold m-0">Languages & Frameworks</h4>
-                        </div>
-                        <div class="skill-tags">
-                            <span class="skill-tag">Java</span>
-                            <span class="skill-tag">Python</span>
-                            <span class="skill-tag">C++</span>
-                            <span class="skill-tag">JavaScript</span>
-                            <span class="skill-tag">TypeScript</span>
-                            <span class="skill-tag">React</span>
-                            <span class="skill-tag">Next.js</span>
-                            <span class="skill-tag">Node.js</span>
-                            <span class="skill-tag">Flask</span>
-                            <span class="skill-tag">Spring Boot</span>
-                            <span class="skill-tag">HTML</span>
-                            <span class="skill-tag">CSS3</span>
-                            <span class="skill-tag">Objective-C</span>
-                            <span class="skill-tag">Swift</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-6 mb-4">
-                    <div class="skill-card h-100">
-                        <div class="d-flex align-items-center mb-3">
-                            <span class="skill-icon bg-primary text-white mr-3"><i class="fa fa-cloud"></i></span>
-                            <h4 class="font-weight-bold m-0">Cloud & DevOps</h4>
-                        </div>
-                        <div class="skill-tags">
-                            <span class="skill-tag">AWS</span>
-                            <span class="skill-tag">Azure</span>
-                            <span class="skill-tag">GCP</span>
-                            <span class="skill-tag">BigQuery</span>
-                            <span class="skill-tag">Vercel</span>
-                            <span class="skill-tag">Docker</span>
-                            <span class="skill-tag">Kubernetes</span>
-                            <span class="skill-tag">GitHub Actions</span>
-                            <span class="skill-tag">Jenkins</span>
-                            <span class="skill-tag">Linux</span>
-                            <span class="skill-tag">CI/CD</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-6 mb-4">
-                    <div class="skill-card h-100">
-                        <div class="d-flex align-items-center mb-3">
-                            <span class="skill-icon bg-primary text-white mr-3"><i class="fa fa-database"></i></span>
-                            <h4 class="font-weight-bold m-0">Databases</h4>
-                        </div>
-                        <div class="skill-tags">
-                            <span class="skill-tag">PostgreSQL</span>
-                            <span class="skill-tag">MySQL</span>
-                            <span class="skill-tag">MongoDB</span>
-                            <span class="skill-tag">Neo4j</span>
-                            <span class="skill-tag">Snowflake</span>
-                            <span class="skill-tag">BigQuery</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-6 mb-4">
-                    <div class="skill-card h-100">
-                        <div class="d-flex align-items-center mb-3">
-                            <span class="skill-icon bg-primary text-white mr-3"><i class="fa fa-vial"></i></span>
-                            <h4 class="font-weight-bold m-0">Testing & QA</h4>
-                        </div>
-                        <div class="skill-tags">
-                            <span class="skill-tag">Selenium</span>
-                            <span class="skill-tag">JUnit</span>
-                            <span class="skill-tag">TestNG</span>
-                            <span class="skill-tag">Pytest</span>
-                            <span class="skill-tag">Playwright</span>
-                            <span class="skill-tag">BDD</span>
-                            <span class="skill-tag">Unit Testing</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-12">
-                    <div class="skill-card">
-                        <div class="d-flex align-items-center mb-3">
-                            <span class="skill-icon bg-primary text-white mr-3"><i class="fa fa-sitemap"></i></span>
-                            <h4 class="font-weight-bold m-0">Practices</h4>
-                        </div>
-                        <div class="skill-tags">
-                            <span class="skill-tag">Data Structures & Algorithms</span>
-                            <span class="skill-tag">Agile</span>
-                            <span class="skill-tag">System Design</span>
-                            <span class="skill-tag">Algorithm Design</span>
-                            <span class="skill-tag">Object-Oriented Design</span>
-                            <span class="skill-tag">Computer Science Fundamentals</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Skill End -->
-
-
-    <!-- Services Start -->
-    <div class="container-fluid pt-5" id="service">
-        <div class="container">
-            <div class="position-relative d-flex align-items-center justify-content-center">
-                <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Service</h1>
-                <h1 class="position-absolute text-uppercase text-primary">My Services</h1>
-            </div>
-            <div class="row pb-3">
-                <div class="col-lg-4 col-md-6 text-center mb-5">
-                    <div class="d-flex align-items-center justify-content-center mb-4">
-                        <i class="fa fa-2x fa-code service-icon bg-primary text-white mr-3"></i>
-                        <h4 class="font-weight-bold m-0">Full Stack Development</h4>
-                    </div>
-                    <p>Expert in building scalable and high-performance web and mobile applications using React, Spring
-                        Boot, Flask, and PostgreSQL.</p>
-
-                </div>
-                <div class="col-lg-4 col-md-6 text-center mb-5">
-                    <div class="d-flex align-items-center justify-content-center mb-4">
-                        <i class="fa fa-2x fa-cloud service-icon bg-primary text-white mr-3"></i>
-                        <h4 class="font-weight-bold m-0">Cloud Computing & DevOps</h4>
-                    </div>
-                    <p>Specialized in AWS, Azure, Kubernetes, Docker, and CI/CD Pipelines for efficient deployment,
-                        scaling, and automation.</p>
-
-                </div>
-                <div class="col-lg-4 col-md-6 text-center mb-5">
-                    <div class="d-flex align-items-center justify-content-center mb-4">
-                        <i class="fa fa-2x fa-database service-icon bg-primary text-white mr-3"></i>
-                        <h4 class="font-weight-bold m-0">Database Engineering</h4>
-                    </div>
-                    <p>Proficient in designing and managing relational and NoSQL databases like MySQL, PostgreSQL, and
-                        MongoDB for optimized data handling.</p>
-
-                </div>
-                <div class="col-lg-4 col-md-6 text-center mb-5">
-                    <div class="d-flex align-items-center justify-content-center mb-4">
-                        <i class="fa fa-2x fa-mobile service-icon bg-primary text-white mr-3"></i>
-                        <h4 class="font-weight-bold m-0">Mobile App Development</h4>
-                    </div>
-                    <p>Building cross-platform mobile applications with React Native and integrating cloud services for
-                        seamless performance.</p>
-
-                </div>
-                <div class="col-lg-4 col-md-6 text-center mb-5">
-                    <div class="d-flex align-items-center justify-content-center mb-4">
-                        <i class="fa fa-2x fa-bug service-icon bg-primary text-white mr-3"></i>
-                        <h4 class="font-weight-bold m-0">Software Testing & QA</h4>
-                    </div>
-                    <p>Expertise in unit testing, integration testing, and test automation to ensure software
-                        reliability and performance.</p>
-
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Services End -->
-
-
-    <!-- Portfolio Start -->
-    <div class="container-fluid pt-5 pb-4" id="portfolio">
-        <div class="container">
-            <div class="position-relative d-flex align-items-center justify-content-center portfolio-heading">
-                <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Projects</h1>
-                <h1 class="position-absolute text-uppercase text-primary">Selected Work</h1>
-            </div>
-            <p class="portfolio-intro text-center mx-auto mb-5">
-                Product, AI, and data-heavy builds where I focused on reliable architecture, strong backend systems,
-                and the details that make software hold up in real use.
+            <p class="hero__role" data-reveal="fade-up" data-delay="0.1">
+              <span>&gt;</span><span class="typed" data-typed='["Backend Engineer","Cloud-Native Engineer","Full-Stack Developer","Data &amp; Analytics Engineer","AWS Solutions Builder"]'>Backend Engineer</span>
             </p>
 
-            <div class="row portfolio-container">
+            <p class="hero__desc" data-reveal="fade-up" data-delay="0.15">
+              Software engineer focused on backend services, cloud-native data platforms, and AI-powered products — built with Python, Java, and modern web stacks, and shipped to production on AWS &amp; GCP.
+            </p>
 
-                <!-- Sendloom -->
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item">
-                    <article class="portfolio-card h-100">
-                        <div class="portfolio-card-front">
-                            <div class="portfolio-visual portfolio-visual--sendloom" aria-hidden="true">
-                                <div class="portfolio-logo-frame portfolio-logo-frame--sendloom">
-                                    <svg class="portfolio-logo-svg sendloom-logo" viewBox="0 0 1024 1024" aria-hidden="true">
-                                        <rect class="sendloom-logo__bg" width="1024" height="1024"></rect>
-                                        <rect class="sendloom-logo__shell" x="84" y="84" width="856" height="856" rx="72"></rect>
-                                        <rect class="sendloom-logo__window" x="156" y="156" width="712" height="712" rx="44"></rect>
-                                        <rect class="sendloom-logo__topbar" x="156" y="156" width="712" height="84" rx="44"></rect>
-                                        <circle class="sendloom-logo__dot sendloom-logo__dot--a" cx="208" cy="198" r="10"></circle>
-                                        <circle class="sendloom-logo__dot sendloom-logo__dot--b" cx="242" cy="198" r="10"></circle>
-                                        <circle class="sendloom-logo__dot sendloom-logo__dot--c" cx="276" cy="198" r="10"></circle>
-
-                                        <rect class="sendloom-logo__stack" x="212" y="300" width="214" height="122" rx="26"></rect>
-                                        <rect class="sendloom-logo__stack" x="212" y="452" width="214" height="122" rx="26"></rect>
-                                        <rect class="sendloom-logo__stack" x="212" y="604" width="214" height="122" rx="26"></rect>
-
-                                        <rect class="sendloom-logo__stack-accent" x="246" y="338" width="26" height="48" rx="11"></rect>
-                                        <rect class="sendloom-logo__stack-accent" x="246" y="490" width="26" height="48" rx="11"></rect>
-                                        <rect class="sendloom-logo__stack-accent" x="246" y="642" width="26" height="48" rx="11"></rect>
-
-                                        <rect class="sendloom-logo__stack-line sendloom-logo__stack-line--strong" x="292" y="346" width="96" height="14" rx="7"></rect>
-                                        <rect class="sendloom-logo__stack-line" x="292" y="374" width="68" height="12" rx="6"></rect>
-                                        <rect class="sendloom-logo__stack-line sendloom-logo__stack-line--strong" x="292" y="498" width="108" height="14" rx="7"></rect>
-                                        <rect class="sendloom-logo__stack-line" x="292" y="526" width="82" height="12" rx="6"></rect>
-                                        <rect class="sendloom-logo__stack-line sendloom-logo__stack-line--strong" x="292" y="650" width="90" height="14" rx="7"></rect>
-                                        <rect class="sendloom-logo__stack-line" x="292" y="678" width="74" height="12" rx="6"></rect>
-
-                                        <rect class="sendloom-logo__panel" x="486" y="286" width="314" height="438" rx="38"></rect>
-                                        <rect class="sendloom-logo__panel-line sendloom-logo__panel-line--strong" x="532" y="338" width="226" height="26" rx="13"></rect>
-                                        <rect class="sendloom-logo__panel-line" x="532" y="388" width="172" height="20" rx="10"></rect>
-                                        <rect class="sendloom-logo__panel-line" x="532" y="596" width="144" height="20" rx="10"></rect>
-                                        <rect class="sendloom-logo__panel-line" x="532" y="634" width="186" height="20" rx="10"></rect>
-
-                                        <path class="sendloom-logo__wire" d="M408 514c44-12 88-10 126 4"></path>
-                                        <path class="sendloom-logo__wire sendloom-logo__wire--soft" d="M408 610c42-6 80-2 116 12"></path>
-
-                                        <path class="sendloom-logo__plane" d="M504 548l236-168c18-13 43 4 36 24l-90 252c-7 20-33 25-47 10l-40-46-82 45c-27 15-56-10-46-39l33-78Z"></path>
-                                        <path class="sendloom-logo__plane-soft" d="M504 548l104-58c10-6 18-14 25-24l87-120-168 198c-8 10-14 21-18 33l-30 90 35-119c4-14 13-26 25-34Z"></path>
-
-                                        <circle class="sendloom-logo__spark" cx="754" cy="290" r="22"></circle>
-                                        <path class="sendloom-logo__spark-cross" d="M754 272v36M736 290h36"></path>
-                                    </svg>
-                                </div>
-                            </div>
-                            <div class="portfolio-front-meta">
-                                <h5 class="portfolio-front-title">Sendloom</h5>
-                            </div>
-                        </div>
-                        <div class="portfolio-card-overlay">
-                            <div class="portfolio-overlay-top">
-                                <p class="portfolio-label">Email Ops / SaaS</p>
-                                <a class="portfolio-repo-link" href="https://github.com/ka8540/Sendloom" target="_blank" rel="noopener" aria-label="Open Sendloom GitHub repository">
-                                    <i class="fab fa-github"></i>
-                                    <span>GitHub</span>
-                                </a>
-                            </div>
-                            <h5 class="portfolio-overlay-title">Sendloom</h5>
-                            <p class="portfolio-summary">
-                                Sequence sending platform for campaign setup, template previews, Gmail SMTP delivery,
-                                lead finding, and controlled send execution.
-                            </p>
-                            <div class="project-tags">
-                                <span class="project-tag">Next.js</span>
-                                <span class="project-tag">PostgreSQL</span>
-                                <span class="project-tag">Redis</span>
-                                <span class="project-tag">SMTP</span>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-
-                <!-- Examora -->
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item">
-                    <article class="portfolio-card h-100">
-                        <div class="portfolio-card-front">
-                            <div class="portfolio-visual portfolio-visual--violet" aria-hidden="true">
-                                <div class="portfolio-logo-frame">
-                                    <img class="portfolio-logo" src="img/Examoraimg.png" alt="Examora">
-                                </div>
-                            </div>
-                            <div class="portfolio-front-meta">
-                                <h5 class="portfolio-front-title">Examora</h5>
-                            </div>
-                        </div>
-                        <div class="portfolio-card-overlay">
-                            <div class="portfolio-overlay-top">
-                                <p class="portfolio-label">EdTech / AI Workflow</p>
-                                <a class="portfolio-repo-link" href="https://github.com/ka8540/Examora" target="_blank" rel="noopener" aria-label="Open Examora GitHub repository">
-                                    <i class="fab fa-github"></i>
-                                    <span>GitHub</span>
-                                </a>
-                            </div>
-                            <h5 class="portfolio-overlay-title">Examora</h5>
-                            <p class="portfolio-summary">
-                                AI-assisted exam authoring platform that combines React, Node.js, AWS, and LLM
-                                workflows to generate question sets, rubrics, and difficulty signals.
-                            </p>
-                            <div class="project-tags">
-                                <span class="project-tag">React</span>
-                                <span class="project-tag">Node.js</span>
-                                <span class="project-tag">AWS</span>
-                                <span class="project-tag">Playwright</span>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-
-                <!-- EquiPay -->
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item">
-                    <article class="portfolio-card h-100">
-                        <div class="portfolio-card-front">
-                            <div class="portfolio-visual portfolio-visual--emerald" aria-hidden="true">
-                                <div class="portfolio-logo-frame">
-                                    <img class="portfolio-logo" src="img/EP.png" alt="EquiPay">
-                                </div>
-                            </div>
-                            <div class="portfolio-front-meta">
-                                <h5 class="portfolio-front-title">EquiPay</h5>
-                            </div>
-                        </div>
-                        <div class="portfolio-card-overlay">
-                            <div class="portfolio-overlay-top">
-                                <p class="portfolio-label">Fintech / Mobile</p>
-                                <a class="portfolio-repo-link" href="https://github.com/ka8540/EquiPay" target="_blank" rel="noopener" aria-label="Open EquiPay GitHub repository">
-                                    <i class="fab fa-github"></i>
-                                    <span>GitHub</span>
-                                </a>
-                            </div>
-                            <h5 class="portfolio-overlay-title">EquiPay</h5>
-                            <p class="portfolio-summary">
-                                Group expense-splitting app with real-time balances, receipt OCR via Textract, and
-                                settlement workflows powered by React Native, Flask, and AWS.
-                            </p>
-                            <div class="project-tags">
-                                <span class="project-tag">React Native</span>
-                                <span class="project-tag">Flask</span>
-                                <span class="project-tag">AWS</span>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-
-                <!-- PersonaCraft -->
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item">
-                    <article class="portfolio-card h-100">
-                        <div class="portfolio-card-front">
-                            <div class="portfolio-visual portfolio-visual--indigo" aria-hidden="true">
-                                <div class="portfolio-logo-frame">
-                                    <img class="portfolio-logo" src="img/PC.png" alt="PersonaCraft">
-                                </div>
-                            </div>
-                            <div class="portfolio-front-meta">
-                                <h5 class="portfolio-front-title">PersonaCraft</h5>
-                            </div>
-                        </div>
-                        <div class="portfolio-card-overlay">
-                            <div class="portfolio-overlay-top">
-                                <p class="portfolio-label">LLM / Conversational AI</p>
-                                <a class="portfolio-repo-link" href="https://github.com/ka8540/PersonaCraft" target="_blank" rel="noopener" aria-label="Open PersonaCraft GitHub repository">
-                                    <i class="fab fa-github"></i>
-                                    <span>GitHub</span>
-                                </a>
-                            </div>
-                            <h5 class="portfolio-overlay-title">PersonaCraft</h5>
-                            <p class="portfolio-summary">
-                                Character-chat app where users define traits, lore, and tone, then hold dynamic
-                                GPT-powered conversations with generated personas.
-                            </p>
-                            <div class="project-tags">
-                                <span class="project-tag">Python</span>
-                                <span class="project-tag">Flask</span>
-                                <span class="project-tag">LLM</span>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-
-                <!-- NeoHub -->
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item">
-                    <article class="portfolio-card h-100">
-                        <div class="portfolio-card-front">
-                            <div class="portfolio-visual portfolio-visual--sky" aria-hidden="true">
-                                <div class="portfolio-logo-frame">
-                                    <img class="portfolio-logo" src="img/image4.png" alt="NeoHub">
-                                </div>
-                            </div>
-                            <div class="portfolio-front-meta">
-                                <h5 class="portfolio-front-title">NeoHub</h5>
-                            </div>
-                        </div>
-                        <div class="portfolio-card-overlay">
-                            <div class="portfolio-overlay-top">
-                                <p class="portfolio-label">Graph / Visualization</p>
-                                <a class="portfolio-repo-link" href="https://github.com/ka8540/NeoHub" target="_blank" rel="noopener" aria-label="Open NeoHub GitHub repository">
-                                    <i class="fab fa-github"></i>
-                                    <span>GitHub</span>
-                                </a>
-                            </div>
-                            <h5 class="portfolio-overlay-title">NeoHub</h5>
-                            <p class="portfolio-summary">
-                                Neo4j and D3 visualization tool for exploring GitHub Archive contribution networks
-                                across millions of nodes, repos, and commits.
-                            </p>
-                            <div class="project-tags">
-                                <span class="project-tag">Neo4j</span>
-                                <span class="project-tag">D3.js</span>
-                                <span class="project-tag">Data Viz</span>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-
-                <!-- CrimeAtlas -->
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item">
-                    <article class="portfolio-card h-100">
-                        <div class="portfolio-card-front">
-                            <div class="portfolio-visual portfolio-visual--amber" aria-hidden="true">
-                                <div class="portfolio-logo-frame">
-                                    <img class="portfolio-logo" src="img/CRA.png" alt="CrimeAtlas">
-                                </div>
-                            </div>
-                            <div class="portfolio-front-meta">
-                                <h5 class="portfolio-front-title">CrimeAtlas</h5>
-                            </div>
-                        </div>
-                        <div class="portfolio-card-overlay">
-                            <div class="portfolio-overlay-top">
-                                <p class="portfolio-label">Geospatial / Data Platform</p>
-                                <a class="portfolio-repo-link" href="https://github.com/ka8540/CrimeAtlas" target="_blank" rel="noopener" aria-label="Open CrimeAtlas GitHub repository">
-                                    <i class="fab fa-github"></i>
-                                    <span>GitHub</span>
-                                </a>
-                            </div>
-                            <h5 class="portfolio-overlay-title">CrimeAtlas</h5>
-                            <p class="portfolio-summary">
-                                MERN-based crime intelligence platform that maps Los Angeles incidents, enriches them
-                                with Street View imagery, and surfaces geospatial patterns for analysis.
-                            </p>
-                            <div class="project-tags">
-                                <span class="project-tag">MERN</span>
-                                <span class="project-tag">MongoDB</span>
-                                <span class="project-tag">Google Cloud</span>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-
-                <!-- BudgetWise AI -->
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item">
-                    <article class="portfolio-card h-100">
-                        <div class="portfolio-card-front">
-                            <div class="portfolio-visual portfolio-visual--teal" aria-hidden="true">
-                                <div class="portfolio-logo-frame">
-                                    <img class="portfolio-logo" src="img/BWR.png" alt="BudgetWise AI">
-                                </div>
-                            </div>
-                            <div class="portfolio-front-meta">
-                                <h5 class="portfolio-front-title">BudgetWise AI</h5>
-                            </div>
-                        </div>
-                        <div class="portfolio-card-overlay">
-                            <div class="portfolio-overlay-top">
-                                <p class="portfolio-label">Analytics / Cloud</p>
-                                <a class="portfolio-repo-link" href="https://github.com/ka8540/BudgetWise" target="_blank" rel="noopener" aria-label="Open BudgetWise AI GitHub repository">
-                                    <i class="fab fa-github"></i>
-                                    <span>GitHub</span>
-                                </a>
-                            </div>
-                            <h5 class="portfolio-overlay-title">BudgetWise AI</h5>
-                            <p class="portfolio-summary">
-                                Cloud-hosted personal finance platform with predictive analytics, Dockerized services,
-                                and AWS deployment for scalable reporting and decision support.
-                            </p>
-                            <div class="project-tags">
-                                <span class="project-tag">AWS</span>
-                                <span class="project-tag">Docker</span>
-                                <span class="project-tag">Analytics</span>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-
-                <!-- Price Compare Plus -->
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item">
-                    <article class="portfolio-card h-100">
-                        <div class="portfolio-card-front">
-                            <div class="portfolio-visual portfolio-visual--coral" aria-hidden="true">
-                                <div class="portfolio-logo-frame">
-                                    <img class="portfolio-logo" src="img/PCP.png" alt="Price Compare Plus">
-                                </div>
-                            </div>
-                            <div class="portfolio-front-meta">
-                                <h5 class="portfolio-front-title">Price Compare Plus</h5>
-                            </div>
-                        </div>
-                        <div class="portfolio-card-overlay">
-                            <div class="portfolio-overlay-top">
-                                <p class="portfolio-label">Mobile / Commerce</p>
-                                <a class="portfolio-repo-link" href="https://github.com/ka8540/SWEN732-team1" target="_blank" rel="noopener" aria-label="Open Price Compare Plus GitHub repository">
-                                    <i class="fab fa-github"></i>
-                                    <span>GitHub</span>
-                                </a>
-                            </div>
-                            <h5 class="portfolio-overlay-title">Price Compare Plus</h5>
-                            <p class="portfolio-summary">
-                                React Native shopping companion that compares cross-retailer pricing, supports
-                                wishlists, and pulls live product data through backend APIs.
-                            </p>
-                            <div class="project-tags">
-                                <span class="project-tag">React Native</span>
-                                <span class="project-tag">APIs</span>
-                                <span class="project-tag">Mobile</span>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-
-                <!-- ICRS -->
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item">
-                    <article class="portfolio-card h-100">
-                        <div class="portfolio-card-front">
-                            <div class="portfolio-visual portfolio-visual--royal" aria-hidden="true">
-                                <div class="portfolio-logo-frame">
-                                    <img class="portfolio-logo" src="img/ICRS2.png" alt="ICRS">
-                                </div>
-                            </div>
-                            <div class="portfolio-front-meta">
-                                <h5 class="portfolio-front-title">ICRS</h5>
-                            </div>
-                        </div>
-                        <div class="portfolio-card-overlay">
-                            <div class="portfolio-overlay-top">
-                                <p class="portfolio-label">Decision Support / Education</p>
-                                <a class="portfolio-repo-link" href="https://github.com/klsterfx/ICRS" target="_blank" rel="noopener" aria-label="Open ICRS GitHub repository">
-                                    <i class="fab fa-github"></i>
-                                    <span>GitHub</span>
-                                </a>
-                            </div>
-                            <h5 class="portfolio-overlay-title">ICRS</h5>
-                            <p class="portfolio-summary">
-                                Recommendation system that helps students evaluate college options using Java,
-                                Flask, and MySQL-backed scoring and ranking workflows.
-                            </p>
-                            <div class="project-tags">
-                                <span class="project-tag">Java</span>
-                                <span class="project-tag">Flask</span>
-                                <span class="project-tag">MySQL</span>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-
+            <div class="hero__ctas" data-reveal="fade-up" data-delay="0.2">
+              <a class="btn btn-primary" href="https://drive.google.com/file/d/1ZNYicCihzlP0S_pLmAMnvWSAFDNkjqI5/view?usp=sharing" target="_blank" rel="noopener">
+                View Resume
+                <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+              <a class="btn btn-ghost" href="#projects">See Projects</a>
+              <a class="btn btn-ghost" href="#contact">Get in Touch</a>
             </div>
+
+            <div class="hero__social" data-reveal="fade-up" data-delay="0.25">
+              <a href="https://github.com/ka8540" target="_blank" rel="noopener" aria-label="GitHub">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.7.4-1.3.7-1.5-2.5-.3-5.2-1.3-5.2-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0C17.3 5.1 18.3 5.4 18.3 5.4c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.2 5.7.4.3.8 1 .8 2.1v3.1c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5Z"/></svg>
+              </a>
+              <a href="https://www.linkedin.com/in/kush-ahir/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 1 1 0 3.5a2.5 2.5 0 0 1 4.98 0ZM.3 8.3h4.4V24H.3V8.3Zm7.4 0h4.2v2.1h.1c.6-1.1 2-2.3 4.2-2.3 4.5 0 5.3 2.9 5.3 6.7V24h-4.4v-7.3c0-1.7 0-4-2.4-4s-2.8 1.9-2.8 3.8V24H7.7V8.3Z"/></svg>
+              </a>
+              <a href="mailto:kush.ahir2024@gmail.com" aria-label="Email">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="m3 6 9 7 9-7"/></svg>
+              </a>
+              <span class="sep" aria-hidden="true"></span>
+              <span class="loc">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s7-5.7 7-11a7 7 0 1 0-14 0c0 5.3 7 11 7 11Z"/><circle cx="12" cy="10" r="2.4"/></svg>
+                Chandler, AZ 
+              </span>
+            </div>
+          </div>
+
+          <div class="hero__visual" data-reveal="scale" data-delay="0.15">
+            <div class="portrait-frame">
+              <img src="img/front2.webp" alt="Portrait of Kush Jayesh Ahir, software engineer" width="900" height="871" fetchpriority="high">
+              <span class="portrait-tag"><b>●</b> Kush Jayesh Ahir</span>
+            </div>
+            <div class="float-card float-card--1">
+              <span class="fc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m8 6-6 6 6 6M16 6l6 6-6 6"/></svg></span>
+              <span><b>Python · Java</b><span>backend &amp; APIs</span></span>
+            </div>
+            <div class="float-card float-card--2">
+              <span class="fc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19a4.5 4.5 0 0 0 .5-9 6 6 0 0 0-11.6-1.6A4 4 0 0 0 6.5 19Z"/></svg></span>
+              <span><b>AWS · GCP</b><span>cloud-native</span></span>
+            </div>
+          </div>
         </div>
-    </div>
+      </div>
 
-    <!-- Portfolio End -->
-
-    <!-- Blog Start -->
-    <div class="container-fluid pt-5" id="blog">
-        <div class="container">
-            <div class="position-relative d-flex align-items-center justify-content-center">
-                <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Research</h1>
-                <h1 class="position-absolute text-uppercase text-primary">My Publications</h1>
-            </div>
-            <div class="row">
-                <!-- Research Paper 1 -->
-                <div class="col-lg-6 mb-5">
-                    <article class="publication-card h-100">
-                    <div class="publication-media">
-                        <img class="publication-img" src="img/Equifax2.png" alt="Equifax Data Breach">
-                    </div>
-                    <h5 class="font-weight-medium mb-4">Equifax Data Breach: A Software Architecture Perspective</h5>
-                    <p class="text-muted">
-                        This research paper examines the 2017 Equifax data breach, a cybersecurity disaster that
-                        compromised the personal data
-                        of 147 million individuals. The study dissects the failure from a software architecture
-                        standpoint, identifying key issues
-                        such as an unpatched vulnerability in Apache Struts, poor security monitoring, and reliance on
-                        outdated legacy systems.
-                        The paper highlights how technical debt and inefficient security patching led to an extended
-                        period of unauthorized access.
-                        Proposed solutions include a shift to microservices, automated security patching, and Zero Trust
-                        architecture to mitigate
-                        future breaches. The case study serves as a cautionary tale for enterprises managing sensitive
-                        consumer data.
-                    </p>
-                    <a class="btn btn-sm btn-outline-primary py-2"
-                        href="https://drive.google.com/file/d/19LkKC2V5NgkT1X8bjYVzvt9Z-NGhzo8j/view?usp=sharing"
-                        target="_blank">Read Paper</a>
-                    </article>
-                </div>
-
-
-                <!-- Research Paper 2 -->
-                <div class="col-lg-6 mb-5">
-                    <article class="publication-card h-100">
-                    <div class="publication-media">
-                        <img class="publication-img" src="img/SAC.png" alt="Software Quality Assurance">
-                    </div>
-                    <h5 class="font-weight-medium mb-4">Legacy Systems in Open Source: Design Pattern-Based Refactoring
-                    </h5>
-                    <p>
-                        This paper explores how legacy systems impact modern open-source development and proposes using
-                        design patterns to improve their maintainability, security, and scalability. The authors
-                        implement Factory, Observer, Strategy, and other patterns to reduce code complexity and enhance
-                        modularity. Empirical results using SonarQube and JaCoCo show measurable reductions in
-                        cyclomatic complexity across key modules of an online cab booking system.
-                    </p>
-                    <a class="btn btn-sm btn-outline-primary py-2"
-                        href="https://drive.google.com/file/d/11D031PYmbkpxVhWif1Ngu7N0wdnpri9A/view?usp=sharing"
-                        target="_blank">Read Paper</a>
-                    </article>
-                </div>
-
-                <!-- Research Paper 3 -->
-                <div class="col-lg-6 mb-5">
-                    <article class="publication-card h-100">
-                    <div class="publication-media">
-                        <img class="publication-img" src="img/Paper3.png" alt="Educational NLP Evaluation">
-                    </div>
-                    <h5 class="font-weight-medium mb-4">Review of DISTO: Textual Distractors for Multiple Choice Reading
-                        Comprehension Questions using Negative Sampling</h5>
-                    <p>
-                        This review evaluates the DISTO metric introduced for assessing textual distractors in reading
-                        comprehension MCQs.
-                        The authors propose a novel approach using negative sampling strategies—such as answer
-                        replication, clustering,
-                        and BERT-based mask filling—combined with transformer-based models like DistilRoBERTa. The paper
-                        critiques
-                        traditional BLEU-like metrics and highlights DISTO's improved semantic sensitivity and
-                        human-aligned performance.
-                        Limitations around multilingual support, grammar validation, and computational scalability are
-                        discussed with
-                        future work directions.
-                    </p>
-                    <a class="btn btn-sm btn-outline-primary py-2"
-                        href="https://drive.google.com/file/d/12Vv1QDZ9nW92yXWaxqtk7EQW_R097XRP/view?usp=sharing"
-                        target="_blank">Read Paper</a>
-                    </article>
-                </div>
-
-
-            </div>
+      <!-- credibility marquee -->
+      <div class="wrap">
+        <div class="marquee" aria-hidden="true">
+          <div class="marquee__track">
+            <span>Python</span><span>Java</span><span>Spring Boot</span><span>Flask</span><span>React</span><span>PostgreSQL</span><span>AWS</span><span>Kubernetes</span><span>Power BI</span><span>BigQuery</span>
+            <span>Python</span><span>Java</span><span>Spring Boot</span><span>Flask</span><span>React</span><span>PostgreSQL</span><span>AWS</span><span>Kubernetes</span><span>Power BI</span><span>BigQuery</span>
+          </div>
         </div>
-    </div>
+      </div>
+    </section>
 
-    <!-- Blog End -->
-
-    <!-- Testimonial Start -->
-    <div class="container-fluid py-5" id="testimonial">
-        <div class="container">
-            <div class="position-relative d-flex align-items-center justify-content-center">
-                <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Impact</h1>
-                <h1 class="position-absolute text-uppercase text-primary">Strengths</h1>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="owl-carousel testimonial-carousel">
-                        <div class="text-center">
-                            <i class="fa fa-3x fa-lightbulb text-primary mb-4"></i>
-                            <h4 class="font-weight-light mb-4">I don’t just write code—I build solutions. My approach is
-                                <strong>problem-solving first, coding second</strong>. Every line I write serves a
-                                purpose: making software intuitive, scalable, and efficient.
-                            </h4>
-                            <h5 class="font-weight-bold m-0">Innovative Thinking</h5>
-                            <span>Creative Problem-Solving</span>
-                        </div>
-                        <div class="text-center">
-                            <i class="fa fa-3x fa-code text-primary mb-4"></i>
-                            <h4 class="font-weight-light mb-4">With expertise in <strong>Python, Flask, React Native,
-                                    and AWS</strong>, I create full-stack applications that are not just functional but
-                                also <strong>optimized for performance and scalability</strong>.</h4>
-                            <h5 class="font-weight-bold m-0">Full-Stack Development</h5>
-                            <span>Scalable & Efficient Solutions</span>
-                        </div>
-                        <div class="text-center">
-                            <i class="fa fa-3x fa-users text-primary mb-4"></i>
-                            <h4 class="font-weight-light mb-4">I thrive in collaborative environments, working
-                                seamlessly with <strong>teams, clients, and stakeholders</strong>. My ability to
-                                <strong>mentor, communicate, and lead projects</strong> makes me a valuable asset in any
-                                setting.
-                            </h4>
-                            <h5 class="font-weight-bold m-0">Collaboration & Leadership</h5>
-                            <span>Team-Oriented Mindset</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!-- ============================ SNAPSHOT ============================= -->
+    <section class="section section--tint" aria-label="Snapshot">
+      <div class="wrap">
+        <div class="snapshot" data-stagger="0.09">
+          <article class="stat">
+            <div class="stat__num">2.5<small>+ yrs</small></div>
+            <div class="stat__label">Engineering experience</div>
+            <div class="stat__sub">internships + co-op</div>
+          </article>
+          <article class="stat">
+            <div class="stat__num">9</div>
+            <div class="stat__label">Shipped projects</div>
+            <div class="stat__sub">backend · cloud · AI · data</div>
+          </article>
+          <article class="stat">
+            <div class="stat__num">3</div>
+            <div class="stat__label">Research papers</div>
+            <div class="stat__sub">architecture &amp; NLP</div>
+          </article>
+          <article class="stat">
+            <div class="stat__num">3.71<small>/4.0</small></div>
+            <div class="stat__label">M.S. GPA · RIT</div>
+            <div class="stat__sub">software engineering</div>
+          </article>
         </div>
-    </div>
+      </div>
+    </section>
 
-    <!-- Testimonial End -->
-
-
-    <!-- Contact Start -->
-    <div class="container-fluid py-5 text-center" id="contact">
-        <a href="mailto:kush.ahir2024@gmail.com" class="btn btn-outline-primary btn-lg">Contact Me</a>
-    </div>
-    <!-- Contact End -->
-
-
-    <!-- Footer Start -->
-    <div class="container-fluid bg-primary text-white mt-5 py-4 px-sm-3 px-md-5">
-        <div class="container">
-            <div class="row align-items-center">
-
-                <!-- Left Content -->
-                <div class="col-md-8 text-md-left text-center mb-3 mb-md-0">
-                    <h5 class="mb-1 footer-name">Kush Jayesh Ahir</h5>
-                    <p class="mb-1 footer-text">
-                        Software Engineer · Backend & Data Systems · Cloud & AI
-                    </p>
-                    <p class="mb-0 footer-text">
-                        Building scalable backend systems, data pipelines, and AI-powered platforms.
-                    </p>
-                </div>
-
-                <!-- Right Social Links -->
-                <div class="col-md-4 text-md-right text-center">
-                    <a class="btn btn-light btn-social mx-1 footer-social"
-                    href="https://www.linkedin.com/in/kush-ahir/" target="_blank">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                    <a class="btn btn-light btn-social mx-1 footer-social"
-                    href="https://github.com/ka8540" target="_blank">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a class="btn btn-light btn-social mx-1 footer-social"
-                    href="https://www.instagram.com/kay_ahir/" target="_blank">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                </div>
-
+    <!-- ============================== ABOUT ============================= -->
+    <section class="section" id="about">
+      <div class="wrap">
+        <div class="about">
+          <div class="about__media" data-reveal="left">
+            <div class="about__photo">
+              <img src="img/profile.webp" alt="Kush Jayesh Ahir" width="900" height="871" loading="lazy">
             </div>
-
-            <!-- Bottom line -->
-            <div class="text-center mt-3">
-                <small class="footer-text" style="opacity: 0.7;">
-                    © 2026 Kush Jayesh Ahir · Designed & Built by Me
-                </small>
+            <div class="about__chip">
+              <div><b>M.S.</b><span>RIT · 2025</span></div>
+              <div><b>Python</b><span>+ Java</span></div>
+              <div><b>AWS</b><span>+ GCP</span></div>
             </div>
+          </div>
+
+          <div class="about__body" data-reveal="right">
+            <span class="eyebrow">About</span>
+            <h2 class="section-title">Backend, cloud &amp; data — built for production.</h2>
+            <p>
+              I'm a software engineer with hands-on experience across <strong>backend development, data pipelines, and cloud-deployed systems</strong>. I work primarily in Python and Java, building scalable APIs and services with Flask and Spring Boot and wiring them into modern front-ends like React.
+            </p>
+            <p>
+              I've deployed and operated applications on <strong>AWS and GCP</strong> using Docker and Kubernetes, and designed data solutions across PostgreSQL, MySQL, MongoDB, BigQuery, and Elasticsearch. Alongside engineering, I deliver analytics and reporting with SQL, Tableau, and Power BI to support data-driven decisions.
+            </p>
+            <p>
+              I work effectively in Agile teams — from sprint planning through delivery — and I'm comfortable breaking down ambiguous problems into reliable, scalable solutions, independently or cross-functionally.
+            </p>
+
+            <dl class="about__meta">
+              <div><dt>Name</dt><dd>Kush Jayesh Ahir</dd></div>
+              <div><dt>Focus</dt><dd>Backend · Cloud · Data</dd></div>
+              <div><dt>Degree</dt><dd>M.S. Computer Software Eng.</dd></div>
+              <div><dt>Email</dt><dd>kush.ahir2024@gmail.com</dd></div>
+            </dl>
+
+            <div class="about__course">
+              <b>Related coursework</b>
+              <div class="tagrow">
+                <span class="tag">Engineering Cloud Software Systems</span>
+                <span class="tag">Software Architecture</span>
+                <span class="tag">Database Design &amp; Implementation</span>
+                <span class="tag">Non-Relational Data Management</span>
+                <span class="tag">Foundations of Data Science &amp; Analytics</span>
+                <span class="tag">Software Quality Assurance</span>
+                <span class="tag">Model-Driven Development</span>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
+    </section>
+
+    <!-- ============================== SKILLS ============================ -->
+    <section class="section section--tint" id="skills">
+      <div class="wrap">
+        <div class="section-head" data-reveal="fade-up">
+          <span class="eyebrow">Stack</span>
+          <h2 class="section-title">Tools I build with</h2>
+          <p class="section-sub">The technologies and practices I reach for to ship scalable, reliable software — grouped by where they live in the stack.</p>
+        </div>
+
+        <div class="skills-grid" data-stagger="0.08">
+          <article class="skill-card">
+            <div class="skill-card__head">
+              <span class="skill-card__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m8 6-6 6 6 6M16 6l6 6-6 6"/></svg></span>
+              <div><h3>Languages &amp; Frameworks</h3><span>core engineering</span></div>
+            </div>
+            <div class="chips">
+              <span class="chip">Java</span><span class="chip">Python</span><span class="chip">C++</span><span class="chip">JavaScript</span><span class="chip">TypeScript</span><span class="chip">React</span><span class="chip">Next.js</span><span class="chip">Node.js</span><span class="chip">Flask</span><span class="chip">Spring Boot</span><span class="chip">Swift</span>
+            </div>
+          </article>
+
+          <article class="skill-card">
+            <div class="skill-card__head">
+              <span class="skill-card__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19a4.5 4.5 0 0 0 .5-9 6 6 0 0 0-11.6-1.6A4 4 0 0 0 6.5 19Z"/></svg></span>
+              <div><h3>Cloud &amp; DevOps</h3><span>ship &amp; scale</span></div>
+            </div>
+            <div class="chips">
+              <span class="chip">AWS</span><span class="chip">Azure</span><span class="chip">GCP</span><span class="chip">Docker</span><span class="chip">Kubernetes</span><span class="chip">GitHub Actions</span><span class="chip">Jenkins</span><span class="chip">CI/CD</span><span class="chip">Vercel</span><span class="chip">Linux</span>
+            </div>
+          </article>
+
+          <article class="skill-card">
+            <div class="skill-card__head">
+              <span class="skill-card__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg></span>
+              <div><h3>Databases</h3><span>relational &amp; NoSQL</span></div>
+            </div>
+            <div class="chips">
+              <span class="chip">PostgreSQL</span><span class="chip">MySQL</span><span class="chip">MongoDB</span><span class="chip">Neo4j</span><span class="chip">Snowflake</span><span class="chip">BigQuery</span><span class="chip">Redis</span>
+            </div>
+          </article>
+
+          <article class="skill-card">
+            <div class="skill-card__head">
+              <span class="skill-card__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l3-4 3 2 4-6"/></svg></span>
+              <div><h3>Data &amp; Analytics</h3><span>pipelines &amp; BI</span></div>
+            </div>
+            <div class="chips">
+              <span class="chip">SQL</span><span class="chip">Power BI</span><span class="chip">Tableau</span><span class="chip">Spark</span><span class="chip">Elasticsearch</span><span class="chip">ETL Pipelines</span><span class="chip">Data Visualization</span>
+            </div>
+          </article>
+
+          <article class="skill-card">
+            <div class="skill-card__head">
+              <span class="skill-card__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></span>
+              <div><h3>Testing &amp; QA</h3><span>reliability</span></div>
+            </div>
+            <div class="chips">
+              <span class="chip">Selenium</span><span class="chip">JUnit</span><span class="chip">TestNG</span><span class="chip">Pytest</span><span class="chip">Playwright</span><span class="chip">BDD</span><span class="chip">Unit Testing</span>
+            </div>
+          </article>
+
+          <article class="skill-card">
+            <div class="skill-card__head">
+              <span class="skill-card__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="m2 17 10 5 10-5M2 12l10 5 10-5"/></svg></span>
+              <div><h3>Practices</h3><span>foundations</span></div>
+            </div>
+            <div class="chips">
+              <span class="chip">Data Structures &amp; Algorithms</span><span class="chip">System Design</span><span class="chip">Object-Oriented Design</span><span class="chip">Agile</span><span class="chip">CS Fundamentals</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ PROJECTS ============================ -->
+    <section class="section" id="projects">
+      <div class="wrap">
+        <div class="section-head" data-reveal="fade-up">
+          <span class="eyebrow">Selected work</span>
+          <h2 class="section-title">Projects built to hold up in real use</h2>
+          <p class="section-sub">Product, AI, and data-heavy builds where I focused on reliable architecture, strong backend systems, and the details that matter in production.</p>
+        </div>
+
+        <div class="projects-grid" data-stagger="0.07">
+          <!-- Featured 1 -->
+          <article class="proj proj--feat">
+            <div class="proj__glow"></div>
+            <div class="proj__top">
+              <div class="proj__head-row">
+                <span class="proj__mark">S</span>
+                <span class="proj__cat" style="text-align:left">Email Ops · SaaS</span>
+              </div>
+              <a class="proj__repo" href="https://github.com/ka8540/Sendloom" target="_blank" rel="noopener" aria-label="Sendloom on GitHub">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.7.4-1.3.7-1.5-2.5-.3-5.2-1.3-5.2-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0C17.3 5.1 18.3 5.4 18.3 5.4c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.2 5.7.4.3.8 1 .8 2.1v3.1c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5Z"/></svg>
+              </a>
+            </div>
+            <h3 class="proj__name">Sendloom</h3>
+            <p class="proj__desc">Sequence-sending platform for campaign setup, template previews, Gmail SMTP delivery, lead finding, and controlled send execution — built around a reliable queueing model.</p>
+            <div class="proj__stack"><span class="t">Next.js</span><span class="t">PostgreSQL</span><span class="t">Redis</span><span class="t">SMTP</span></div>
+          </article>
+
+          <!-- Featured 2 -->
+          <article class="proj proj--feat">
+            <div class="proj__glow"></div>
+            <div class="proj__top">
+              <div class="proj__head-row">
+                <span class="proj__mark">E</span>
+                <span class="proj__cat" style="text-align:left">EdTech · AI Workflow</span>
+              </div>
+              <a class="proj__repo" href="https://github.com/ka8540/Examora" target="_blank" rel="noopener" aria-label="Examora on GitHub">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.7.4-1.3.7-1.5-2.5-.3-5.2-1.3-5.2-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0C17.3 5.1 18.3 5.4 18.3 5.4c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.2 5.7.4.3.8 1 .8 2.1v3.1c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5Z"/></svg>
+              </a>
+            </div>
+            <h3 class="proj__name">Examora</h3>
+            <p class="proj__desc">AI-assisted exam authoring platform combining React, Node.js, AWS, and LLM workflows to generate question sets, rubrics, and difficulty signals end-to-end.</p>
+            <div class="proj__stack"><span class="t">React</span><span class="t">Node.js</span><span class="t">AWS</span><span class="t">Playwright</span></div>
+          </article>
+
+          <!-- Standard 2-col cards -->
+          <article class="proj">
+            <div class="proj__glow"></div>
+            <div class="proj__top">
+              <span class="proj__mark">Ep</span>
+              <a class="proj__repo" href="https://github.com/ka8540/EquiPay" target="_blank" rel="noopener" aria-label="EquiPay on GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.7.4-1.3.7-1.5-2.5-.3-5.2-1.3-5.2-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0C17.3 5.1 18.3 5.4 18.3 5.4c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.2 5.7.4.3.8 1 .8 2.1v3.1c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5Z"/></svg></a>
+            </div>
+            <span class="proj__cat" style="margin-top:14px">Fintech · Mobile</span>
+            <h3 class="proj__name">EquiPay</h3>
+            <p class="proj__desc">Group expense-splitting app with real-time balances, receipt OCR via Textract, and settlement workflows.</p>
+            <div class="proj__stack"><span class="t">React Native</span><span class="t">Flask</span><span class="t">AWS</span></div>
+          </article>
+
+          <article class="proj">
+            <div class="proj__glow"></div>
+            <div class="proj__top">
+              <span class="proj__mark">Pc</span>
+              <a class="proj__repo" href="https://github.com/ka8540/PersonaCraft" target="_blank" rel="noopener" aria-label="PersonaCraft on GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.7.4-1.3.7-1.5-2.5-.3-5.2-1.3-5.2-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0C17.3 5.1 18.3 5.4 18.3 5.4c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.2 5.7.4.3.8 1 .8 2.1v3.1c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5Z"/></svg></a>
+            </div>
+            <span class="proj__cat" style="margin-top:14px">LLM · Conversational AI</span>
+            <h3 class="proj__name">PersonaCraft</h3>
+            <p class="proj__desc">Character-chat app where users define traits, lore, and tone, then hold dynamic GPT-powered conversations with generated personas.</p>
+            <div class="proj__stack"><span class="t">Python</span><span class="t">Flask</span><span class="t">LLM</span></div>
+          </article>
+
+          <article class="proj">
+            <div class="proj__glow"></div>
+            <div class="proj__top">
+              <span class="proj__mark">Nh</span>
+              <a class="proj__repo" href="https://github.com/ka8540/NeoHub" target="_blank" rel="noopener" aria-label="NeoHub on GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.7.4-1.3.7-1.5-2.5-.3-5.2-1.3-5.2-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0C17.3 5.1 18.3 5.4 18.3 5.4c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.2 5.7.4.3.8 1 .8 2.1v3.1c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5Z"/></svg></a>
+            </div>
+            <span class="proj__cat" style="margin-top:14px">Graph · Visualization</span>
+            <h3 class="proj__name">NeoHub</h3>
+            <p class="proj__desc">Neo4j and D3 tool for exploring GitHub Archive contribution networks across millions of nodes, repos, and commits.</p>
+            <div class="proj__stack"><span class="t">Neo4j</span><span class="t">D3.js</span><span class="t">Data Viz</span></div>
+          </article>
+
+          <article class="proj">
+            <div class="proj__glow"></div>
+            <div class="proj__top">
+              <span class="proj__mark">Ca</span>
+              <a class="proj__repo" href="https://github.com/ka8540/CrimeAtlas" target="_blank" rel="noopener" aria-label="CrimeAtlas on GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.7.4-1.3.7-1.5-2.5-.3-5.2-1.3-5.2-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0C17.3 5.1 18.3 5.4 18.3 5.4c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.2 5.7.4.3.8 1 .8 2.1v3.1c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5Z"/></svg></a>
+            </div>
+            <span class="proj__cat" style="margin-top:14px">Geospatial · Data Platform</span>
+            <h3 class="proj__name">CrimeAtlas</h3>
+            <p class="proj__desc">MERN crime-intelligence platform mapping LA incidents, enriching them with Street View imagery, and surfacing geospatial patterns.</p>
+            <div class="proj__stack"><span class="t">MERN</span><span class="t">MongoDB</span><span class="t">Google Cloud</span></div>
+          </article>
+
+          <article class="proj">
+            <div class="proj__glow"></div>
+            <div class="proj__top">
+              <span class="proj__mark">Bw</span>
+              <a class="proj__repo" href="https://github.com/ka8540/BudgetWise" target="_blank" rel="noopener" aria-label="BudgetWise AI on GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.7.4-1.3.7-1.5-2.5-.3-5.2-1.3-5.2-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0C17.3 5.1 18.3 5.4 18.3 5.4c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.2 5.7.4.3.8 1 .8 2.1v3.1c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5Z"/></svg></a>
+            </div>
+            <span class="proj__cat" style="margin-top:14px">Analytics · Cloud</span>
+            <h3 class="proj__name">BudgetWise AI</h3>
+            <p class="proj__desc">Cloud-hosted personal-finance platform with predictive analytics, Dockerized services, and AWS deployment for scalable reporting.</p>
+            <div class="proj__stack"><span class="t">AWS</span><span class="t">Docker</span><span class="t">Analytics</span></div>
+          </article>
+
+          <article class="proj">
+            <div class="proj__glow"></div>
+            <div class="proj__top">
+              <span class="proj__mark">Pp</span>
+              <a class="proj__repo" href="https://github.com/ka8540/SWEN732-team1" target="_blank" rel="noopener" aria-label="Price Compare Plus on GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.7.4-1.3.7-1.5-2.5-.3-5.2-1.3-5.2-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0C17.3 5.1 18.3 5.4 18.3 5.4c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.2 5.7.4.3.8 1 .8 2.1v3.1c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5Z"/></svg></a>
+            </div>
+            <span class="proj__cat" style="margin-top:14px">Mobile · Commerce</span>
+            <h3 class="proj__name">Price Compare Plus</h3>
+            <p class="proj__desc">React Native shopping companion comparing cross-retailer pricing, with wishlists and live product data via backend APIs.</p>
+            <div class="proj__stack"><span class="t">React Native</span><span class="t">APIs</span><span class="t">Mobile</span></div>
+          </article>
+
+          <article class="proj">
+            <div class="proj__glow"></div>
+            <div class="proj__top">
+              <span class="proj__mark">Ic</span>
+              <a class="proj__repo" href="https://github.com/klsterfx/ICRS" target="_blank" rel="noopener" aria-label="ICRS on GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.7.4-1.3.7-1.5-2.5-.3-5.2-1.3-5.2-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0C17.3 5.1 18.3 5.4 18.3 5.4c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.2 5.7.4.3.8 1 .8 2.1v3.1c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5Z"/></svg></a>
+            </div>
+            <span class="proj__cat" style="margin-top:14px">Decision Support · Education</span>
+            <h3 class="proj__name">ICRS</h3>
+            <p class="proj__desc">Recommendation system that helps students evaluate college options through Java, Flask, and MySQL-backed scoring and ranking workflows.</p>
+            <div class="proj__stack"><span class="t">Java</span><span class="t">Flask</span><span class="t">MySQL</span></div>
+          </article>
+        </div>
+
+        <div class="projects-foot" data-reveal="fade-up">
+          <a class="btn btn-soft" href="https://github.com/ka8540" target="_blank" rel="noopener">
+            View all projects on GitHub
+            <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================== EXPERIENCE =========================== -->
+    <section class="section section--tint" id="experience">
+      <div class="wrap">
+        <div class="section-head" data-reveal="fade-up">
+          <span class="eyebrow">Journey</span>
+          <h2 class="section-title">Where I've shipped</h2>
+          <p class="section-sub">Co-op and internship roles across data &amp; analytics, backend microservices, and AI/ML engineering.</p>
+        </div>
+
+        <div class="timeline">
+          <article class="tl-item" data-reveal="fade-up">
+            <div class="tl-card">
+              <div class="tl-head">
+                <h3 class="tl-role">Dashboard Developer (Co-op)</h3>
+                <span class="tl-date">May 2025 – Dec 2025</span>
+              </div>
+              <p class="tl-org"><b>Rochester Institute of Technology</b> — Institutional Research, Data &amp; Analytics</p>
+              <p class="tl-desc">Architected backend data services and analytics pipelines for high-volume institutional reporting. Delivered SQL- and Power BI–driven dashboards by translating stakeholder requirements into insights, integrated heterogeneous data sources, and automated ingestion workflows to improve reporting reliability and end-to-end data accuracy.</p>
+              <div class="tl-tags"><span class="t">SQL</span><span class="t">Power BI</span><span class="t">ETL</span><span class="t">Data Modeling</span></div>
+            </div>
+          </article>
+
+          <article class="tl-item" data-reveal="fade-up">
+            <div class="tl-card">
+              <div class="tl-head">
+                <h3 class="tl-role">Course Assistant</h3>
+                <span class="tl-date">Aug 2024 – May 2025</span>
+              </div>
+              <p class="tl-org"><b>Rochester Institute of Technology</b></p>
+              <p class="tl-desc">Provided targeted instruction in software processes and development tooling, mentoring students through setup and project work. Delivered critical feedback and personalized support that improved project outcomes and class performance across the cohort.</p>
+              <div class="tl-tags"><span class="t">Mentorship</span><span class="t">Software Process</span><span class="t">Dev Tooling</span></div>
+            </div>
+          </article>
+
+          <article class="tl-item" data-reveal="fade-up">
+            <div class="tl-card">
+              <div class="tl-head">
+                <h3 class="tl-role">Software Engineer Intern</h3>
+                <span class="tl-date">Jan 2023 – May 2023</span>
+              </div>
+              <p class="tl-org"><b>Axisray Pvt Ltd</b></p>
+              <p class="tl-desc">Developed and optimized backend microservices in Java and Python within a distributed system. Built Flask-based REST APIs for reliable service-to-service communication, improved throughput and runtime stability across legacy services, and enhanced maintainability through modular Spring Boot components and comprehensive unit testing.</p>
+              <div class="tl-tags"><span class="t">Java</span><span class="t">Python</span><span class="t">Flask</span><span class="t">Spring Boot</span><span class="t">Microservices</span></div>
+            </div>
+          </article>
+
+          <article class="tl-item" data-reveal="fade-up">
+            <div class="tl-card">
+              <div class="tl-head">
+                <h3 class="tl-role">Data Science &amp; AI/ML Engineering Intern</h3>
+                <span class="tl-date">May 2022 – Oct 2022</span>
+              </div>
+              <p class="tl-org"><b>Moon Technolabs Pvt Ltd</b></p>
+              <p class="tl-desc">Contributed to production-scale analytics and system integrations. Executed distributed data-processing pipelines with Spark and C++ on AWS, built Python service layers and REST APIs to unify HRMS and CRM platforms, and supported automated deployments that improved release quality and cross-system data consistency.</p>
+              <div class="tl-tags"><span class="t">Spark</span><span class="t">AWS</span><span class="t">Python</span><span class="t">REST APIs</span><span class="t">C++</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================== EDUCATION ============================ -->
+    <section class="section" id="education">
+      <div class="wrap">
+        <div class="section-head" data-reveal="fade-up">
+          <span class="eyebrow">Background</span>
+          <h2 class="section-title">Education</h2>
+        </div>
+
+        <div class="edu-grid" data-stagger="0.1">
+          <article class="edu-card">
+            <div class="edu-card__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c0 1 2.7 3 6 3s6-2 6-3v-5"/><path d="M22 10v6"/></svg></div>
+            <h3>M.S. Computer Software Engineering</h3>
+            <p class="edu-org">Rochester Institute of Technology · Minor in Data Science</p>
+            <div class="edu-meta"><span>Aug 2023 – Dec 2025</span><span class="gpa">GPA 3.71 / 4.0</span></div>
+            <p>Focused on backend systems, cloud-native development, and data-driven software engineering — designing and optimizing scalable APIs, analytics pipelines, and distributed systems with Python, Java, Spring Boot, SQL, AWS, and GCP.</p>
+            <a class="link" href="https://www.parchment.com/u/award/d1606ebb2fe57420f6ff502d27fe21aa" target="_blank" rel="noopener">View certificate <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          </article>
+
+          <article class="edu-card">
+            <div class="edu-card__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c0 1 2.7 3 6 3s6-2 6-3v-5"/><path d="M22 10v6"/></svg></div>
+            <h3>B.E. Electronics &amp; Communication</h3>
+            <p class="edu-org">L. J. Institute of Engineering &amp; Technology · Gujarat Technological University</p>
+            <div class="edu-meta"><span>Aug 2019 – May 2023</span><span class="gpa">CGPA 8.52 / 10</span></div>
+            <p>Built a strong foundation in core engineering and analytical problem-solving, with an appreciation for the interplay of hardware and software that shaped my path into software engineering. First Class with Distinction.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ RESEARCH ============================ -->
+    <section class="section section--tint" id="research">
+      <div class="wrap">
+        <div class="section-head" data-reveal="fade-up">
+          <span class="eyebrow">Publications</span>
+          <h2 class="section-title">Research</h2>
+          <p class="section-sub">Writing at the intersection of software architecture, security, and applied NLP.</p>
+        </div>
+
+        <div class="research-list" data-stagger="0.1">
+          <article class="paper">
+            <span class="paper__no">01</span>
+            <div>
+              <h3 class="paper__title">Equifax Data Breach: A Software Architecture Perspective</h3>
+              <p class="paper__desc">Dissects the 2017 Equifax breach from a software-architecture standpoint — unpatched Apache Struts, weak monitoring, and legacy debt — and proposes microservices, automated patching, and Zero Trust as mitigations.</p>
+            </div>
+            <a class="paper__link" href="https://drive.google.com/file/d/19LkKC2V5NgkT1X8bjYVzvt9Z-NGhzo8j/view?usp=sharing" target="_blank" rel="noopener">Read paper <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          </article>
+
+          <article class="paper">
+            <span class="paper__no">02</span>
+            <div>
+              <h3 class="paper__title">Legacy Systems in Open Source: Design Pattern-Based Refactoring</h3>
+              <p class="paper__desc">Applies Factory, Observer, Strategy, and other patterns to reduce complexity in legacy open-source code. SonarQube and JaCoCo results show measurable cyclomatic-complexity reductions across an online cab-booking system.</p>
+            </div>
+            <a class="paper__link" href="https://drive.google.com/file/d/11D031PYmbkpxVhWif1Ngu7N0wdnpri9A/view?usp=sharing" target="_blank" rel="noopener">Read paper <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          </article>
+
+          <article class="paper">
+            <span class="paper__no">03</span>
+            <div>
+              <h3 class="paper__title">Review of DISTO: Textual Distractors for MCQ Reading Comprehension via Negative Sampling</h3>
+              <p class="paper__desc">Evaluates the DISTO metric for assessing MCQ distractors using negative-sampling strategies and transformer models like DistilRoBERTa, critiquing BLEU-style metrics and discussing multilingual and scalability limitations.</p>
+            </div>
+            <a class="paper__link" href="https://drive.google.com/file/d/12Vv1QDZ9nW92yXWaxqtk7EQW_R097XRP/view?usp=sharing" target="_blank" rel="noopener">Read paper <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= RESUME ============================= -->
+    <section class="section" id="resume">
+      <div class="wrap">
+        <div class="resume-cta" data-reveal="fade-up">
+          <div class="bg-fx"><div class="bg-grid"></div></div>
+          <div class="resume-cta__txt">
+            <span class="eyebrow">Resume</span>
+            <h2>The one-page version, ready to share.</h2>
+            <p>A concise overview of my experience, projects, and stack — open it in your browser or download a copy for your records.</p>
+            <div class="resume-cta__actions">
+              <a class="btn btn-primary" href="https://drive.google.com/file/d/1ZNYicCihzlP0S_pLmAMnvWSAFDNkjqI5/view?usp=sharing" target="_blank" rel="noopener">
+                Open Resume
+                <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+              <a class="btn btn-ghost" href="https://drive.google.com/uc?export=download&id=1ZNYicCihzlP0S_pLmAMnvWSAFDNkjqI5" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14"/></svg>
+                Download PDF
+              </a>
+            </div>
+          </div>
+          <div class="resume-doc" aria-hidden="true">
+            <div class="rd-top">
+              <div class="rd-name">Kush Jayesh Ahir<span>Software Engineer</span></div>
+              <span class="rd-badge">PDF</span>
+            </div>
+            <div class="rd-line a"></div>
+            <div class="rd-line m"></div>
+            <div class="rd-sec">Experience</div>
+            <div class="rd-line"></div><div class="rd-line m"></div><div class="rd-line s"></div>
+            <div class="rd-sec">Skills</div>
+            <div class="rd-line m"></div><div class="rd-line"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= CONTACT ============================ -->
+    <section class="section section--tint contact" id="contact">
+      <div class="bg-fx"><div class="glow glow--a" style="left:50%;top:0;transform:translateX(-50%)"></div></div>
+      <div class="wrap">
+        <div class="contact__inner">
+          <span class="eyebrow" style="justify-content:center" data-reveal="fade-up">Contact</span>
+          <h2 data-reveal="fade-up" data-delay="0.05">Let's build <span class="grad">something</span>.</h2>
+          <p data-reveal="fade-up" data-delay="0.1">Have a role, project, or idea in mind? I'm open to full-time software engineering opportunities and collaborations — send a note and I'll get back to you within a day or two.</p>
+
+          <a class="contact__email" href="mailto:kush.ahir2024@gmail.com" data-reveal="fade-up" data-delay="0.15">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="m3 6 9 7 9-7"/></svg>
+            kush.ahir2024@gmail.com
+          </a>
+
+          <div class="contact__links" data-reveal="fade-up" data-delay="0.2">
+            <a class="btn btn-ghost" href="https://www.linkedin.com/in/kush-ahir/" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 1 1 0 3.5a2.5 2.5 0 0 1 4.98 0ZM.3 8.3h4.4V24H.3V8.3Zm7.4 0h4.2v2.1h.1c.6-1.1 2-2.3 4.2-2.3 4.5 0 5.3 2.9 5.3 6.7V24h-4.4v-7.3c0-1.7 0-4-2.4-4s-2.8 1.9-2.8 3.8V24H7.7V8.3Z"/></svg>
+              LinkedIn
+            </a>
+            <a class="btn btn-ghost" href="https://github.com/ka8540" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.7.4-1.3.7-1.5-2.5-.3-5.2-1.3-5.2-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0C17.3 5.1 18.3 5.4 18.3 5.4c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.2 5.7.4.3.8 1 .8 2.1v3.1c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5Z"/></svg>
+              GitHub
+            </a>
+            <a class="btn btn-ghost" href="https://drive.google.com/file/d/1ZNYicCihzlP0S_pLmAMnvWSAFDNkjqI5/view?usp=sharing" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/></svg>
+              Resume
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================== FOOTER ============================== -->
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <span class="brand__mark">KA</span>
+          <div>
+            <p>Kush Jayesh Ahir</p>
+            <small>Software Engineer · Backend &amp; Data Systems</small>
+          </div>
+        </div>
+        <nav class="footer__nav" aria-label="Footer">
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#experience">Experience</a>
+          <a href="#research">Research</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <div class="footer__social">
+          <a href="https://github.com/ka8540" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.7.4-1.3.7-1.5-2.5-.3-5.2-1.3-5.2-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0C17.3 5.1 18.3 5.4 18.3 5.4c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.2 5.7.4.3.8 1 .8 2.1v3.1c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5Z"/></svg></a>
+          <a href="https://www.linkedin.com/in/kush-ahir/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 1 1 0 3.5a2.5 2.5 0 0 1 4.98 0ZM.3 8.3h4.4V24H.3V8.3Zm7.4 0h4.2v2.1h.1c.6-1.1 2-2.3 4.2-2.3 4.5 0 5.3 2.9 5.3 6.7V24h-4.4v-7.3c0-1.7 0-4-2.4-4s-2.8 1.9-2.8 3.8V24H7.7V8.3Z"/></svg></a>
+          <a href="mailto:kush.ahir2024@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="m3 6 9 7 9-7"/></svg></a>
+        </div>
+      </div>
+      <div class="footer__base">
+        <span>© <span data-year>2026</span> Kush Jayesh Ahir. Designed &amp; built from scratch.</span>
+        <span>Backend · Cloud · Data · AI</span>
+      </div>
     </div>
-    <!-- Footer End -->
+  </footer>
 
-
-
-    <!-- Scroll to Bottom -->
-    <i class="fa fa-2x fa-angle-down text-white scroll-to-bottom"></i>
-
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-outline-dark px-0 back-to-top"><i class="fa fa-angle-double-up"></i></a>
-
-
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/typed/typed.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="lib/isotope/isotope.pkgd.min.js"></script>
-    <script src="lib/lightbox/js/lightbox.min.js"></script>
-
-    <!-- Contact Javascript File -->
-    <script src="mail/jqBootstrapValidation.min.js"></script>
-    <script src="mail/contact.js"></script>
-
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
-
-    <!-- FadeIn Animation Script  -->
-    <script src="js/fadein.js"></script>
-
-    <!-- Portfolio Animation Script -->
-    <script src="js/portfolioFade.js"></script>
-
-    <!-- Portfolio Interaction Script -->
-    <script src="js/portfolioInteractive.js"></script>
-
-    <!-- Qualification Animation Script -->
-    <script src="js/qualificationFade.js"></script>
-
-    <!-- Skills Interaction Script -->
-    <script src="js/skillsInteractive.js"></script>
-
-    <!-- Theme (Dark Mode) Toggle Script -->
-    <script src="js/themeToggle.js"></script>
+  <script src="js/main.js"></script>
 </body>
-
 </html>
