@@ -1094,82 +1094,42 @@ body.menu-open .mobile-nav { opacity: 1; visibility: visible; transform: none; }
 }
 
 
-/* ===================== FIX: Skills section icons ===================== */
+/* ===================== FIX: Center skill-card icons ===================== */
 
 .skill-card__ic {
-  width: 46px;
-  height: 46px;
-  min-width: 46px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 14px;
-  position: relative;
-  overflow: hidden;
-  color: var(--accent, #63e6d2);
-  background:
-    radial-gradient(circle at 30% 20%, rgba(99, 230, 210, 0.28), transparent 45%),
-    linear-gradient(135deg, rgba(99, 230, 210, 0.16), rgba(96, 165, 250, 0.12));
-  border: 1px solid rgba(99, 230, 210, 0.32);
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.10),
-    0 10px 24px rgba(99, 230, 210, 0.10);
-  transition:
-    transform 220ms ease,
-    border-color 220ms ease,
-    box-shadow 220ms ease,
-    color 220ms ease;
+  display: grid !important;
+  place-items: center !important;
+  place-content: center !important;
+  line-height: 0 !important;
+  font-size: 0 !important;
 }
 
 .skill-card__ic svg {
-  width: 23px;
-  height: 23px;
-  display: block;
-  color: inherit;
-  opacity: 1;
-  filter: none;
-  transition: transform 220ms ease, color 220ms ease;
+  position: relative !important;
+  inset: auto !important;
+  margin: 0 !important;
+  display: block !important;
+  width: 26px !important;
+  height: 26px !important;
+  transform: none !important;
+  transform-origin: center center !important;
+  overflow: visible !important;
 }
 
+/* Fine visual alignment for stroke-based icons */
 .skill-card__ic svg path,
 .skill-card__ic svg circle,
 .skill-card__ic svg ellipse,
 .skill-card__ic svg rect,
 .skill-card__ic svg line,
-.skill-card__ic svg polyline {
-  stroke: currentColor;
-  stroke-width: 2.15;
-  opacity: 1;
+.skill-card__ic svg polyline,
+.skill-card__ic svg polygon {
+  vector-effect: non-scaling-stroke;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
-.skill-card__head {
-  align-items: center;
-  gap: 14px;
-}
-
-.skill-card:hover .skill-card__ic {
-  transform: translateY(-2px) scale(1.04);
-  border-color: rgba(99, 230, 210, 0.58);
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.16),
-    0 14px 32px rgba(99, 230, 210, 0.18);
-}
-
-html[data-theme="light"] .skill-card__ic {
-  color: #0f9f8c;
-  background:
-    radial-gradient(circle at 30% 20%, rgba(15, 159, 140, 0.20), transparent 45%),
-    linear-gradient(135deg, rgba(15, 159, 140, 0.12), rgba(59, 130, 246, 0.08));
-  border-color: rgba(15, 159, 140, 0.24);
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.75),
-    0 10px 24px rgba(15, 159, 140, 0.10);
-}
-
-html[data-theme="dark"] .skill-card__ic {
-  color: #77f5df;
-  background:
-    radial-gradient(circle at 30% 20%, rgba(119, 245, 223, 0.30), transparent 45%),
-    linear-gradient(135deg, rgba(119, 245, 223, 0.16), rgba(96, 165, 250, 0.14));
-  border-color: rgba(119, 245, 223, 0.36);
+/* Keep hover centered too */
+.skill-card:hover .skill-card__ic svg {
+  transform: none !important;
 }
