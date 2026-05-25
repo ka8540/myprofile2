@@ -1133,3 +1133,68 @@ body.menu-open .mobile-nav { opacity: 1; visibility: visible; transform: none; }
 .skill-card:hover .skill-card__ic svg {
   transform: none !important;
 }
+
+/* ...existing code... */
+
+/* ===================== FIX: Hero mini stats bar ===================== */
+
+.hero__mini {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0 !important;
+  background: rgba(15, 23, 35, 0.72) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 14px !important;
+  padding: 8px 16px !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  width: auto !important;
+  max-width: fit-content !important;
+}
+
+.hero__mini > div {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 2px 14px !important;
+  gap: 2px !important;
+  border-right: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+.hero__mini > div:last-child {
+  border-right: none !important;
+}
+
+.hero__mini b {
+  font-size: 0.88rem !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  letter-spacing: 0.01em !important;
+  line-height: 1.2 !important;
+}
+
+.hero__mini span {
+  font-size: 0.68rem !important;
+  color: rgba(255, 255, 255, 0.45) !important;
+  font-family: 'JetBrains Mono', monospace !important;
+  letter-spacing: 0.03em !important;
+  line-height: 1.2 !important;
+}
+
+html[data-theme="light"] .hero__mini {
+  background: rgba(255, 255, 255, 0.80) !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+html[data-theme="light"] .hero__mini b {
+  color: #0b1520 !important;
+}
+
+html[data-theme="light"] .hero__mini span {
+  color: rgba(11, 21, 32, 0.48) !important;
+}
+
+html[data-theme="light"] .hero__mini > div {
+  border-right-color: rgba(0, 0, 0, 0.08) !important;
+}
