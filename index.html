@@ -74,11 +74,11 @@
 
   <main>
     <!-- =============================== HERO ============================== -->
-    <section class="hero" id="hero" data-hero-depth>
+    <section class="hero" id="hero" data-scroll-scene="hero" data-hero-depth>
       <div class="bg-fx">
-        <div class="bg-grid" data-depth data-depth-y="-18"></div>
-        <div class="glow glow--a" data-depth data-depth-x="18" data-depth-y="-72"></div>
-        <div class="glow glow--b" data-depth data-depth-x="-18" data-depth-y="-58"></div>
+        <div class="bg-grid" data-depth data-scroll-parallax data-parallax-speed="-18" data-depth-y="-18"></div>
+        <div class="glow glow--a" data-depth data-scroll-parallax data-parallax-speed="-72" data-depth-x="18" data-depth-y="-72"></div>
+        <div class="glow glow--b" data-depth data-scroll-parallax data-parallax-speed="-58" data-depth-x="-18" data-depth-y="-58"></div>
       </div>
 
       <div class="wrap">
@@ -126,15 +126,15 @@
           </div>
 
           <div class="hero__visual" data-reveal="scale" data-delay="0.15">
-            <div class="portrait-frame" data-depth data-depth-y="-28">
+            <div class="portrait-frame" data-depth data-scroll-parallax data-parallax-speed="42" data-depth-y="-28">
               <img src="img/front2.webp" alt="Portrait of Kush Jayesh Ahir, software engineer" width="900" height="871" fetchpriority="high">
               <span class="portrait-tag"><b>●</b> Kush Jayesh Ahir</span>
             </div>
-            <div class="float-card float-card--1" data-depth data-depth-x="18" data-depth-y="-52">
+            <div class="float-card float-card--1" data-depth data-scroll-parallax data-parallax-speed="-72" data-depth-x="18" data-depth-y="-52">
               <span class="fc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m8 6-6 6 6 6M16 6l6 6-6 6"/></svg></span>
               <span><b>Python · Java</b><span>backend &amp; APIs</span></span>
             </div>
-            <div class="float-card float-card--2" data-depth data-depth-x="-16" data-depth-y="-42">
+            <div class="float-card float-card--2" data-depth data-scroll-parallax data-parallax-speed="-46" data-depth-x="-16" data-depth-y="-42">
               <span class="fc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19a4.5 4.5 0 0 0 .5-9 6 6 0 0 0-11.6-1.6A4 4 0 0 0 6.5 19Z"/></svg></span>
               <span><b>AWS · GCP</b><span>cloud-native</span></span>
             </div>
@@ -144,7 +144,7 @@
 
       <!-- credibility marquee -->
       <div class="wrap">
-        <div class="marquee" aria-hidden="true" data-depth data-depth-y="-18">
+        <div class="marquee" aria-hidden="true" data-depth data-scroll-parallax data-parallax-speed="-24" data-depth-y="-18">
           <div class="marquee__track">
             <span class="marquee__item"><span class="marquee__logo"><img src="img/tech/python.svg" alt="" decoding="async"></span>Python</span>
             <span class="marquee__item"><span class="marquee__logo"><img src="img/tech/java.svg" alt="" decoding="async"></span>Java</span>
@@ -327,15 +327,18 @@
     <!-- ============================ PROJECTS ============================ -->
     <section class="section" id="projects">
       <div class="wrap">
-        <div class="section-head" data-reveal="fade-up">
-          <span class="eyebrow">Selected work</span>
-          <h2 class="section-title">Projects built to hold up in real use</h2>
-          <p class="section-sub">Product, AI, and data-heavy builds where I focused on reliable architecture, strong backend systems, and the details that matter in production.</p>
-        </div>
+        <div class="projects-scene" data-scroll-scene="projects">
+          <div class="projects-scene__bg" aria-hidden="true"></div>
+          <div class="projects-sticky">
+            <div class="section-head projects-head" data-reveal="fade-up" data-scroll-parallax data-parallax-speed="-18">
+              <span class="eyebrow">Selected work</span>
+              <h2 class="section-title">Projects built to hold up in real use</h2>
+              <p class="section-sub">Product, AI, and data-heavy builds where I focused on reliable architecture, strong backend systems, and the details that matter in production.</p>
+            </div>
 
-        <div class="projects-grid" data-stagger="0.07">
+            <div class="projects-grid" data-stagger="0.07" data-project-grid>
           <!-- Featured 1 -->
-          <article class="proj proj--feat">
+          <article class="proj proj--feat" data-project-card>
             <div class="proj__glow"></div>
             <div class="proj__top">
               <div class="proj__head-row">
@@ -352,7 +355,7 @@
           </article>
 
           <!-- Featured 2 -->
-          <article class="proj proj--feat">
+          <article class="proj proj--feat" data-project-card>
             <div class="proj__glow"></div>
             <div class="proj__top">
               <div class="proj__head-row">
@@ -369,7 +372,7 @@
           </article>
 
           <!-- Standard 2-col cards -->
-          <article class="proj">
+          <article class="proj" data-project-card>
             <div class="proj__glow"></div>
             <div class="proj__top">
               <span class="proj__mark">Ep</span>
@@ -381,7 +384,7 @@
             <div class="proj__stack"><span class="t">React Native</span><span class="t">Flask</span><span class="t">AWS</span></div>
           </article>
 
-          <article class="proj">
+          <article class="proj" data-project-card>
             <div class="proj__glow"></div>
             <div class="proj__top">
               <span class="proj__mark">Pc</span>
@@ -393,7 +396,7 @@
             <div class="proj__stack"><span class="t">Python</span><span class="t">Flask</span><span class="t">LLM</span></div>
           </article>
 
-          <article class="proj">
+          <article class="proj" data-project-card>
             <div class="proj__glow"></div>
             <div class="proj__top">
               <span class="proj__mark">Nh</span>
@@ -405,7 +408,7 @@
             <div class="proj__stack"><span class="t">Neo4j</span><span class="t">D3.js</span><span class="t">Data Viz</span></div>
           </article>
 
-          <article class="proj">
+          <article class="proj" data-project-card>
             <div class="proj__glow"></div>
             <div class="proj__top">
               <span class="proj__mark">Ca</span>
@@ -417,7 +420,7 @@
             <div class="proj__stack"><span class="t">MERN</span><span class="t">MongoDB</span><span class="t">Google Cloud</span></div>
           </article>
 
-          <article class="proj">
+          <article class="proj" data-project-card>
             <div class="proj__glow"></div>
             <div class="proj__top">
               <span class="proj__mark">Bw</span>
@@ -429,7 +432,7 @@
             <div class="proj__stack"><span class="t">AWS</span><span class="t">Docker</span><span class="t">Analytics</span></div>
           </article>
 
-          <article class="proj">
+          <article class="proj" data-project-card>
             <div class="proj__glow"></div>
             <div class="proj__top">
               <span class="proj__mark">Pp</span>
@@ -441,7 +444,7 @@
             <div class="proj__stack"><span class="t">React Native</span><span class="t">APIs</span><span class="t">Mobile</span></div>
           </article>
 
-          <article class="proj">
+          <article class="proj" data-project-card>
             <div class="proj__glow"></div>
             <div class="proj__top">
               <span class="proj__mark">Ic</span>
@@ -452,13 +455,15 @@
             <p class="proj__desc">Recommendation system that helps students evaluate college options through Java, Flask, and MySQL-backed scoring and ranking workflows.</p>
             <div class="proj__stack"><span class="t">Java</span><span class="t">Flask</span><span class="t">MySQL</span></div>
           </article>
-        </div>
+            </div>
 
-        <div class="projects-foot" data-reveal="fade-up">
-          <a class="btn btn-soft" href="https://github.com/ka8540" target="_blank" rel="noopener">
-            View all projects on GitHub
-            <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a>
+            <div class="projects-foot" data-reveal="fade-up">
+              <a class="btn btn-soft" href="https://github.com/ka8540" target="_blank" rel="noopener">
+                View all projects on GitHub
+                <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -473,7 +478,7 @@
         </div>
 
         <div class="timeline" data-timeline>
-          <article class="tl-item" data-reveal="fade-up">
+          <article class="tl-item" data-reveal="fade-up" data-timeline-item>
             <div class="tl-card">
               <div class="tl-head">
                 <h3 class="tl-role">Dashboard Developer (Co-op)</h3>
@@ -485,7 +490,7 @@
             </div>
           </article>
 
-          <article class="tl-item" data-reveal="fade-up">
+          <article class="tl-item" data-reveal="fade-up" data-timeline-item>
             <div class="tl-card">
               <div class="tl-head">
                 <h3 class="tl-role">Course Assistant</h3>
@@ -497,7 +502,7 @@
             </div>
           </article>
 
-          <article class="tl-item" data-reveal="fade-up">
+          <article class="tl-item" data-reveal="fade-up" data-timeline-item>
             <div class="tl-card">
               <div class="tl-head">
                 <h3 class="tl-role">Software Engineer Intern</h3>
@@ -509,7 +514,7 @@
             </div>
           </article>
 
-          <article class="tl-item" data-reveal="fade-up">
+          <article class="tl-item" data-reveal="fade-up" data-timeline-item>
             <div class="tl-card">
               <div class="tl-head">
                 <h3 class="tl-role">Data Science &amp; AI/ML Engineering Intern</h3>
