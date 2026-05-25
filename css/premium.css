@@ -634,30 +634,71 @@ body.menu-open .mobile-nav { opacity: 1; visibility: visible; transform: none; }
   gap: clamp(36px, 5vw, 70px);
   align-items: start;
 }
-.about__media { position: relative; }
+.about__media {
+  position: relative;
+  max-width: 460px;
+}
 .about__photo {
+  position: relative;
   border-radius: var(--radius-lg);
   overflow: hidden;
   border: 1px solid var(--border);
   box-shadow: var(--shadow-md);
+  background: var(--surface-2);
 }
-.about__photo img { width: 100%; aspect-ratio: 4/4.2; object-fit: cover; object-position: center top; }
-.about__chip {
+.about__photo::after {
+  content: "";
   position: absolute;
-  bottom: -18px; left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 0;
-  background: var(--surface);
-  border: 1px solid var(--border-strong);
-  border-radius: 16px;
-  box-shadow: var(--shadow-md);
-  overflow: hidden;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, transparent 62%, color-mix(in srgb, var(--bg) 22%, transparent) 100%);
 }
-.about__chip div { padding: 14px 20px; text-align: center; }
-.about__chip div + div { border-left: 1px solid var(--border); }
-.about__chip b { display: block; font-family: var(--font-display); font-size: 20px; font-weight: 600; color: var(--text); }
-.about__chip span { font-size: 11px; color: var(--text-3); font-family: var(--font-mono); }
+.about__photo img {
+  width: 100%;
+  aspect-ratio: 4 / 4.35;
+  object-fit: cover;
+  object-position: center 16%;
+}
+.about__chip {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin: -34px 18px 0;
+  padding: 10px;
+  background: color-mix(in srgb, var(--surface) 94%, transparent);
+  border: 1px solid var(--border-strong);
+  border-radius: 18px;
+  box-shadow: var(--shadow-md);
+  backdrop-filter: blur(16px) saturate(135%);
+  -webkit-backdrop-filter: blur(16px) saturate(135%);
+}
+.about__chip div {
+  min-width: 0;
+  padding: 11px 10px 10px;
+  text-align: center;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface-2);
+}
+.about__chip b {
+  display: block;
+  font-family: var(--font-display);
+  font-size: clamp(15px, 1.45vw, 18px);
+  font-weight: 700;
+  line-height: 1.05;
+  color: var(--text);
+}
+.about__chip span {
+  display: block;
+  margin-top: 5px;
+  font-size: 10.5px;
+  line-height: 1.2;
+  color: var(--text-3);
+  font-family: var(--font-mono);
+  white-space: nowrap;
+}
 
 .about__body p { color: var(--text-2); font-size: 16.5px; }
 .about__body p + p { margin-top: 18px; }
@@ -1067,7 +1108,7 @@ body.menu-open .mobile-nav { opacity: 1; visibility: visible; transform: none; }
   .skills-grid { grid-template-columns: repeat(2, 1fr); }
   .proj, .proj--feat { grid-column: span 3; }
   .about { grid-template-columns: 1fr; gap: 56px; }
-  .about__media { max-width: 360px; }
+  .about__media { max-width: 420px; }
   .resume-cta { grid-template-columns: 1fr; }
   .resume-doc { display: none; }
 }
@@ -1090,7 +1131,12 @@ body.menu-open .mobile-nav { opacity: 1; visibility: visible; transform: none; }
 
 @media (max-width: 420px) {
   .snapshot { grid-template-columns: 1fr; }
+  .about__chip {
+    grid-template-columns: 1fr;
+    margin: 12px 0 0;
+  }
   .about__chip div { padding: 12px 14px; }
+  .about__chip span { white-space: normal; }
 }
 
 
@@ -1132,134 +1178,4 @@ body.menu-open .mobile-nav { opacity: 1; visibility: visible; transform: none; }
 /* Keep hover centered too */
 .skill-card:hover .skill-card__ic svg {
   transform: none !important;
-}
-
-/* ...existing code... */
-
-/* ===================== FIX: Hero mini stats bar ===================== */
-
-.hero__mini {
-  display: inline-flex !important;
-  align-items: center !important;
-  gap: 0 !important;
-  background: rgba(15, 23, 35, 0.72) !important;
-  border: 1px solid rgba(255, 255, 255, 0.08) !important;
-  border-radius: 14px !important;
-  padding: 8px 16px !important;
-  backdrop-filter: blur(12px) !important;
-  -webkit-backdrop-filter: blur(12px) !important;
-  width: auto !important;
-  max-width: fit-content !important;
-}
-
-.hero__mini > div {
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
-  justify-content: center !important;
-  padding: 2px 14px !important;
-  gap: 2px !important;
-  border-right: 1px solid rgba(255, 255, 255, 0.08) !important;
-}
-
-.hero__mini > div:last-child {
-  border-right: none !important;
-}
-
-.hero__mini b {
-  font-size: 0.88rem !important;
-  font-weight: 700 !important;
-  color: #ffffff !important;
-  letter-spacing: 0.01em !important;
-  line-height: 1.2 !important;
-}
-
-.hero__mini span {
-  font-size: 0.68rem !important;
-  color: rgba(255, 255, 255, 0.45) !important;
-  font-family: 'JetBrains Mono', monospace !important;
-  letter-spacing: 0.03em !important;
-  line-height: 1.2 !important;
-}
-
-html[data-theme="light"] .hero__mini {
-  background: rgba(255, 255, 255, 0.80) !important;
-  border-color: rgba(0, 0, 0, 0.08) !important;
-}
-
-html[data-theme="light"] .hero__mini b {
-  color: #0b1520 !important;
-}
-
-html[data-theme="light"] .hero__mini span {
-  color: rgba(11, 21, 32, 0.48) !important;
-}
-
-html[data-theme="light"] .hero__mini > div {
-  border-right-color: rgba(0, 0, 0, 0.08) !important;
-}
-
-/* ...existing code... */
-
-/* ===================== FIX: About chip stats bar ===================== */
-
-.about__chip {
-  display: inline-flex !important;
-  align-items: center !important;
-  gap: 0 !important;
-  background: rgba(15, 23, 35, 0.72) !important;
-  border: 1px solid rgba(255, 255, 255, 0.08) !important;
-  border-radius: 14px !important;
-  padding: 6px 12px !important;
-  backdrop-filter: blur(12px) !important;
-  -webkit-backdrop-filter: blur(12px) !important;
-  width: auto !important;
-  max-width: fit-content !important;
-}
-
-.about__chip > div {
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
-  justify-content: center !important;
-  padding: 2px 12px !important;
-  gap: 1px !important;
-  border-right: 1px solid rgba(255, 255, 255, 0.08) !important;
-}
-
-.about__chip > div:last-child {
-  border-right: none !important;
-}
-
-.about__chip b {
-  font-size: 0.85rem !important;
-  font-weight: 700 !important;
-  color: #ffffff !important;
-  letter-spacing: 0.01em !important;
-  line-height: 1.2 !important;
-}
-
-.about__chip span {
-  font-size: 0.65rem !important;
-  color: rgba(255, 255, 255, 0.45) !important;
-  font-family: 'JetBrains Mono', monospace !important;
-  letter-spacing: 0.03em !important;
-  line-height: 1.2 !important;
-}
-
-html[data-theme="light"] .about__chip {
-  background: rgba(255, 255, 255, 0.80) !important;
-  border-color: rgba(0, 0, 0, 0.08) !important;
-}
-
-html[data-theme="light"] .about__chip b {
-  color: #0b1520 !important;
-}
-
-html[data-theme="light"] .about__chip span {
-  color: rgba(11, 21, 32, 0.48) !important;
-}
-
-html[data-theme="light"] .about__chip > div {
-  border-right-color: rgba(0, 0, 0, 0.08) !important;
 }
