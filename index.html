@@ -74,16 +74,16 @@
 
   <main>
     <!-- =============================== HERO ============================== -->
-    <section class="hero" id="hero">
+    <section class="hero" id="hero" data-hero-depth>
       <div class="bg-fx">
-        <div class="bg-grid"></div>
-        <div class="glow glow--a"></div>
-        <div class="glow glow--b"></div>
+        <div class="bg-grid" data-depth data-depth-y="-18"></div>
+        <div class="glow glow--a" data-depth data-depth-x="18" data-depth-y="-72"></div>
+        <div class="glow glow--b" data-depth data-depth-x="-18" data-depth-y="-58"></div>
       </div>
 
       <div class="wrap">
         <div class="hero__inner">
-          <div class="hero__copy">
+          <div class="hero__copy" data-hero-copy>
             <span class="status-pill" data-reveal="fade-up"><span class="dot"></span> Open to Software Engineering roles · 2026</span>
 
             <h1 data-reveal="fade-up" data-delay="0.05">
@@ -126,15 +126,15 @@
           </div>
 
           <div class="hero__visual" data-reveal="scale" data-delay="0.15">
-            <div class="portrait-frame">
+            <div class="portrait-frame" data-depth data-depth-y="-28">
               <img src="img/front2.webp" alt="Portrait of Kush Jayesh Ahir, software engineer" width="900" height="871" fetchpriority="high">
               <span class="portrait-tag"><b>●</b> Kush Jayesh Ahir</span>
             </div>
-            <div class="float-card float-card--1">
+            <div class="float-card float-card--1" data-depth data-depth-x="18" data-depth-y="-52">
               <span class="fc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m8 6-6 6 6 6M16 6l6 6-6 6"/></svg></span>
               <span><b>Python · Java</b><span>backend &amp; APIs</span></span>
             </div>
-            <div class="float-card float-card--2">
+            <div class="float-card float-card--2" data-depth data-depth-x="-16" data-depth-y="-42">
               <span class="fc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19a4.5 4.5 0 0 0 .5-9 6 6 0 0 0-11.6-1.6A4 4 0 0 0 6.5 19Z"/></svg></span>
               <span><b>AWS · GCP</b><span>cloud-native</span></span>
             </div>
@@ -144,7 +144,7 @@
 
       <!-- credibility marquee -->
       <div class="wrap">
-        <div class="marquee" aria-hidden="true">
+        <div class="marquee" aria-hidden="true" data-depth data-depth-y="-18">
           <div class="marquee__track">
             <span class="marquee__item"><span class="marquee__logo"><img src="img/tech/python.svg" alt="" decoding="async"></span>Python</span>
             <span class="marquee__item"><span class="marquee__logo"><img src="img/tech/java.svg" alt="" decoding="async"></span>Java</span>
@@ -472,7 +472,7 @@
           <p class="section-sub">Co-op and internship roles across data &amp; analytics, backend microservices, and AI/ML engineering.</p>
         </div>
 
-        <div class="timeline">
+        <div class="timeline" data-timeline>
           <article class="tl-item" data-reveal="fade-up">
             <div class="tl-card">
               <div class="tl-head">
