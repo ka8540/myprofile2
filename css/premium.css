@@ -1128,6 +1128,7 @@ body.menu-open .to-top { opacity: 0; visibility: hidden; pointer-events: none; }
     border-color 260ms ease,
     box-shadow 260ms ease,
     background 260ms ease;
+  transition-delay: 0s !important;
 }
 .resume-doc[data-tilt] { --tilt-base-rotate: 2.5deg; }
 .resume-doc[data-tilt]:hover { --tilt-base-rotate: 0deg; }

@@ -42,17 +42,27 @@
       targets.forEach(function (el) { el.classList.add("in"); });
       return;
     }
+
+    function clearRevealDelay(el, delay) {
+      window.setTimeout(function () {
+        el.style.transitionDelay = "";
+      }, (delay + 0.85) * 1000);
+    }
+
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (!entry.isIntersecting) return;
         var el = entry.target;
         var delay = parseFloat(el.getAttribute("data-delay") || 0);
         if (delay) el.style.transitionDelay = delay + "s";
+        clearRevealDelay(el, delay);
 
         if (el.hasAttribute("data-stagger")) {
           var step = parseFloat(el.getAttribute("data-stagger")) || 0.08;
           Array.prototype.forEach.call(el.children, function (child, i) {
-            child.style.transitionDelay = (delay + i * step) + "s";
+            var childDelay = delay + i * step;
+            child.style.transitionDelay = childDelay + "s";
+            clearRevealDelay(child, childDelay);
           });
         }
         el.classList.add("in");
@@ -333,6 +343,7 @@
         state.rx = subtleOnly ? 0 : -(py - 0.5) * max * 2;
         state.scale = subtleOnly ? 1.006 : hoverScale;
         state.lift = subtleOnly ? -2 : hoverLift;
+        el.style.transitionDelay = "0s";
         el.classList.add("is-tilting");
         trackActive(el, reset);
         queueRender();
