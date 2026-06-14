@@ -72,6 +72,23 @@
     var tlProg = document.querySelector(".timeline__progress");
     var ticking = false;
 
+    function setToTopVisible(visible) {
+      if (!toTop) return;
+      toTop.classList.toggle("show", visible);
+      toTop.setAttribute("aria-hidden", visible ? "false" : "true");
+      toTop.tabIndex = visible ? 0 : -1;
+    }
+
+    function scrollBackToTop() {
+      var target = document.getElementById("hero") || document.body;
+      var behavior = reduceMotion ? "auto" : "smooth";
+      if (target && target.scrollIntoView) {
+        target.scrollIntoView({ behavior: behavior, block: "start" });
+      } else {
+        window.scrollTo({ top: 0, behavior: behavior });
+      }
+    }
+
     function update() {
       var y = window.scrollY || window.pageYOffset;
       var h = root.scrollHeight - window.innerHeight;
@@ -79,7 +96,7 @@
 
       if (nav) nav.classList.toggle("is-scrolled", y > 20);
       if (bar) bar.style.transform = "scaleX(" + Math.min(1, Math.max(0, p)) + ")";
-      if (toTop) toTop.classList.toggle("show", y > 600);
+      setToTopVisible(y > Math.min(600, window.innerHeight * 0.7));
 
       if (tl && tlProg) {
         var r = tl.getBoundingClientRect();
@@ -94,7 +111,11 @@
       if (!ticking) { window.requestAnimationFrame(update); ticking = true; }
     }, { passive: true });
     window.addEventListener("resize", update, { passive: true });
+    window.addEventListener("hashchange", update, { passive: true });
+    if (toTop) toTop.addEventListener("click", scrollBackToTop);
     update();
+    setTimeout(update, 0);
+    setTimeout(update, 250);
   }
 
   /* ------------------- Active section + sliding pill -------------------- */
@@ -235,65 +256,133 @@
   }
 
   /* ----------------------------- 3D tilt -------------------------------- */
-  /* Works for mouse, pen, and touch via pointer events. Rotation is applied
-     through CSS vars (--rx/--ry) + the .tilting class so it never clobbers the
-     reveal/hover transforms. Bound to EVERY [data-tilt] element. */
+  /* One reusable pointer system for every [data-tilt] surface. Each card owns
+     its measurements, CSS vars, reset state, and optional depth layers. */
   function initTilt() {
     if (reduceMotion) return;
     var cards = document.querySelectorAll("[data-tilt]");
     if (!cards.length) return;
+    var activeCards = [];
+
+    function trackActive(el, reset) {
+      for (var i = 0; i < activeCards.length; i++) {
+        if (activeCards[i].el === el) return;
+      }
+      activeCards.push({ el: el, reset: reset });
+    }
+
+    function untrackActive(el) {
+      activeCards = activeCards.filter(function (item) { return item.el !== el; });
+    }
+
+    function resetCardsOutside(e) {
+      activeCards.slice().forEach(function (item) {
+        var r = item.el.getBoundingClientRect();
+        var outside = e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom;
+        if (outside) item.reset();
+      });
+    }
 
     cards.forEach(function (el) {
-      var baseMax = parseFloat(el.getAttribute("data-tilt-max") || "8");
+      var strength = el.getAttribute("data-tilt-strength");
+      var baseMax = parseFloat(el.getAttribute("data-tilt-max") || (strength === "soft" ? "4" : "6"));
+      var hoverLift = strength === "soft" ? -4 : -6;
+      var hoverScale = strength === "soft" ? 1.008 : 1.012;
       var layers = el.querySelectorAll("[data-tilt-layer]");
-      var raf = null, rx = 0, ry = 0, mx = 50, my = 50;
+      var raf = null;
+      var state = {
+        rx: 0,
+        ry: 0,
+        scale: 1,
+        lift: 0,
+        shineX: 50,
+        shineY: 50
+      };
+
+      function isCoarseEvent(e) {
+        return e.pointerType === "touch" || (!finePointer && e.pointerType !== "mouse");
+      }
 
       function render() {
         raf = null;
-        el.style.setProperty("--rx", rx.toFixed(2) + "deg");
-        el.style.setProperty("--ry", ry.toFixed(2) + "deg");
-        el.style.setProperty("--mx", mx.toFixed(1) + "%");
-        el.style.setProperty("--my", my.toFixed(1) + "%");
+        el.style.setProperty("--tilt-x", state.rx.toFixed(2) + "deg");
+        el.style.setProperty("--tilt-y", state.ry.toFixed(2) + "deg");
+        el.style.setProperty("--tilt-scale", state.scale.toFixed(3));
+        el.style.setProperty("--tilt-z", state.lift.toFixed(1) + "px");
+        el.style.setProperty("--shine-x", state.shineX.toFixed(1) + "%");
+        el.style.setProperty("--shine-y", state.shineY.toFixed(1) + "%");
         for (var i = 0; i < layers.length; i++) {
           var d = parseFloat(layers[i].getAttribute("data-tilt-layer")) || 0;
           layers[i].style.transform =
-            "translateZ(" + d + "px) translate(" + (-ry * 1.2).toFixed(1) + "px," + (rx * 1.2).toFixed(1) + "px)";
+            "translateZ(" + d + "px) translate(" + (-state.ry * 1.2).toFixed(1) + "px," + (state.rx * 1.2).toFixed(1) + "px)";
         }
       }
 
-      function update(clientX, clientY, max) {
+      function queueRender() {
+        if (!raf) raf = requestAnimationFrame(render);
+      }
+
+      function update(clientX, clientY, max, subtleOnly) {
         var r = el.getBoundingClientRect();
         if (!r.width || !r.height) return;
         var px = Math.min(1, Math.max(0, (clientX - r.left) / r.width));
         var py = Math.min(1, Math.max(0, (clientY - r.top) / r.height));
-        mx = px * 100; my = py * 100;
-        ry = (px - 0.5) * max * 2;
-        rx = -(py - 0.5) * max * 2;
-        el.classList.add("tilting");
-        if (!raf) raf = requestAnimationFrame(render);
+        state.shineX = px * 100;
+        state.shineY = py * 100;
+        state.ry = subtleOnly ? 0 : (px - 0.5) * max * 2;
+        state.rx = subtleOnly ? 0 : -(py - 0.5) * max * 2;
+        state.scale = subtleOnly ? 1.006 : hoverScale;
+        state.lift = subtleOnly ? -2 : hoverLift;
+        el.classList.add("is-tilting");
+        trackActive(el, reset);
+        queueRender();
       }
 
       function reset() {
         if (raf) { cancelAnimationFrame(raf); raf = null; }
-        rx = ry = 0; mx = my = 50;
-        el.classList.remove("tilting");
-        el.style.removeProperty("--rx");
-        el.style.removeProperty("--ry");
-        el.style.setProperty("--mx", "50%");
-        el.style.setProperty("--my", "50%");
+        state.rx = 0;
+        state.ry = 0;
+        state.scale = 1;
+        state.lift = 0;
+        state.shineX = 50;
+        state.shineY = 50;
+        el.classList.remove("is-tilting");
+        el.style.removeProperty("--tilt-x");
+        el.style.removeProperty("--tilt-y");
+        el.style.removeProperty("--tilt-scale");
+        el.style.removeProperty("--tilt-z");
+        el.style.setProperty("--shine-x", "50%");
+        el.style.setProperty("--shine-y", "50%");
+        untrackActive(el);
         for (var i = 0; i < layers.length; i++) { layers[i].style.transform = ""; }
       }
 
-      // Pointer events unify mouse / pen / touch. Passive so page scroll is
-      // never blocked; touch uses a gentler max so it stays subtle.
+      function resetWhenOutside(e) {
+        if (!e.relatedTarget || !el.contains(e.relatedTarget)) reset();
+      }
+
+      el.addEventListener("pointerenter", function (e) {
+        if (isCoarseEvent(e)) return;
+        update(e.clientX, e.clientY, baseMax, false);
+      }, { passive: true });
       el.addEventListener("pointermove", function (e) {
-        var max = e.pointerType === "touch" ? Math.min(baseMax, 4) : baseMax;
-        update(e.clientX, e.clientY, max);
+        if (isCoarseEvent(e)) return;
+        update(e.clientX, e.clientY, baseMax, false);
+      }, { passive: true });
+      el.addEventListener("pointerdown", function (e) {
+        if (!isCoarseEvent(e)) return;
+        update(e.clientX, e.clientY, 0, true);
       }, { passive: true });
       el.addEventListener("pointerleave", reset);
+      el.addEventListener("pointerout", resetWhenOutside);
+      el.addEventListener("mouseleave", reset);
+      el.addEventListener("mouseout", resetWhenOutside);
       el.addEventListener("pointercancel", reset);
-      el.addEventListener("pointerup", function (e) { if (e.pointerType !== "mouse") reset(); });
+      el.addEventListener("pointerup", function (e) { if (isCoarseEvent(e)) reset(); });
     });
+
+    document.addEventListener("pointermove", resetCardsOutside, { passive: true });
+    document.addEventListener("mousemove", resetCardsOutside, { passive: true });
   }
 
   /* ------------------------ Cursor aura + parallax ---------------------- */
