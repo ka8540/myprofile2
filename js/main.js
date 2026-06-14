@@ -77,7 +77,7 @@
       var h = root.scrollHeight - window.innerHeight;
       var p = h > 0 ? y / h : 0;
 
-      if (nav) nav.classList.toggle("is-scrolled", y > 12);
+      if (nav) nav.classList.toggle("is-scrolled", y > 20);
       if (bar) bar.style.transform = "scaleX(" + Math.min(1, Math.max(0, p)) + ")";
       if (toTop) toTop.classList.toggle("show", y > 600);
 
@@ -301,13 +301,18 @@
   }
 
   /* --------------------- Particle constellation ------------------------- */
+  /* Restores the original tsParticles look (white dots + teal links + mouse
+     repulse) as a lightweight vanilla canvas — no external library. */
   function initParticles() {
     var canvas = document.getElementById("fx-canvas");
     if (!canvas || reduceMotion) return;
     var ctx = canvas.getContext("2d");
     var dpr = Math.min(window.devicePixelRatio || 1, 2);
-    var w = 0, h = 0, parts = [], dot = "rgba(140,180,255,.7)", line = "rgba(120,160,240,.14)";
+    var w = 0, h = 0, parts = [], linkDist = 130, maxd2 = linkDist * linkDist;
+    var dot = "rgba(255,255,255,.72)", line = "rgba(0,255,198,.28)";
     var running = true;
+    var mouse = { x: -9999, y: -9999, active: false };
+    var REP = 110, REP2 = REP * REP; // repulse radius
 
     function colors() {
       var cs = getComputedStyle(root);
@@ -320,13 +325,15 @@
       w = canvas.clientWidth; h = canvas.clientHeight;
       canvas.width = Math.floor(w * dpr); canvas.height = Math.floor(h * dpr);
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      var count = Math.min(58, Math.max(18, Math.floor((w * h) / 26000)));
+      var mobile = w <= 768;
+      linkDist = mobile ? 100 : 132; maxd2 = linkDist * linkDist;
+      var count = mobile ? 26 : Math.min(66, Math.max(38, Math.floor((w * h) / 20000)));
       parts = [];
       for (var i = 0; i < count; i++) {
         parts.push({
           x: Math.random() * w, y: Math.random() * h,
-          vx: (Math.random() - 0.5) * 0.28, vy: (Math.random() - 0.5) * 0.28,
-          r: Math.random() * 1.6 + 0.7
+          vx: (Math.random() - 0.5) * 0.5, vy: (Math.random() - 0.5) * 0.5,
+          r: Math.random() * 1.5 + 2.2
         });
       }
     }
@@ -337,21 +344,35 @@
       for (var i = 0; i < parts.length; i++) {
         var p = parts[i];
         p.x += p.vx; p.y += p.vy;
-        if (p.x < 0 || p.x > w) p.vx *= -1;
-        if (p.y < 0 || p.y > h) p.vy *= -1;
+
+        // mouse repulse — particles push away from the cursor
+        if (mouse.active) {
+          var mdx = p.x - mouse.x, mdy = p.y - mouse.y, md2 = mdx * mdx + mdy * mdy;
+          if (md2 < REP2 && md2 > 0.01) {
+            var md = Math.sqrt(md2), f = (REP - md) / REP;
+            p.x += (mdx / md) * f * 3.4;
+            p.y += (mdy / md) * f * 3.4;
+          }
+        }
+
+        // wrap around edges
+        if (p.x < -14) p.x = w + 14; else if (p.x > w + 14) p.x = -14;
+        if (p.y < -14) p.y = h + 14; else if (p.y > h + 14) p.y = -14;
+
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
         ctx.fillStyle = dot;
         ctx.fill();
+
         for (var j = i + 1; j < parts.length; j++) {
           var q = parts[j];
           var dx = p.x - q.x, dy = p.y - q.y;
           var dist = dx * dx + dy * dy;
-          if (dist < 16900) { // 130px
+          if (dist < maxd2) {
             ctx.beginPath();
             ctx.moveTo(p.x, p.y); ctx.lineTo(q.x, q.y);
             ctx.strokeStyle = line;
-            ctx.globalAlpha = 1 - dist / 16900;
+            ctx.globalAlpha = 1 - dist / maxd2;
             ctx.lineWidth = 1;
             ctx.stroke();
             ctx.globalAlpha = 1;
@@ -364,6 +385,14 @@
     colors();
     resize();
     window.addEventListener("resize", resize, { passive: true });
+    if (finePointer) {
+      window.addEventListener("pointermove", function (e) {
+        mouse.x = e.clientX; mouse.y = e.clientY; mouse.active = true;
+      }, { passive: true });
+      window.addEventListener("pointerout", function (e) {
+        if (!e.relatedTarget) mouse.active = false;
+      });
+    }
     document.addEventListener("visibilitychange", function () {
       running = !document.hidden;
       if (running) requestAnimationFrame(frame);
