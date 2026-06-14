@@ -235,40 +235,64 @@
   }
 
   /* ----------------------------- 3D tilt -------------------------------- */
+  /* Works for mouse, pen, and touch via pointer events. Rotation is applied
+     through CSS vars (--rx/--ry) + the .tilting class so it never clobbers the
+     reveal/hover transforms. Bound to EVERY [data-tilt] element. */
   function initTilt() {
-    if (!finePointer || reduceMotion) return;
-    document.querySelectorAll("[data-tilt]").forEach(function (el) {
-      var max = parseFloat(el.getAttribute("data-tilt-max") || "8");
+    if (reduceMotion) return;
+    var cards = document.querySelectorAll("[data-tilt]");
+    if (!cards.length) return;
+
+    cards.forEach(function (el) {
+      var baseMax = parseFloat(el.getAttribute("data-tilt-max") || "8");
       var layers = el.querySelectorAll("[data-tilt-layer]");
       var raf = null, rx = 0, ry = 0, mx = 50, my = 50;
 
-      function apply() {
+      function render() {
         raf = null;
-        el.style.transform = "perspective(900px) rotateX(" + rx + "deg) rotateY(" + ry + "deg)";
-        el.style.setProperty("--mx", mx + "%");
-        el.style.setProperty("--my", my + "%");
-        layers.forEach(function (l) {
-          var d = parseFloat(l.getAttribute("data-tilt-layer")) || 0;
-          l.style.transform = "translateZ(" + d + "px) translate(" + (-ry * 1.3) + "px," + (rx * 1.3) + "px)";
-        });
+        el.style.setProperty("--rx", rx.toFixed(2) + "deg");
+        el.style.setProperty("--ry", ry.toFixed(2) + "deg");
+        el.style.setProperty("--mx", mx.toFixed(1) + "%");
+        el.style.setProperty("--my", my.toFixed(1) + "%");
+        for (var i = 0; i < layers.length; i++) {
+          var d = parseFloat(layers[i].getAttribute("data-tilt-layer")) || 0;
+          layers[i].style.transform =
+            "translateZ(" + d + "px) translate(" + (-ry * 1.2).toFixed(1) + "px," + (rx * 1.2).toFixed(1) + "px)";
+        }
       }
-      el.addEventListener("pointermove", function (e) {
+
+      function update(clientX, clientY, max) {
         var r = el.getBoundingClientRect();
-        var px = (e.clientX - r.left) / r.width;
-        var py = (e.clientY - r.top) / r.height;
+        if (!r.width || !r.height) return;
+        var px = Math.min(1, Math.max(0, (clientX - r.left) / r.width));
+        var py = Math.min(1, Math.max(0, (clientY - r.top) / r.height));
         mx = px * 100; my = py * 100;
         ry = (px - 0.5) * max * 2;
         rx = -(py - 0.5) * max * 2;
-        if (!raf) raf = requestAnimationFrame(apply);
-      });
-      el.addEventListener("pointerleave", function () {
+        el.classList.add("tilting");
+        if (!raf) raf = requestAnimationFrame(render);
+      }
+
+      function reset() {
+        if (raf) { cancelAnimationFrame(raf); raf = null; }
         rx = ry = 0; mx = my = 50;
-        el.style.transform = "";
-        layers.forEach(function (l) {
-          var d = parseFloat(l.getAttribute("data-tilt-layer")) || 0;
-          l.style.transform = "translateZ(" + d + "px)";
-        });
-      });
+        el.classList.remove("tilting");
+        el.style.removeProperty("--rx");
+        el.style.removeProperty("--ry");
+        el.style.setProperty("--mx", "50%");
+        el.style.setProperty("--my", "50%");
+        for (var i = 0; i < layers.length; i++) { layers[i].style.transform = ""; }
+      }
+
+      // Pointer events unify mouse / pen / touch. Passive so page scroll is
+      // never blocked; touch uses a gentler max so it stays subtle.
+      el.addEventListener("pointermove", function (e) {
+        var max = e.pointerType === "touch" ? Math.min(baseMax, 4) : baseMax;
+        update(e.clientX, e.clientY, max);
+      }, { passive: true });
+      el.addEventListener("pointerleave", reset);
+      el.addEventListener("pointercancel", reset);
+      el.addEventListener("pointerup", function (e) { if (e.pointerType !== "mouse") reset(); });
     });
   }
 

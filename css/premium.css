@@ -1001,6 +1001,19 @@ html[data-theme="light"] .about__photo::after { background: linear-gradient(160d
 [data-stagger].in > * { opacity: 1; transform: none; }
 
 /* ----------------------------------------------------------------------------
+   21b. CARD TILT
+   Driven entirely by CSS vars + the .tilting class (set from JS) so it never
+   fights the reveal/hover transforms above. Declared after all card + reveal
+   rules so it wins on source order without !important. Removing .tilting
+   reverts the card to its reveal/hover transform with a smooth transition.
+---------------------------------------------------------------------------- */
+[data-tilt].tilting {
+  transform: perspective(950px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+  transition: transform .12s ease-out;
+  will-change: transform;
+}
+
+/* ----------------------------------------------------------------------------
    22. RESPONSIVE
 ---------------------------------------------------------------------------- */
 @media (max-width: 1024px) {
@@ -1029,9 +1042,27 @@ html[data-theme="light"] .about__photo::after { background: linear-gradient(160d
 
 @media (max-width: 560px) {
   body { font-size: 15px; }
-  .nav { top: 10px; padding-inline: 12px; }
-  .nav__shell { padding: 8px 8px 8px 14px; }
+
+  /* Compact, glassy-before-scroll floating navbar */
+  .nav { top: 8px; padding-inline: 12px; }
+  .nav.is-scrolled { top: 6px; }
+  .nav__shell {
+    padding: 6px 8px 6px 10px;
+    gap: 8px;
+    border-radius: 16px;
+    background: var(--glass-strong);
+    -webkit-backdrop-filter: blur(16px) saturate(150%);
+    backdrop-filter: blur(16px) saturate(150%);
+    border-color: var(--border);
+    box-shadow: 0 10px 26px -18px rgba(0, 0, 0, .55);
+  }
+  .brand { gap: 9px; }
+  .brand__mark { width: 33px; height: 33px; border-radius: 9px; font-size: .8rem; }
+  .brand__txt { font-size: .94rem; }
   .brand__txt small { display: none; }
+  .nav__right { gap: 8px; margin-left: auto; }
+  .theme-toggle, .burger { width: 38px; height: 38px; border-radius: 10px; }
+
   .hero { padding-top: calc(var(--nav-h) + 20px); }
   .hero__ctas .btn { flex: 1 1 100%; justify-content: center; }
   .snapshot { grid-template-columns: 1fr 1fr; gap: 12px; }
