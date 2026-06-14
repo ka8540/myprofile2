@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#0a0b0f">
+  <meta name="theme-color" content="#070a14">
   <title>Kush Jayesh Ahir — Software Engineer · Backend, Cloud & Data</title>
   <meta name="description" content="Kush Jayesh Ahir — Software Engineer building scalable backend systems, cloud-native data platforms, and AI-powered products with Python, Java, and modern web stacks. M.S. Computer Software Engineering, RIT.">
   <meta name="author" content="Kush Jayesh Ahir">
@@ -21,39 +21,54 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/premium.css">
 </head>
 
 <body>
-  <a href="#hero" class="visually-hidden" style="position:absolute;left:-9999px;top:0;">Skip to content</a>
-  <div class="scroll-progress" aria-hidden="true"></div>
+  <a href="#hero" class="skip-link">Skip to content</a>
+  <div class="scroll-progress" aria-hidden="true"><span></span></div>
+
+  <!-- ===================== GLOBAL BACKGROUND FX ===================== -->
+  <div class="fx" aria-hidden="true">
+    <canvas id="fx-canvas"></canvas>
+    <div class="fx__mesh"></div>
+    <div class="fx__grid"></div>
+    <div class="orb orb--1"></div>
+    <div class="orb orb--2"></div>
+    <div class="orb orb--3"></div>
+    <div class="fx__noise"></div>
+  </div>
+  <div class="cursor-aura" id="cursor-aura" aria-hidden="true"></div>
 
   <!-- ============================== NAVBAR ============================== -->
   <header class="nav" id="nav">
-    <div class="nav__inner">
+    <div class="nav__shell">
       <a href="#hero" class="brand" aria-label="Kush Jayesh Ahir — home">
-        <span class="brand__mark">KA</span>
-        <span>Kush Ahir<small>Software Engineer</small></span>
+        <span class="brand__mark"><span>KA</span></span>
+        <span class="brand__txt">Kush Ahir<small>Software Engineer</small></span>
       </a>
 
       <nav class="nav__links" aria-label="Primary">
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#experience">Experience</a>
-        <a href="#education">Education</a>
-        <a href="#research">Research</a>
-        <a href="#contact">Contact</a>
+        <span class="nav__pill" aria-hidden="true"></span>
+        <a href="#about" class="nav__link">About</a>
+        <a href="#skills" class="nav__link">Skills</a>
+        <a href="#projects" class="nav__link">Projects</a>
+        <a href="#experience" class="nav__link">Experience</a>
+        <a href="#education" class="nav__link">Education</a>
+        <a href="#research" class="nav__link">Research</a>
+        <a href="#contact" class="nav__link">Contact</a>
       </nav>
 
       <div class="nav__right">
         <button class="theme-toggle" data-theme-toggle aria-label="Toggle color theme">
-          <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2M12 19.5v2M21.5 12h-2M4.5 12h-2M18.4 5.6l-1.4 1.4M7 17l-1.4 1.4M18.4 18.4 17 17M7 7 5.6 5.6"/></svg>
-          <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"/></svg>
+          <span class="theme-toggle__track">
+            <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2M12 19.5v2M21.5 12h-2M4.5 12h-2M18.4 5.6l-1.4 1.4M7 17l-1.4 1.4M18.4 18.4 17 17M7 7 5.6 5.6"/></svg>
+            <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"/></svg>
+          </span>
         </button>
-        <a href="#contact" class="btn btn-primary btn-sm nav__cta">Get in touch</a>
+        <a href="#contact" class="btn btn-primary btn-sm nav__cta" data-magnetic>Get in touch</a>
         <button class="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
           <span></span><span></span><span></span>
         </button>
@@ -62,36 +77,39 @@
   </header>
 
   <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile">
-    <a href="#about">About <span>01</span></a>
-    <a href="#skills">Skills <span>02</span></a>
-    <a href="#projects">Projects <span>03</span></a>
-    <a href="#experience">Experience <span>04</span></a>
-    <a href="#education">Education <span>05</span></a>
-    <a href="#research">Research <span>06</span></a>
-    <a href="#contact">Contact <span>07</span></a>
-    <a href="#contact" class="btn btn-primary">Get in touch</a>
+    <a href="#about"><span class="mn__no">01</span> About</a>
+    <a href="#skills"><span class="mn__no">02</span> Skills</a>
+    <a href="#projects"><span class="mn__no">03</span> Projects</a>
+    <a href="#experience"><span class="mn__no">04</span> Experience</a>
+    <a href="#education"><span class="mn__no">05</span> Education</a>
+    <a href="#research"><span class="mn__no">06</span> Research</a>
+    <a href="#contact"><span class="mn__no">07</span> Contact</a>
+    <a href="#contact" class="btn btn-primary mobile-nav__cta">Get in touch</a>
   </nav>
+  <div class="mobile-scrim" id="mobile-scrim" aria-hidden="true"></div>
 
   <main>
     <!-- =============================== HERO ============================== -->
     <section class="hero" id="hero">
-      <div class="bg-fx">
-        <div class="bg-grid"></div>
-        <div class="glow glow--a"></div>
-        <div class="glow glow--b"></div>
-      </div>
-
       <div class="wrap">
         <div class="hero__inner">
           <div class="hero__copy">
-            <span class="status-pill" data-reveal="fade-up"><span class="dot"></span> Open to Software Engineering roles · 2026</span>
+            <span class="status-pill" data-reveal="fade-up">
+              <span class="status-pill__dot"></span> Open to Software Engineering roles · 2026
+            </span>
 
-            <h1 data-reveal="fade-up" data-delay="0.05">
-              Hi, I'm Kush.<br>I build <span class="grad">scalable backend</span> &amp; data systems.
+            <h1 class="hero__title" data-reveal="fade-up" data-delay="0.05">
+              <span class="hero__line">Hi, I'm Kush.</span>
+              <span class="hero__line">I build <span class="grad">scalable backend</span></span>
+              <span class="hero__line">&amp; data systems.</span>
             </h1>
 
             <p class="hero__role" data-reveal="fade-up" data-delay="0.1">
-              <span>&gt;</span><span class="typed" data-typed='["Backend Engineer","Cloud-Native Engineer","Full-Stack Developer","Data &amp; Analytics Engineer","AWS Solutions Builder"]'>Backend Engineer</span>
+              <span class="hero__role-prompt">&gt;_</span>
+              <span class="role-rotator" data-roles='["Backend Engineer","Cloud-Native Engineer","Full-Stack Developer","Data &amp; Analytics Engineer","AWS Solutions Builder"]'>
+                <span class="role-rotator__word">Backend Engineer</span>
+              </span>
+              <span class="role-rotator__caret" aria-hidden="true"></span>
             </p>
 
             <p class="hero__desc" data-reveal="fade-up" data-delay="0.15">
@@ -99,51 +117,66 @@
             </p>
 
             <div class="hero__ctas" data-reveal="fade-up" data-delay="0.2">
-              <a class="btn btn-primary" href="https://drive.google.com/file/d/1ZNYicCihzlP0S_pLmAMnvWSAFDNkjqI5/view?usp=sharing" target="_blank" rel="noopener">
+              <a class="btn btn-primary" data-magnetic href="https://drive.google.com/file/d/1ZNYicCihzlP0S_pLmAMnvWSAFDNkjqI5/view?usp=sharing" target="_blank" rel="noopener">
                 View Resume
                 <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
               </a>
-              <a class="btn btn-ghost" href="#projects">See Projects</a>
-              <a class="btn btn-ghost" href="#contact">Get in Touch</a>
+              <a class="btn btn-ghost" data-magnetic href="#projects">See Projects</a>
+              <a class="btn btn-ghost" data-magnetic href="#contact">Get in Touch</a>
             </div>
 
             <div class="hero__social" data-reveal="fade-up" data-delay="0.25">
-              <a href="https://github.com/ka8540" target="_blank" rel="noopener" aria-label="GitHub">
+              <a href="https://github.com/ka8540" target="_blank" rel="noopener" aria-label="GitHub" class="icon-link">
                 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.7.4-1.3.7-1.5-2.5-.3-5.2-1.3-5.2-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0C17.3 5.1 18.3 5.4 18.3 5.4c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.2 5.7.4.3.8 1 .8 2.1v3.1c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5Z"/></svg>
               </a>
-              <a href="https://www.linkedin.com/in/kush-ahir/" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <a href="https://www.linkedin.com/in/kush-ahir/" target="_blank" rel="noopener" aria-label="LinkedIn" class="icon-link">
                 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 1 1 0 3.5a2.5 2.5 0 0 1 4.98 0ZM.3 8.3h4.4V24H.3V8.3Zm7.4 0h4.2v2.1h.1c.6-1.1 2-2.3 4.2-2.3 4.5 0 5.3 2.9 5.3 6.7V24h-4.4v-7.3c0-1.7 0-4-2.4-4s-2.8 1.9-2.8 3.8V24H7.7V8.3Z"/></svg>
               </a>
-              <a href="mailto:kush.ahir2024@gmail.com" aria-label="Email">
+              <a href="mailto:kush.ahir2024@gmail.com" aria-label="Email" class="icon-link">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="m3 6 9 7 9-7"/></svg>
               </a>
               <span class="sep" aria-hidden="true"></span>
               <span class="loc">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s7-5.7 7-11a7 7 0 1 0-14 0c0 5.3 7 11 7 11Z"/><circle cx="12" cy="10" r="2.4"/></svg>
-                Chandler, AZ 
+                Chandler, AZ
               </span>
             </div>
           </div>
 
-          <div class="hero__visual" data-reveal="scale" data-delay="0.15">
-            <div class="portrait-frame">
-              <img src="img/front2.webp" alt="Portrait of Kush Jayesh Ahir, software engineer" width="900" height="871" fetchpriority="high">
-              <span class="portrait-tag"><b>●</b> Kush Jayesh Ahir</span>
-            </div>
-            <div class="float-card float-card--1">
-              <span class="fc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m8 6-6 6 6 6M16 6l6 6-6 6"/></svg></span>
-              <span><b>Python · Java</b><span>backend &amp; APIs</span></span>
-            </div>
-            <div class="float-card float-card--2">
-              <span class="fc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19a4.5 4.5 0 0 0 .5-9 6 6 0 0 0-11.6-1.6A4 4 0 0 0 6.5 19Z"/></svg></span>
-              <span><b>AWS · GCP</b><span>cloud-native</span></span>
+          <div class="hero__visual" data-reveal="scale" data-delay="0.15" data-parallax>
+            <div class="portrait" data-tilt data-tilt-max="9">
+              <span class="portrait__ring" aria-hidden="true"></span>
+              <span class="portrait__glow" aria-hidden="true"></span>
+              <div class="portrait__frame">
+                <img src="img/front2.webp" alt="Portrait of Kush Jayesh Ahir, software engineer" width="900" height="871" fetchpriority="high">
+                <span class="portrait__scan" aria-hidden="true"></span>
+                <span class="portrait__tag"><b>●</b> Kush Jayesh Ahir</span>
+              </div>
+              <div class="float-card float-card--1" data-tilt-layer="22">
+                <span class="fc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m8 6-6 6 6 6M16 6l6 6-6 6"/></svg></span>
+                <span class="fc-txt"><b>Python · Java</b><span>backend &amp; APIs</span></span>
+              </div>
+              <div class="float-card float-card--2" data-tilt-layer="32">
+                <span class="fc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19a4.5 4.5 0 0 0 .5-9 6 6 0 0 0-11.6-1.6A4 4 0 0 0 6.5 19Z"/></svg></span>
+                <span class="fc-txt"><b>AWS · GCP</b><span>cloud-native</span></span>
+              </div>
+              <div class="float-card float-card--3" data-tilt-layer="44">
+                <span class="fc-dot"></span>
+                <span class="fc-txt"><b>99.9%</b><span>uptime mindset</span></span>
+              </div>
             </div>
           </div>
         </div>
+
+        <!-- scroll hint -->
+        <a class="scroll-hint" href="#about" aria-label="Scroll to about" data-reveal="fade-up" data-delay="0.35">
+          <span class="scroll-hint__mouse"><span></span></span>
+          <span>Scroll</span>
+        </a>
       </div>
 
       <!-- credibility marquee -->
-      <div class="wrap">
+      <div class="marquee-wrap">
         <div class="marquee" aria-hidden="true">
           <div class="marquee__track">
             <span class="marquee__item"><span class="marquee__logo"><img src="img/tech/python.svg" alt="" decoding="async"></span>Python</span>
@@ -172,26 +205,30 @@
     </section>
 
     <!-- ============================ SNAPSHOT ============================= -->
-    <section class="section section--tint" aria-label="Snapshot">
+    <section class="section section--snapshot" aria-label="Snapshot">
       <div class="wrap">
-        <div class="snapshot" data-stagger="0.09">
-          <article class="stat">
-            <div class="stat__num">2.5<small>+ yrs</small></div>
+        <div class="snapshot" data-stagger="0.1">
+          <article class="stat" data-reveal="fade-up">
+            <span class="stat__spark" aria-hidden="true"></span>
+            <div class="stat__num"><span data-count="2.5" data-decimals="1">2.5</span><small>+ yrs</small></div>
             <div class="stat__label">Engineering experience</div>
             <div class="stat__sub">internships + co-op</div>
           </article>
-          <article class="stat">
-            <div class="stat__num">9</div>
+          <article class="stat" data-reveal="fade-up">
+            <span class="stat__spark" aria-hidden="true"></span>
+            <div class="stat__num"><span data-count="9">9</span></div>
             <div class="stat__label">Shipped projects</div>
             <div class="stat__sub">backend · cloud · AI · data</div>
           </article>
-          <article class="stat">
-            <div class="stat__num">3</div>
+          <article class="stat" data-reveal="fade-up">
+            <span class="stat__spark" aria-hidden="true"></span>
+            <div class="stat__num"><span data-count="3">3</span></div>
             <div class="stat__label">Research papers</div>
             <div class="stat__sub">architecture &amp; NLP</div>
           </article>
-          <article class="stat">
-            <div class="stat__num">3.71<small>/4.0</small></div>
+          <article class="stat" data-reveal="fade-up">
+            <span class="stat__spark" aria-hidden="true"></span>
+            <div class="stat__num"><span data-count="3.71" data-decimals="2">3.71</span><small>/4.0</small></div>
             <div class="stat__label">M.S. GPA · RIT</div>
             <div class="stat__sub">software engineering</div>
           </article>
@@ -204,8 +241,11 @@
       <div class="wrap">
         <div class="about">
           <div class="about__media" data-reveal="left">
-            <div class="about__photo">
+            <div class="about__photo" data-tilt data-tilt-max="6">
+              <span class="about__photo-glow" aria-hidden="true"></span>
               <img src="img/profile.webp" alt="Kush Jayesh Ahir" width="900" height="871" loading="lazy">
+              <span class="about__corner about__corner--tl" aria-hidden="true"></span>
+              <span class="about__corner about__corner--br" aria-hidden="true"></span>
             </div>
             <div class="about__chip">
               <div><b>M.S.</b><span>RIT · 2025</span></div>
@@ -215,8 +255,8 @@
           </div>
 
           <div class="about__body" data-reveal="right">
-            <span class="eyebrow">About</span>
-            <h2 class="section-title">Backend, cloud &amp; data — built for production.</h2>
+            <span class="eyebrow"><span class="eyebrow__line"></span>About</span>
+            <h2 class="section-title">Backend, cloud &amp; data — <span class="grad">built for production.</span></h2>
             <p>
               I'm a software engineer with hands-on experience across <strong>backend development, data pipelines, and cloud-deployed systems</strong>. I work primarily in Python and Java, building scalable APIs and services with Flask and Spring Boot and wiring them into modern front-ends like React.
             </p>
@@ -252,16 +292,17 @@
     </section>
 
     <!-- ============================== SKILLS ============================ -->
-    <section class="section section--tint" id="skills">
+    <section class="section" id="skills">
       <div class="wrap">
         <div class="section-head" data-reveal="fade-up">
-          <span class="eyebrow">Stack</span>
+          <span class="eyebrow"><span class="eyebrow__line"></span>Stack</span>
           <h2 class="section-title">Tools I build with</h2>
           <p class="section-sub">The technologies and practices I reach for to ship scalable, reliable software — grouped by where they live in the stack.</p>
         </div>
 
         <div class="skills-grid" data-stagger="0.08">
-          <article class="skill-card">
+          <article class="skill-card" data-reveal="fade-up" data-tilt data-tilt-max="5">
+            <span class="skill-card__shine" aria-hidden="true"></span>
             <div class="skill-card__head">
               <span class="skill-card__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m8 6-6 6 6 6M16 6l6 6-6 6"/></svg></span>
               <div><h3>Languages &amp; Frameworks</h3><span>core engineering</span></div>
@@ -271,7 +312,8 @@
             </div>
           </article>
 
-          <article class="skill-card">
+          <article class="skill-card" data-reveal="fade-up" data-tilt data-tilt-max="5">
+            <span class="skill-card__shine" aria-hidden="true"></span>
             <div class="skill-card__head">
               <span class="skill-card__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19a4.5 4.5 0 0 0 .5-9 6 6 0 0 0-11.6-1.6A4 4 0 0 0 6.5 19Z"/></svg></span>
               <div><h3>Cloud &amp; DevOps</h3><span>ship &amp; scale</span></div>
@@ -281,7 +323,8 @@
             </div>
           </article>
 
-          <article class="skill-card">
+          <article class="skill-card" data-reveal="fade-up" data-tilt data-tilt-max="5">
+            <span class="skill-card__shine" aria-hidden="true"></span>
             <div class="skill-card__head">
               <span class="skill-card__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg></span>
               <div><h3>Databases</h3><span>relational &amp; NoSQL</span></div>
@@ -291,7 +334,8 @@
             </div>
           </article>
 
-          <article class="skill-card">
+          <article class="skill-card" data-reveal="fade-up" data-tilt data-tilt-max="5">
+            <span class="skill-card__shine" aria-hidden="true"></span>
             <div class="skill-card__head">
               <span class="skill-card__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l3-4 3 2 4-6"/></svg></span>
               <div><h3>Data &amp; Analytics</h3><span>pipelines &amp; BI</span></div>
@@ -301,7 +345,8 @@
             </div>
           </article>
 
-          <article class="skill-card">
+          <article class="skill-card" data-reveal="fade-up" data-tilt data-tilt-max="5">
+            <span class="skill-card__shine" aria-hidden="true"></span>
             <div class="skill-card__head">
               <span class="skill-card__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></span>
               <div><h3>Testing &amp; QA</h3><span>reliability</span></div>
@@ -311,7 +356,8 @@
             </div>
           </article>
 
-          <article class="skill-card">
+          <article class="skill-card" data-reveal="fade-up" data-tilt data-tilt-max="5">
+            <span class="skill-card__shine" aria-hidden="true"></span>
             <div class="skill-card__head">
               <span class="skill-card__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="m2 17 10 5 10-5M2 12l10 5 10-5"/></svg></span>
               <div><h3>Practices</h3><span>foundations</span></div>
@@ -328,19 +374,20 @@
     <section class="section" id="projects">
       <div class="wrap">
         <div class="section-head" data-reveal="fade-up">
-          <span class="eyebrow">Selected work</span>
+          <span class="eyebrow"><span class="eyebrow__line"></span>Selected work</span>
           <h2 class="section-title">Projects built to hold up in real use</h2>
           <p class="section-sub">Product, AI, and data-heavy builds where I focused on reliable architecture, strong backend systems, and the details that matter in production.</p>
         </div>
 
         <div class="projects-grid" data-stagger="0.07">
           <!-- Featured 1 -->
-          <article class="proj proj--feat">
+          <article class="proj proj--feat" data-reveal="fade-up" data-tilt data-tilt-max="6">
+            <span class="proj__shine" aria-hidden="true"></span>
             <div class="proj__glow"></div>
             <div class="proj__top">
               <div class="proj__head-row">
                 <span class="proj__mark">S</span>
-                <span class="proj__cat" style="text-align:left">Email Ops · SaaS</span>
+                <span class="proj__cat">Email Ops · SaaS</span>
               </div>
               <a class="proj__repo" href="https://github.com/ka8540/Sendloom" target="_blank" rel="noopener" aria-label="Sendloom on GitHub">
                 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.7.4-1.3.7-1.5-2.5-.3-5.2-1.3-5.2-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0C17.3 5.1 18.3 5.4 18.3 5.4c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.2 5.7.4.3.8 1 .8 2.1v3.1c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5Z"/></svg>
@@ -352,12 +399,13 @@
           </article>
 
           <!-- Featured 2 -->
-          <article class="proj proj--feat">
+          <article class="proj proj--feat" data-reveal="fade-up" data-tilt data-tilt-max="6">
+            <span class="proj__shine" aria-hidden="true"></span>
             <div class="proj__glow"></div>
             <div class="proj__top">
               <div class="proj__head-row">
                 <span class="proj__mark">E</span>
-                <span class="proj__cat" style="text-align:left">EdTech · AI Workflow</span>
+                <span class="proj__cat">EdTech · AI Workflow</span>
               </div>
               <a class="proj__repo" href="https://github.com/ka8540/Examora" target="_blank" rel="noopener" aria-label="Examora on GitHub">
                 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.7.4-1.3.7-1.5-2.5-.3-5.2-1.3-5.2-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0C17.3 5.1 18.3 5.4 18.3 5.4c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.2 5.7.4.3.8 1 .8 2.1v3.1c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5Z"/></svg>
@@ -368,86 +416,93 @@
             <div class="proj__stack"><span class="t">React</span><span class="t">Node.js</span><span class="t">AWS</span><span class="t">Playwright</span></div>
           </article>
 
-          <!-- Standard 2-col cards -->
-          <article class="proj">
+          <!-- Standard cards -->
+          <article class="proj" data-reveal="fade-up" data-tilt data-tilt-max="7">
+            <span class="proj__shine" aria-hidden="true"></span>
             <div class="proj__glow"></div>
             <div class="proj__top">
               <span class="proj__mark">Ep</span>
               <a class="proj__repo" href="https://github.com/ka8540/EquiPay" target="_blank" rel="noopener" aria-label="EquiPay on GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.7.4-1.3.7-1.5-2.5-.3-5.2-1.3-5.2-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0C17.3 5.1 18.3 5.4 18.3 5.4c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.2 5.7.4.3.8 1 .8 2.1v3.1c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5Z"/></svg></a>
             </div>
-            <span class="proj__cat" style="margin-top:14px">Fintech · Mobile</span>
+            <span class="proj__cat">Fintech · Mobile</span>
             <h3 class="proj__name">EquiPay</h3>
             <p class="proj__desc">Group expense-splitting app with real-time balances, receipt OCR via Textract, and settlement workflows.</p>
             <div class="proj__stack"><span class="t">React Native</span><span class="t">Flask</span><span class="t">AWS</span></div>
           </article>
 
-          <article class="proj">
+          <article class="proj" data-reveal="fade-up" data-tilt data-tilt-max="7">
+            <span class="proj__shine" aria-hidden="true"></span>
             <div class="proj__glow"></div>
             <div class="proj__top">
               <span class="proj__mark">Pc</span>
               <a class="proj__repo" href="https://github.com/ka8540/PersonaCraft" target="_blank" rel="noopener" aria-label="PersonaCraft on GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.7.4-1.3.7-1.5-2.5-.3-5.2-1.3-5.2-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0C17.3 5.1 18.3 5.4 18.3 5.4c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.2 5.7.4.3.8 1 .8 2.1v3.1c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5Z"/></svg></a>
             </div>
-            <span class="proj__cat" style="margin-top:14px">LLM · Conversational AI</span>
+            <span class="proj__cat">LLM · Conversational AI</span>
             <h3 class="proj__name">PersonaCraft</h3>
             <p class="proj__desc">Character-chat app where users define traits, lore, and tone, then hold dynamic GPT-powered conversations with generated personas.</p>
             <div class="proj__stack"><span class="t">Python</span><span class="t">Flask</span><span class="t">LLM</span></div>
           </article>
 
-          <article class="proj">
+          <article class="proj" data-reveal="fade-up" data-tilt data-tilt-max="7">
+            <span class="proj__shine" aria-hidden="true"></span>
             <div class="proj__glow"></div>
             <div class="proj__top">
               <span class="proj__mark">Nh</span>
               <a class="proj__repo" href="https://github.com/ka8540/NeoHub" target="_blank" rel="noopener" aria-label="NeoHub on GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.7.4-1.3.7-1.5-2.5-.3-5.2-1.3-5.2-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0C17.3 5.1 18.3 5.4 18.3 5.4c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.2 5.7.4.3.8 1 .8 2.1v3.1c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5Z"/></svg></a>
             </div>
-            <span class="proj__cat" style="margin-top:14px">Graph · Visualization</span>
+            <span class="proj__cat">Graph · Visualization</span>
             <h3 class="proj__name">NeoHub</h3>
             <p class="proj__desc">Neo4j and D3 tool for exploring GitHub Archive contribution networks across millions of nodes, repos, and commits.</p>
             <div class="proj__stack"><span class="t">Neo4j</span><span class="t">D3.js</span><span class="t">Data Viz</span></div>
           </article>
 
-          <article class="proj">
+          <article class="proj" data-reveal="fade-up" data-tilt data-tilt-max="7">
+            <span class="proj__shine" aria-hidden="true"></span>
             <div class="proj__glow"></div>
             <div class="proj__top">
               <span class="proj__mark">Ca</span>
               <a class="proj__repo" href="https://github.com/ka8540/CrimeAtlas" target="_blank" rel="noopener" aria-label="CrimeAtlas on GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.7.4-1.3.7-1.5-2.5-.3-5.2-1.3-5.2-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0C17.3 5.1 18.3 5.4 18.3 5.4c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.2 5.7.4.3.8 1 .8 2.1v3.1c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5Z"/></svg></a>
             </div>
-            <span class="proj__cat" style="margin-top:14px">Geospatial · Data Platform</span>
+            <span class="proj__cat">Geospatial · Data Platform</span>
             <h3 class="proj__name">CrimeAtlas</h3>
             <p class="proj__desc">MERN crime-intelligence platform mapping LA incidents, enriching them with Street View imagery, and surfacing geospatial patterns.</p>
             <div class="proj__stack"><span class="t">MERN</span><span class="t">MongoDB</span><span class="t">Google Cloud</span></div>
           </article>
 
-          <article class="proj">
+          <article class="proj" data-reveal="fade-up" data-tilt data-tilt-max="7">
+            <span class="proj__shine" aria-hidden="true"></span>
             <div class="proj__glow"></div>
             <div class="proj__top">
               <span class="proj__mark">Bw</span>
               <a class="proj__repo" href="https://github.com/ka8540/BudgetWise" target="_blank" rel="noopener" aria-label="BudgetWise AI on GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.7.4-1.3.7-1.5-2.5-.3-5.2-1.3-5.2-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0C17.3 5.1 18.3 5.4 18.3 5.4c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.2 5.7.4.3.8 1 .8 2.1v3.1c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5Z"/></svg></a>
             </div>
-            <span class="proj__cat" style="margin-top:14px">Analytics · Cloud</span>
+            <span class="proj__cat">Analytics · Cloud</span>
             <h3 class="proj__name">BudgetWise AI</h3>
             <p class="proj__desc">Cloud-hosted personal-finance platform with predictive analytics, Dockerized services, and AWS deployment for scalable reporting.</p>
             <div class="proj__stack"><span class="t">AWS</span><span class="t">Docker</span><span class="t">Analytics</span></div>
           </article>
 
-          <article class="proj">
+          <article class="proj" data-reveal="fade-up" data-tilt data-tilt-max="7">
+            <span class="proj__shine" aria-hidden="true"></span>
             <div class="proj__glow"></div>
             <div class="proj__top">
               <span class="proj__mark">Pp</span>
               <a class="proj__repo" href="https://github.com/ka8540/SWEN732-team1" target="_blank" rel="noopener" aria-label="Price Compare Plus on GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.7.4-1.3.7-1.5-2.5-.3-5.2-1.3-5.2-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0C17.3 5.1 18.3 5.4 18.3 5.4c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.2 5.7.4.3.8 1 .8 2.1v3.1c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5Z"/></svg></a>
             </div>
-            <span class="proj__cat" style="margin-top:14px">Mobile · Commerce</span>
+            <span class="proj__cat">Mobile · Commerce</span>
             <h3 class="proj__name">Price Compare Plus</h3>
             <p class="proj__desc">React Native shopping companion comparing cross-retailer pricing, with wishlists and live product data via backend APIs.</p>
             <div class="proj__stack"><span class="t">React Native</span><span class="t">APIs</span><span class="t">Mobile</span></div>
           </article>
 
-          <article class="proj">
+          <article class="proj" data-reveal="fade-up" data-tilt data-tilt-max="7">
+            <span class="proj__shine" aria-hidden="true"></span>
             <div class="proj__glow"></div>
             <div class="proj__top">
               <span class="proj__mark">Ic</span>
               <a class="proj__repo" href="https://github.com/klsterfx/ICRS" target="_blank" rel="noopener" aria-label="ICRS on GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.7.4-1.3.7-1.5-2.5-.3-5.2-1.3-5.2-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0C17.3 5.1 18.3 5.4 18.3 5.4c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.2 5.7.4.3.8 1 .8 2.1v3.1c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5Z"/></svg></a>
             </div>
-            <span class="proj__cat" style="margin-top:14px">Decision Support · Education</span>
+            <span class="proj__cat">Decision Support · Education</span>
             <h3 class="proj__name">ICRS</h3>
             <p class="proj__desc">Recommendation system that helps students evaluate college options through Java, Flask, and MySQL-backed scoring and ranking workflows.</p>
             <div class="proj__stack"><span class="t">Java</span><span class="t">Flask</span><span class="t">MySQL</span></div>
@@ -455,7 +510,7 @@
         </div>
 
         <div class="projects-foot" data-reveal="fade-up">
-          <a class="btn btn-soft" href="https://github.com/ka8540" target="_blank" rel="noopener">
+          <a class="btn btn-soft" data-magnetic href="https://github.com/ka8540" target="_blank" rel="noopener">
             View all projects on GitHub
             <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
@@ -464,19 +519,22 @@
     </section>
 
     <!-- =========================== EXPERIENCE =========================== -->
-    <section class="section section--tint" id="experience">
+    <section class="section" id="experience">
       <div class="wrap">
         <div class="section-head" data-reveal="fade-up">
-          <span class="eyebrow">Journey</span>
+          <span class="eyebrow"><span class="eyebrow__line"></span>Journey</span>
           <h2 class="section-title">Where I've shipped</h2>
           <p class="section-sub">Co-op and internship roles across data &amp; analytics, backend microservices, and AI/ML engineering.</p>
         </div>
 
         <div class="timeline">
+          <span class="timeline__rail" aria-hidden="true"><span class="timeline__progress"></span></span>
+
           <article class="tl-item" data-reveal="fade-up">
-            <div class="tl-card">
+            <span class="tl-node" aria-hidden="true"></span>
+            <div class="tl-card" data-tilt data-tilt-max="4">
               <div class="tl-head">
-                <h3 class="tl-role">Dashboard Developer (Co-op)</h3>
+                <h3 class="tl-role">Dashboard Developer <span class="tl-kind">Co-op</span></h3>
                 <span class="tl-date">May 2025 – Dec 2025</span>
               </div>
               <p class="tl-org"><b>Rochester Institute of Technology</b> — Institutional Research, Data &amp; Analytics</p>
@@ -486,7 +544,8 @@
           </article>
 
           <article class="tl-item" data-reveal="fade-up">
-            <div class="tl-card">
+            <span class="tl-node" aria-hidden="true"></span>
+            <div class="tl-card" data-tilt data-tilt-max="4">
               <div class="tl-head">
                 <h3 class="tl-role">Course Assistant</h3>
                 <span class="tl-date">Aug 2024 – May 2025</span>
@@ -498,7 +557,8 @@
           </article>
 
           <article class="tl-item" data-reveal="fade-up">
-            <div class="tl-card">
+            <span class="tl-node" aria-hidden="true"></span>
+            <div class="tl-card" data-tilt data-tilt-max="4">
               <div class="tl-head">
                 <h3 class="tl-role">Software Engineer Intern</h3>
                 <span class="tl-date">Jan 2023 – May 2023</span>
@@ -510,7 +570,8 @@
           </article>
 
           <article class="tl-item" data-reveal="fade-up">
-            <div class="tl-card">
+            <span class="tl-node" aria-hidden="true"></span>
+            <div class="tl-card" data-tilt data-tilt-max="4">
               <div class="tl-head">
                 <h3 class="tl-role">Data Science &amp; AI/ML Engineering Intern</h3>
                 <span class="tl-date">May 2022 – Oct 2022</span>
@@ -528,12 +589,13 @@
     <section class="section" id="education">
       <div class="wrap">
         <div class="section-head" data-reveal="fade-up">
-          <span class="eyebrow">Background</span>
+          <span class="eyebrow"><span class="eyebrow__line"></span>Background</span>
           <h2 class="section-title">Education</h2>
         </div>
 
         <div class="edu-grid" data-stagger="0.1">
-          <article class="edu-card">
+          <article class="edu-card" data-reveal="fade-up" data-tilt data-tilt-max="5">
+            <span class="edu-card__shine" aria-hidden="true"></span>
             <div class="edu-card__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c0 1 2.7 3 6 3s6-2 6-3v-5"/><path d="M22 10v6"/></svg></div>
             <h3>M.S. Computer Software Engineering</h3>
             <p class="edu-org">Rochester Institute of Technology · Minor in Data Science</p>
@@ -542,7 +604,8 @@
             <a class="link" href="https://www.parchment.com/u/award/d1606ebb2fe57420f6ff502d27fe21aa" target="_blank" rel="noopener">View certificate <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
           </article>
 
-          <article class="edu-card">
+          <article class="edu-card" data-reveal="fade-up" data-tilt data-tilt-max="5">
+            <span class="edu-card__shine" aria-hidden="true"></span>
             <div class="edu-card__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c0 1 2.7 3 6 3s6-2 6-3v-5"/><path d="M22 10v6"/></svg></div>
             <h3>B.E. Electronics &amp; Communication</h3>
             <p class="edu-org">L. J. Institute of Engineering &amp; Technology · Gujarat Technological University</p>
@@ -554,40 +617,40 @@
     </section>
 
     <!-- ============================ RESEARCH ============================ -->
-    <section class="section section--tint" id="research">
+    <section class="section" id="research">
       <div class="wrap">
         <div class="section-head" data-reveal="fade-up">
-          <span class="eyebrow">Publications</span>
+          <span class="eyebrow"><span class="eyebrow__line"></span>Publications</span>
           <h2 class="section-title">Research</h2>
           <p class="section-sub">Writing at the intersection of software architecture, security, and applied NLP.</p>
         </div>
 
         <div class="research-list" data-stagger="0.1">
-          <article class="paper">
+          <article class="paper" data-reveal="fade-up">
             <span class="paper__no">01</span>
-            <div>
+            <div class="paper__body">
               <h3 class="paper__title">Equifax Data Breach: A Software Architecture Perspective</h3>
               <p class="paper__desc">Dissects the 2017 Equifax breach from a software-architecture standpoint — unpatched Apache Struts, weak monitoring, and legacy debt — and proposes microservices, automated patching, and Zero Trust as mitigations.</p>
             </div>
-            <a class="paper__link" href="https://drive.google.com/file/d/19LkKC2V5NgkT1X8bjYVzvt9Z-NGhzo8j/view?usp=sharing" target="_blank" rel="noopener">Read paper <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+            <a class="paper__link" href="https://drive.google.com/file/d/19LkKC2V5NgkT1X8bjYVzvt9Z-NGhzo8j/view?usp=sharing" target="_blank" rel="noopener" aria-label="Read paper: Equifax Data Breach">Read paper <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
           </article>
 
-          <article class="paper">
+          <article class="paper" data-reveal="fade-up">
             <span class="paper__no">02</span>
-            <div>
+            <div class="paper__body">
               <h3 class="paper__title">Legacy Systems in Open Source: Design Pattern-Based Refactoring</h3>
               <p class="paper__desc">Applies Factory, Observer, Strategy, and other patterns to reduce complexity in legacy open-source code. SonarQube and JaCoCo results show measurable cyclomatic-complexity reductions across an online cab-booking system.</p>
             </div>
-            <a class="paper__link" href="https://drive.google.com/file/d/11D031PYmbkpxVhWif1Ngu7N0wdnpri9A/view?usp=sharing" target="_blank" rel="noopener">Read paper <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+            <a class="paper__link" href="https://drive.google.com/file/d/11D031PYmbkpxVhWif1Ngu7N0wdnpri9A/view?usp=sharing" target="_blank" rel="noopener" aria-label="Read paper: Legacy Systems in Open Source">Read paper <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
           </article>
 
-          <article class="paper">
+          <article class="paper" data-reveal="fade-up">
             <span class="paper__no">03</span>
-            <div>
+            <div class="paper__body">
               <h3 class="paper__title">Review of DISTO: Textual Distractors for MCQ Reading Comprehension via Negative Sampling</h3>
               <p class="paper__desc">Evaluates the DISTO metric for assessing MCQ distractors using negative-sampling strategies and transformer models like DistilRoBERTa, critiquing BLEU-style metrics and discussing multilingual and scalability limitations.</p>
             </div>
-            <a class="paper__link" href="https://drive.google.com/file/d/12Vv1QDZ9nW92yXWaxqtk7EQW_R097XRP/view?usp=sharing" target="_blank" rel="noopener">Read paper <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+            <a class="paper__link" href="https://drive.google.com/file/d/12Vv1QDZ9nW92yXWaxqtk7EQW_R097XRP/view?usp=sharing" target="_blank" rel="noopener" aria-label="Read paper: Review of DISTO">Read paper <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
           </article>
         </div>
       </div>
@@ -597,23 +660,23 @@
     <section class="section" id="resume">
       <div class="wrap">
         <div class="resume-cta" data-reveal="fade-up">
-          <div class="bg-fx"><div class="bg-grid"></div></div>
+          <span class="resume-cta__beam" aria-hidden="true"></span>
           <div class="resume-cta__txt">
-            <span class="eyebrow">Resume</span>
-            <h2>The one-page version, ready to share.</h2>
+            <span class="eyebrow"><span class="eyebrow__line"></span>Resume</span>
+            <h2>The one-page version, <span class="grad">ready to share.</span></h2>
             <p>A concise overview of my experience, projects, and stack — open it in your browser or download a copy for your records.</p>
             <div class="resume-cta__actions">
-              <a class="btn btn-primary" href="https://drive.google.com/file/d/1QdGEjIWt3534rtqOKuX_cUxdClWjCuCy/view?usp=sharing" target="_blank" rel="noopener">
+              <a class="btn btn-primary" data-magnetic href="https://drive.google.com/file/d/1QdGEjIWt3534rtqOKuX_cUxdClWjCuCy/view?usp=sharing" target="_blank" rel="noopener">
                 Open Resume
                 <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
               </a>
-              <a class="btn btn-ghost" href="https://drive.google.com/file/d/1QdGEjIWt3534rtqOKuX_cUxdClWjCuCy/view?usp=sharing" target="_blank" rel="noopener">
+              <a class="btn btn-ghost" data-magnetic href="https://drive.google.com/file/d/1QdGEjIWt3534rtqOKuX_cUxdClWjCuCy/view?usp=sharing" target="_blank" rel="noopener">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14"/></svg>
                 Download PDF
               </a>
             </div>
           </div>
-          <div class="resume-doc" aria-hidden="true">
+          <div class="resume-doc" aria-hidden="true" data-tilt data-tilt-max="9">
             <div class="rd-top">
               <div class="rd-name">Kush Jayesh Ahir<span>Software Engineer</span></div>
               <span class="rd-badge">PDF</span>
@@ -630,15 +693,14 @@
     </section>
 
     <!-- ============================= CONTACT ============================ -->
-    <section class="section section--tint contact" id="contact">
-      <div class="bg-fx"><div class="glow glow--a" style="left:50%;top:0;transform:translateX(-50%)"></div></div>
+    <section class="section contact" id="contact">
       <div class="wrap">
         <div class="contact__inner">
-          <span class="eyebrow" style="justify-content:center" data-reveal="fade-up">Contact</span>
-          <h2 data-reveal="fade-up" data-delay="0.05">Let's build <span class="grad">something</span>.</h2>
-          <p data-reveal="fade-up" data-delay="0.1">Have a role, project, or idea in mind? I'm open to full-time software engineering opportunities and collaborations — send a note and I'll get back to you within a day or two.</p>
+          <span class="eyebrow eyebrow--center" data-reveal="fade-up">Contact</span>
+          <h2 class="contact__title" data-reveal="fade-up" data-delay="0.05">Let's build <span class="grad">something</span>.</h2>
+          <p class="contact__lead" data-reveal="fade-up" data-delay="0.1">Have a role, project, or idea in mind? I'm open to full-time software engineering opportunities and collaborations — send a note and I'll get back to you within a day or two.</p>
 
-          <a class="contact__email" href="mailto:kush.ahir2024@gmail.com" data-reveal="fade-up" data-delay="0.15">
+          <a class="contact__email" data-magnetic href="mailto:kush.ahir2024@gmail.com" data-reveal="fade-up" data-delay="0.15">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="m3 6 9 7 9-7"/></svg>
             kush.ahir2024@gmail.com
           </a>
@@ -667,7 +729,7 @@
     <div class="wrap">
       <div class="footer__inner">
         <div class="footer__brand">
-          <span class="brand__mark">KA</span>
+          <span class="brand__mark"><span>KA</span></span>
           <div>
             <p>Kush Jayesh Ahir</p>
             <small>Software Engineer · Backend &amp; Data Systems</small>
@@ -682,17 +744,21 @@
           <a href="#contact">Contact</a>
         </nav>
         <div class="footer__social">
-          <a href="https://github.com/ka8540" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.7.4-1.3.7-1.5-2.5-.3-5.2-1.3-5.2-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0C17.3 5.1 18.3 5.4 18.3 5.4c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.2 5.7.4.3.8 1 .8 2.1v3.1c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5Z"/></svg></a>
-          <a href="https://www.linkedin.com/in/kush-ahir/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 1 1 0 3.5a2.5 2.5 0 0 1 4.98 0ZM.3 8.3h4.4V24H.3V8.3Zm7.4 0h4.2v2.1h.1c.6-1.1 2-2.3 4.2-2.3 4.5 0 5.3 2.9 5.3 6.7V24h-4.4v-7.3c0-1.7 0-4-2.4-4s-2.8 1.9-2.8 3.8V24H7.7V8.3Z"/></svg></a>
-          <a href="mailto:kush.ahir2024@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="m3 6 9 7 9-7"/></svg></a>
+          <a href="https://github.com/ka8540" target="_blank" rel="noopener" aria-label="GitHub" class="icon-link"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.7.4-1.3.7-1.5-2.5-.3-5.2-1.3-5.2-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0C17.3 5.1 18.3 5.4 18.3 5.4c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.2 5.7.4.3.8 1 .8 2.1v3.1c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5Z"/></svg></a>
+          <a href="https://www.linkedin.com/in/kush-ahir/" target="_blank" rel="noopener" aria-label="LinkedIn" class="icon-link"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 1 1 0 3.5a2.5 2.5 0 0 1 4.98 0ZM.3 8.3h4.4V24H.3V8.3Zm7.4 0h4.2v2.1h.1c.6-1.1 2-2.3 4.2-2.3 4.5 0 5.3 2.9 5.3 6.7V24h-4.4v-7.3c0-1.7 0-4-2.4-4s-2.8 1.9-2.8 3.8V24H7.7V8.3Z"/></svg></a>
+          <a href="mailto:kush.ahir2024@gmail.com" aria-label="Email" class="icon-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="m3 6 9 7 9-7"/></svg></a>
         </div>
       </div>
       <div class="footer__base">
         <span>© <span data-year>2026</span> Kush Jayesh Ahir. Designed &amp; built from scratch.</span>
-        <span>Backend · Cloud · Data · AI</span>
+        <span class="footer__tag">Backend · Cloud · Data · AI</span>
       </div>
     </div>
   </footer>
+
+  <button class="to-top" id="to-top" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
 
   <script src="js/main.js"></script>
 </body>
